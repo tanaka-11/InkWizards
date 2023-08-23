@@ -39,8 +39,29 @@ Oferecemos suporte técnico aos usuários e implementamos medidas de segurança 
 
 1. Faça o login na sua conta de tatuador.
 
-2. Acesse a seção "Meu Portfólio"
+2. Acesse a seção "Meu Portfólio".
 
+3. Clique em "Adicionar Novo Trabalho".
+
+4. Carregue uma imagem de seu trabalgo e adicione uma descrição.
+
+5. Clique em "Salvar" para adicionar o trabalho ao seu portfólio.
+
+### Exploração de Portfólios
+
+1. Navegue pela lista de tatuadores na página inicial ou na página artistas para vizualização geral de todos tatuadores.
+
+2. Clique em um tatuador para ver seu perfil e portfólio.
+
+3. Explore as imagens e descrições dos trabalhos do tatuador.
+
+4. Entre em contato usando as informações fornecidas.
+
+## Suporte e Contato
+**Para obter suporte ou relatar problemas, entre em contato conosco pelo email inkwizards.tatto@gmail.com**
+
+## Conclusão
+Esta documentação tem como objetivo proporcionar uma compreensão abrangente das funcionalidades e uso do projeto de divulgação de portfólios de tatuadores. Esperamos que você aproveite essa plataforma para ampliar sua presença online e alcançar mais pessoas com seu talento único.
 
 ## Documentação do Projeto
 
