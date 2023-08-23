@@ -1,9 +1,6 @@
 # InkWizards
 
 ## Visão Geral
-
-**Site criado para o projeto integrador da QT2 - Back-End na instituição Senac Penha no curso de Téc. em Informática para Internet**
-
 O projeto "InkWizards" é um site dedicado a ajudar tatuadores que não possuem muita visibilidade a divulgarem seus portfólios. Através de uma interface intuitiva e de fácil utilização, nosso objetivo é simplificar a experiência do usuário. Garantimos suporte e segurança para seus dados, permitindo que eles alcancem mais pessoas e ampliem sua presença online.
 
 ---
@@ -43,7 +40,7 @@ Oferecemos suporte técnico aos usuários e implementamos medidas de segurança 
 
 3. Clique em "Adicionar Novo Trabalho".
 
-4. Carregue uma imagem de seu trabalgo e adicione uma descrição.
+4. Carregue uma imagem de seu trabalho e adicione uma descrição.
 
 5. Clique em "Salvar" para adicionar o trabalho ao seu portfólio.
 
@@ -63,7 +60,7 @@ Oferecemos suporte técnico aos usuários e implementamos medidas de segurança 
 
 ---
 # Conclusão
-Esta documentação tem como objetivo proporcionar uma compreensão abrangente das funcionalidades e uso do projeto de divulgação de portfólios de tatuadores. Esperamos que você aproveite essa plataforma para ampliar sua presença online e alcançar mais pessoas com seu talento único.
+Esta documentação tem como objetivo proporcionar uma compreensão abrangente das funcionalidades e uso do site **InkWizards**. Esperamos que você aproveite essa plataforma para ampliar sua presença online e alcançar mais pessoas com seu talento.
 
 # Guia do Desenvolvedor
 
