@@ -25,6 +25,23 @@ A interface do site é projetada para ser intuitiva e de fácil navegação, pro
 5. Suporte e Segurança: 
 Oferecemos suporte técnico aos usuários e implementamos medidas de segurança para proteger os dados pessoais e o conteúdo dos tatuadores.
 
+## Guia de Uso
+
+### Cadastro de Tatuadores
+
+1. Acesse a página de cadastro.
+
+2. Preencha o formulário com suas informações pessoais e profissionais.
+
+3. Clique em "Registrar" para criar sua conta.
+
+### Criação de Portfólios
+
+1. Faça o login na sua conta de tatuador.
+
+2. Acesse a seção "Meu Portfólio"
+
+
 ## Documentação do Projeto
 
 ### MySQL Workbench (Modelo Lógico do DATABASE)
