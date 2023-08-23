@@ -63,9 +63,11 @@ Oferecemos suporte técnico aos usuários e implementamos medidas de segurança 
 ## Conclusão
 Esta documentação tem como objetivo proporcionar uma compreensão abrangente das funcionalidades e uso do projeto de divulgação de portfólios de tatuadores. Esperamos que você aproveite essa plataforma para ampliar sua presença online e alcançar mais pessoas com seu talento único.
 
-## Documentação do Projeto
+---
 
-### MySQL Workbench (Modelo Lógico do DATABASE)
+# Guia do Desenvolvedor
+
+## MySQL Workbench (Modelo Lógico do DATABASE)
 
 ![Modelo-logico-InkWizards](./database/Workbench/tatuadores.png)
 
