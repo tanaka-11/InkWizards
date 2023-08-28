@@ -13,7 +13,7 @@
 
 <header>
     <div>
-        <img src="#" alt="InkWizards">
+        <img src="./assets/logo-VER1.png" alt="InkWizards">
         
         <nav>
             <a href="">Home</a>
