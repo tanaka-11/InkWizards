@@ -12,8 +12,8 @@
 <body>
 
 <header>
-    <div>
-        <img src="./assets/logo-VER1.png" alt="InkWizards">
+    <div class="navegacao">
+        <img src="./assets/logo-VER1.png" class="logo" alt="InkWizards">
         
         <nav>
             <a href="">Home</a>
@@ -25,7 +25,20 @@
     </div>
 </header>
 
-    <main></main>
+    <main>
+        <div class="imagem-destaque">
+            <p class="link-tatuador-home"><a href="">Conheça nossos tatuadores</a></p>
+        </div>
+
+        <h1 class="font">Veja alguns de nossos trabalhos recentes</h1>
+
+        <section class="exposicao-home">
+        <div class="expositorio">
+
+        </div>
+        </section>
+
+    </main>
 
     <footer>
         <div></div>
