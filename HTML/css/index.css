@@ -25,25 +25,25 @@
 .navegacao {
     background: var(--container, rgba(203, 0, 45, 0.25));
 
-    width: 375px;
-    height: 92px;
+    width: 23.4375rem;
+    height: 5.75rem;
     flex-shrink: 0;
 }
 
 .logo {
     display: inline-flex;
-    height: 81px;
+    height: 5.0625rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem;
     flex-shrink: 0;
 }
 
 .imagem-destaque {
     background: url(../assets/imagem-destaque.jpg), lightgray 0.704px 0px / 99.624% 100% no-repeat;
 
-    width: 375px;
-    height: 249px;
+    width: 23.4375rem;
+    height: 15.5625rem;
     flex-shrink: 0;
 }
 
@@ -52,9 +52,10 @@
     border: 1px solid var(--cinza-escuro-background, #242C33);
     background: var(--container, rgba(203, 0, 45, 0.25));
 
-    width: 335px;
-    height: 495px;
+    width: 20.9375rem;
+    height: 30.9375rem;
     flex-shrink: 0;
+
 }
 
 body{background: var(--color-primary);}
