@@ -1,7 +1,9 @@
 # InkWizards
 
 ## Visão Geral
-O projeto "InkWizards" é um site dedicado a ajudar tatuadores que não possuem muita visibilidade a divulgarem seus portfólios. Através de uma interface intuitiva e de fácil utilização, nosso objetivo é simplificar a experiência do usuário. Garantimos suporte e segurança para seus dados, permitindo que eles alcancem mais pessoas e ampliem sua presença online.
+O projeto "InkWizards" é um site dedicado a ajudar tatuadores que não possuem muita visibilidade a divulgarem seus portfólios. 
+Através de uma interface intuitiva e de fácil utilização, nosso objetivo é simplificar a experiência do usuário. 
+Garantimos suporte e segurança para seus dados, permitindo que eles alcancem mais pessoas e ampliem sua presença online.
 
 ---
 
