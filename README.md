@@ -65,4 +65,3 @@ Para obter suporte ou relatar problemas, entre em contato conosco pelo e-mail **
 Esta documentação tem como objetivo proporcionar uma compreensão abrangente das funcionalidades e uso do site **InkWizards**. Esperamos que você aproveite essa plataforma para ampliar sua presença online e alcançar mais pessoas com seu talento.
 
 
-

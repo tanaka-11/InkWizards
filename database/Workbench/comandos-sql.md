@@ -43,7 +43,7 @@ CREATE TABLE portfolio(
 ```sql
 ALTER TABLE portfolio
     ADD CONSTRAINT fk_portfolio_tatuadores
-    FOREIGN KEY (tatuador_id) REFERENCES  
+    FOREIGN KEY (tatuador_id) REFERENCES tatuadores(id); 
 ```
 
 
