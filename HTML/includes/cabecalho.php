@@ -33,7 +33,8 @@ $titulo = match($pagina) {
 
     <title><?=$titulo?> - InkWizards</title>
 
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/index.css">
+
 </head>
 
 <body>
