@@ -5,8 +5,6 @@
 
 ![Modelo-logico-InkWizards](/database/Workbench/tatuadores.png)
 
-
-
 ## Modelo Físico do DATABASE feito com phpmyadmin.
 
 ### Criando banco de dados
