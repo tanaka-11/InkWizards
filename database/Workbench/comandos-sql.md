@@ -1,3 +1,14 @@
+# Guia do Desenvolvedor
+
+# Banco de Dados
+## Modelo Lógico do DATABASE feito no MySQL Workbench.
+
+![Modelo-logico-InkWizards](/database/Workbench/tatuadores.png)
+
+
+
+## Modelo Físico do DATABASE feito com phpmyadmin.
+
 # Criando banco de dados
 
 ```sql
@@ -32,5 +43,13 @@ CREATE TABLE portfolio(
 ```sql
 ALTER TABLE portfolio
     ADD CONSTRAINT fk_portfolio_tatuadores
-    FOREIGN KEY (tatuador_id) REFERENCES tatuadores(id); 
+    FOREIGN KEY (tatuador_id) REFERENCES  
 ```
+
+
+# Back-End
+
+
+
+# Front-End
+

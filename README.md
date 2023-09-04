@@ -64,20 +64,5 @@ Para obter suporte ou relatar problemas, entre em contato conosco pelo e-mail **
 # Conclusão
 Esta documentação tem como objetivo proporcionar uma compreensão abrangente das funcionalidades e uso do site **InkWizards**. Esperamos que você aproveite essa plataforma para ampliar sua presença online e alcançar mais pessoas com seu talento.
 
-# Guia do Desenvolvedor
 
-## Banco de Dados
-1. Modelo Lógico do DATABASE feito no MySQL Workbench.
-
-![Modelo-logico-InkWizards](./database/Workbench/tatuadores.png)
-
-2. Modelo Físico do DATABASE feito com phpmyadmin.
-
-![Modelo-fisico-InkWizards]()
-
-## Back-End
-
-
-
-## Front-End
 
