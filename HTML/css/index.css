@@ -2,8 +2,10 @@
 
 * {
     box-sizing: border-box;
+
     /* Mudar Fonte para Poppins */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
     margin: 0;
     padding: 0;
 }
@@ -22,10 +24,6 @@ nav {display: none;}
 
 
 /* Página Index */
-.linkTatuadores a{
-    text-decoration: none;
-    color: #ff0000;
-}
 
 .font {
     color: var(--color-secondary, #242C33);
@@ -38,7 +36,7 @@ nav {display: none;}
 }
 
 .navegacao {
-    background: var(--container, rgba(203, 0, 45, 0.25));
+    background: var(--container, #cb002d40);
 
     width: 23.4375rem;
     height: 5.75rem;
@@ -60,4 +58,9 @@ nav {display: none;}
     width: 23.4375rem;
     height: 15.5625rem;
     flex-shrink: 0;
+}
+
+footer {
+    text-decoration: none;
+    color: #ff0000;
 }

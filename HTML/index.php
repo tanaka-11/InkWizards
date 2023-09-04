@@ -1,13 +1,11 @@
 <?php require "includes/cabecalho.php" ?>
     
     <section class="destaqueIndex">
-
         <div class="imagemDestaque">
-            <p class="linkTatuadores">
+            <button class="botao-saiba-mais">
                 <a href="#">Conheça nossos tatuadores</a>
-            </p>
+            </button>
         </div>
-
     </section>
     
     <section class="exposicao-home">
