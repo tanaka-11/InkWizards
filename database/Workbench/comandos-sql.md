@@ -9,15 +9,15 @@
 
 ## Modelo Físico do DATABASE feito com phpmyadmin.
 
-# Criando banco de dados
+### Criando banco de dados
 
 ```sql
 CREATE DATABASE InkWizards CHARACTER SET utf8mb4;
 ```
 
-# Criando tabelas do database
+### Criando tabelas do database
 
-## Tatuadores
+#### Tatuadores
 
 ```sql
 CREATE TABLE tatuadores(
@@ -29,7 +29,7 @@ CREATE TABLE tatuadores(
 );
 ```
 
-## Portfólio
+#### Portfólio
 ```sql
 CREATE TABLE portfolio(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -39,7 +39,7 @@ CREATE TABLE portfolio(
 );    
 ```
 
-# Adicionando Foreign Key das tabelas
+### Adicionando Foreign Key das tabelas
 ```sql
 ALTER TABLE portfolio
     ADD CONSTRAINT fk_portfolio_tatuadores
