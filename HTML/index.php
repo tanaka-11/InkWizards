@@ -3,9 +3,9 @@
     
     <section class="destaqueIndex">
         <div class="imagemDestaque">
-            <button class="botao-saiba-mais">
+            <p class="botao-saiba-mais">
                 <a href="#">Conheça nossos tatuadores</a>
-            </button>
+            </p>
         </div>
     </section>
     

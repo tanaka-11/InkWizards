@@ -23,6 +23,9 @@ body{background: var(--color-primary);}
 /* nav {display: none;} */
 
 
+
+
+
 /* Página Index */
 
 .font {
@@ -32,15 +35,37 @@ body{background: var(--color-primary);}
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    /* text-align: center; */
+
 }
 
+
+/* HEADER */
 .navegacao {
     background: var(--container, #cb002d40);
 
     width: 23.4375rem;
-    height: 5.75rem;
+    height: 7rem;
     flex-shrink: 0;
+}
+
+.navegacao nav {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.navegacao nav a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #242C33;
+    
+}
+
+.navegacao nav a:hover {
+    text-shadow: #CB002D 1px 1px 3px;
+    color: lightgray;
+    font-weight: 800;
 }
 
 .logo {
@@ -52,15 +77,50 @@ body{background: var(--color-primary);}
     flex-shrink: 0;
 }
 
+
+/* DESTAQUE INDEX */
 .destaqueIndex {
-    background: url(/assets/imagem-destaque.jpg), lightgray 0.704px 0px / 99.624% 100% no-repeat;
+    background: url(/HTML/assets/imagem-destaque.jpg), lightgray 0.704px 0px / 99.624% 100% no-repeat;
 
     width: 23.4375rem;
     height: 15.5625rem;
     flex-shrink: 0;
 }
 
-footer {
+.destaqueIndex p a {
     text-decoration: none;
-    color: #ff0000;
+    display: none;
+}
+
+.destaqueIndex p a:hover {
+    color: lightgray;
+}
+
+
+
+/* FOOTER */
+footer {
+    background: var(--container, #cb002d40);
+    width: 23.4375rem;
+}
+
+
+footer nav {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+footer nav a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #242C33;
+    
+}
+
+footer nav a:hover {
+    text-shadow: #CB002D 1px 1px 3px;
+    color: lightgray;
+    font-weight: 800;
 }

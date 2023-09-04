@@ -22,6 +22,7 @@ $titulo = match($pagina) {
 ?>
 
 
+<!-- Começo HTML  -->
 <!DOCTYPE html>
 
 <html lang="pt-br">
