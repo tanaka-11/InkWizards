@@ -22,7 +22,7 @@ nav {display: none;}
 
 
 /* Página Index */
-.destaqueIndex p a{
+.linkTatuadores a{
     text-decoration: none;
     color: #ff0000;
 }
@@ -55,7 +55,7 @@ nav {display: none;}
 }
 
 .imagemDestaque {
-    background: url(/HTML/assets/imagem-destaque.jpg), lightgray 0.704px 0px / 99.624% 100% no-repeat;
+    background: url(/assets/imagem-destaque.jpg), lightgray 0.704px 0px / 99.624% 100% no-repeat;
 
     width: 23.4375rem;
     height: 15.5625rem;
