@@ -1,7 +1,7 @@
 
 </main>
 
-<footer>
+    <footer>
         <div></div>
 
         <nav>
@@ -13,8 +13,7 @@
         </nav>
 
         <form action="" method="get"></form>
-
-</footer>
-
+    </footer>
+    
 </body>
 </html>

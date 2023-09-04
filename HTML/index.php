@@ -1,4 +1,5 @@
-<?php require "includes/cabecalho.php" ?>
+
+<?php require_once "./includes/cabecalho.php" ?>
     
     <section class="destaqueIndex">
         <div class="imagemDestaque">
@@ -17,4 +18,4 @@
 
     </section>
 
-<?php require "includes/rodape.php" ?>
+<?php require_once "./includes/rodape.php" ?>

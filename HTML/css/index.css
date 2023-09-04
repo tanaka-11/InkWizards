@@ -20,7 +20,7 @@
 body{background: var(--color-primary);}
 
 /* Desativar quando fizer versão desktop */
-nav {display: none;}
+/* nav {display: none;} */
 
 
 /* Página Index */
@@ -52,7 +52,7 @@ nav {display: none;}
     flex-shrink: 0;
 }
 
-.imagemDestaque {
+.destaqueIndex {
     background: url(/assets/imagem-destaque.jpg), lightgray 0.704px 0px / 99.624% 100% no-repeat;
 
     width: 23.4375rem;
