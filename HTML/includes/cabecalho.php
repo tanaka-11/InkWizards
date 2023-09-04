@@ -2,7 +2,7 @@
 // Obtém o nome do arquivo PHP atual
 $pagina = basename($_SERVER['PHP_SELF']);
 
-// Define constantes para os títulos das páginas
+// Definindo constantes para os títulos das páginas.
 define("TITULO_INICIAL", "Página Inicial");
 define("TITULO_ESTILOS", "Página Estilos");
 define("TITULO_CONTATO", "Página de Contato");
@@ -51,3 +51,5 @@ $titulo = match($pagina) {
         </nav>
     </div>
 </header>
+
+<main>
