@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "InkWizards";
+$banco = "inkwizards";
 
 try {
     $conexao = new PDO(
