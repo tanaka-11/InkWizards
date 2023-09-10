@@ -1,5 +1,4 @@
 <?php
-// Obtém o nome do arquivo PHP atual
 $pagina = basename($_SERVER['PHP_SELF']);
 
 // Definindo constantes para os títulos das páginas.
