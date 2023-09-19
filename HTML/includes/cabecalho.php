@@ -41,7 +41,7 @@ $titulo = match($pagina) {
 <body>
 
 <header>
-    <div class="navegacao">
+    <div class="navegacao center">
         <img src="" class="logo" alt="InkWizards">
         
         <nav>

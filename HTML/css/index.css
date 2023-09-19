@@ -18,11 +18,20 @@
     text-align: center;
 }
 
+.center {
+    margin: auto;
+    width: 100%;
+}
+
 /* body{background: var(--color-primary);} */
 
 /* Desativar quando fizer versão desktop */
 /* nav {display: none;} */
 
+h1 {
+    
+    padding-top: 10px;
+}
 
 /* HEADER */
 header {
