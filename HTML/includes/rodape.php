@@ -2,7 +2,7 @@
 </main>
 
     <footer>
-        <div></div>
+        <div>
 
         <nav>
             <a href="#">Home</a>
@@ -11,6 +11,8 @@
             <a href="#">Contato </a>
             <a href="#">Login</a>
         </nav>
+
+        </div>
 
         <form action="" method="get"></form>
     </footer>

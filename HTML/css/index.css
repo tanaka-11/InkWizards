@@ -33,10 +33,23 @@ header {
 
 .navegacao nav {
     background: #BBB;
-
     width: 20rem;
     height: 1.875rem;
     flex-shrink: 0;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.navegacao a {
+    text-decoration: none;
+    padding: 4px;
+    color: #000;
+}
+
+nav a:hover {
+    color: #fff;
+    cursor: pointer;
 }
 
 /* INDEX */
@@ -112,7 +125,7 @@ header {
 }
 
 /* CONTATO */
-.Contatos {
+.contatos {
     background: #D9D9D9;
     width: 18.75rem;
     height: 13.0625rem;
@@ -156,26 +169,27 @@ header {
 
 
 /* CADASTRO/LOGIN */
-.cadastro-login {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
+.cadastro {
     width: 18.75rem;
     height: 12.5rem;
     flex-shrink: 0;
     background: #D9D9D9;
 }
 
+.cadastro-login {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .cadastro-login a {
     text-decoration: none;
     color: #fff;
+    
 }
 
 .cadastro-login p {
-    
     /* font-family: Inter; */
-    padding: -8px;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
@@ -184,15 +198,18 @@ header {
 }
 
 
-.botaoCadastro, .botaoLogin {
-    width: 6.25rem;
-    height: 1.875rem;
+.botao-cadastro, .botao-login {
+    width: 100px;
+    height: 20px;
     flex-shrink: 0;
     margin: 12px auto;
+
     
     background: #999;
     color: #FFF;
 }
+
+
 /* FOOTER */
 footer {
     background: #BBB;
@@ -200,5 +217,19 @@ footer {
     width: 20rem;
     height: 1.875rem;
     flex-shrink: 0;
+   
+    display: flex;
+    justify-content: space-evenly;
+        
+}
+    
+footer a {
+    text-decoration: none;
+    padding: 4px;
+    color: #000;
 }
 
+/* footer a:hover {
+    color: #fff;
+    cursor: pointer;
+} */

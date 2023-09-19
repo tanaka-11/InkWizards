@@ -30,7 +30,7 @@
             <img src="./assets/estilos/teste.png" alt="">
 
             <img src="./assets/estilos/teste.png" alt="">
-    </div>
+        </div>
 
         <div class="botao-saiba-mais-index">
         <p>
@@ -40,7 +40,7 @@
         
     </section>
 
-    <section class="Contatos">
+    <section class="contatos">
         <h1 class="text-center">Contato</h1>
         
         <div class="contato text-center">
@@ -56,21 +56,22 @@
         
         </div>
     </section>    
+    
+    <section class="cadastro">
 
-    <section class="cadastro-login">
+    <h1 class="text-center">Cadastro/Login</h1>
 
-        <div class="botaoCadastro">
-        <p>
-            <a href="">Cadastro</a>
-        </p>
+        <div class="cadastro-login">
+            <p  class="botao-cadastro">
+                <a href="">Cadastro</a>
+            </p>
+        
+            <p class="botao-login">
+                <a href="">Login</a>
+            </p>
+            
         </div>
-
-        <div class="botaoLogin">
-        <p>
-            <a href="">Login</a>
-        </p>
-        </div>
-
+            
     </section>
 
 
