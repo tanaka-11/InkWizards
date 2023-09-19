@@ -37,43 +37,7 @@ CREATE TABLE portfolio(
 );    
 ```
 
-#### Contatos
-```sql
-CREATE TABLE contatos (
-    id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    email VARCHAR(45) NOT NULL,
-    telefone TINYINT(8),
-    celular TINYINT(9) NOT NULL,
-    tatuador_id TINYINT NOT NULL
-);
-```
-
-#### Localização
-```sql
-CREATE TABLE localizacao (
-    id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    cep TINYINT(8) NOT NULL,
-    endereco VARCHAR(45) NOT NULL,
-    numero TINYINT NOT NULL,
-    bairro VARCHAR(45) NOT NULL,
-    complemento VARCHAR(30)
-);
-```
-
 ### Adicionando Foreign Key das tabelas
-```sql
-ALTER TABLE tatuadores
-    ADD CONSTRAINT fk_tatuadores_localizacao
-    FOREIGN KEY (localizacao_id) REFERENCES localizacao(id);
-```
-
-```sql
-ALTER TABLE contatos
-    ADD CONSTRAINT fk_contatos_tatuadores
-    FOREIGN KEY (tatuador_id) REFERENCES tatuadores(id);
-```
-
-
 ```sql
 ALTER TABLE portfolio
     ADD CONSTRAINT fk_portfolio_tatuadores
