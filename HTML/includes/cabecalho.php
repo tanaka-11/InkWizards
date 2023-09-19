@@ -42,7 +42,7 @@ $titulo = match($pagina) {
 
 <header>
     <div class="navegacao">
-        <img src="./assets/logo-VER1.png" class="logo" alt="InkWizards">
+        <img src="" class="logo" alt="InkWizards">
         
         <nav>
             <a href="#">Home</a>
