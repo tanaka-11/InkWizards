@@ -2,21 +2,35 @@
 <?php require_once "./includes/cabecalho.php" ?>
     
     <section class="destaque-artista-index">
-        <h1>Artistas</h1>
+        <h1 class="text-center">Artistas</h1>
 
         <div class="destaqueArtistas">
-            <p class="botao-saiba-mais-index">
-                <a href="#">Ver Mais</a>
-            </p>
-
+            <!-- <img src="" alt=""> -->
         </div>
-
+        
+        <div class="botao-saiba-mais-index">
+        <p class="text-center">
+            <a href="#">Ver Mais</a>
+        </p>
+        </div>
     </section>
     
     <section class="estilos">
-        <h1 class="font">Estilos</h1>
+        <h1 class="text-center">Estilos</h1>
 
-        <span class="cardEstilos"></span>
+        <div class="cardsEstilos text-center">
+            <img src="./assets/estilos/teste.png" alt="">
+
+            <img src="./assets/estilos/teste.png" alt="">
+
+            <img src="./assets/estilos/teste.png" alt="">
+
+            <img src="./assets/estilos/teste.png" alt="">
+
+            <img src="./assets/estilos/teste.png" alt="">
+
+            <img src="./assets/estilos/teste.png" alt="">
+    </div>
 
         <div class="botao-saiba-mais-index">
         <p>
@@ -27,29 +41,36 @@
     </section>
 
     <section class="Contatos">
+        <h1 class="text-center">Contato</h1>
         
-        <h1>Contato</h1>
-        
-        <div class="contato">
+        <div class="contato text-center">
         <p>
             Entre em contato conosco no email InkWizards@gmail.com
         </p>
 
-        <p class="botao-contato ">
+        <div class="botao-contato">
+        <p>
             <a href="#">Contato</a>
         </p>
+        </div>
         
         </div>
     </section>    
 
     <section class="cadastro-login">
-        <p class="botaoCadastro">
+
+        <div class="botaoCadastro">
+        <p>
             <a href="">Cadastro</a>
         </p>
+        </div>
 
-        <p class="botaoLogin">
+        <div class="botaoLogin">
+        <p>
             <a href="">Login</a>
         </p>
+        </div>
+
     </section>
 
 
