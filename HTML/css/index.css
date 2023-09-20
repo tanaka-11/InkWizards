@@ -1,11 +1,11 @@
 /* Regras Gerais */
 
-/* * {
+* {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
     margin: 0;
-    padding: 0;
-} */
+}
 
 :root {
     --color-primary: #242C33;
@@ -35,14 +35,14 @@ h1 {
 
 /* HEADER */
 header {
-    width: 20rem;
+    /* width: 20rem; */
     height: 6.25rem;
     flex-shrink: 0;
 }
 
 .navegacao nav {
     background: #BBB;
-    width: 20rem;
+    /* width: 20rem; */
     height: 1.875rem;
     flex-shrink: 0;
     display: flex;
@@ -223,7 +223,7 @@ nav a:hover {
 footer {
     background: #BBB;
 
-    width: 20rem;
+    /* width: 20rem; */
     height: 1.875rem;
     flex-shrink: 0;
    
@@ -242,3 +242,34 @@ footer a {
     color: #fff;
     cursor: pointer;
 } */
+
+/* CSS PÁGINA DE CADASTRO */
+#titulo-cadastro {
+    text-align: center;
+}
+.form-cadastro {
+    padding: 20px;
+}
+.form-cadastro div {
+    margin: 10px 0;
+}
+.form-cadastro input {
+    padding: 5px;
+    width: 100%;
+}
+.form-cadastro textarea {
+    height: 75px;
+    padding: 5px;
+    resize: none;
+    width: 100%;
+}
+.form-cadastro button {
+    background-color: #EEE;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+}
+.form-cadastro button:hover {
+    background-color: #BBB;
+    cursor: pointer;
+}
