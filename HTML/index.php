@@ -9,9 +9,9 @@
         </div>
         
         <div class="botao-saiba-mais-index">
-        <p class="text-center">
-            <a href="#">Ver Mais</a>
-        </p>
+            <p class="text-center">
+                <a href="#">Ver Mais</a>
+            </p>
         </div>
     </section>
     
@@ -33,9 +33,9 @@
         </div>
 
         <div class="botao-saiba-mais-index">
-        <p>
-            <a href="#">Ver Mais</a>
-        </p>
+            <p>
+                <a href="#">Ver Mais</a>
+            </p>
         </div>
         
     </section>
@@ -44,14 +44,14 @@
         <h1 class="text-center">Contato</h1>
         
         <div class="contato text-center">
-        <p>
+            <p>
             Entre em contato conosco no email InkWizards@gmail.com
-        </p>
+            </p>
 
         <div class="botao-contato">
-        <p>
-            <a href="#">Contato</a>
-        </p>
+            <p>
+                <a href="#">Contato</a>
+            </p>
         </div>
         
         </div>
@@ -69,7 +69,6 @@
             <p class="botao-login">
                 <a href="">Login</a>
             </p>
-            
         </div>
             
     </section>
