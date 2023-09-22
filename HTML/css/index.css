@@ -3,6 +3,9 @@
 * {
     box-sizing: border-box;
 }
+html {
+    font-size: 16px;
+}
 body {
     margin: 0;
 }
@@ -254,10 +257,13 @@ footer a {
     margin: 10px 0;
 }
 .form-cadastro input {
-    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
     width: 100%;
 }
 .form-cadastro textarea {
+    border-radius: 5px;
     height: 75px;
     padding: 5px;
     resize: none;
@@ -272,4 +278,26 @@ footer a {
 .form-cadastro button:hover {
     background-color: #BBB;
     cursor: pointer;
+}
+#foto-de-perfil {
+    background-color: #AAA;
+    height: 150px;
+    margin: auto;
+    width: 150px;
+}
+.nome-perfil {
+    text-align: center;
+}
+.dados-perfil {
+    padding: 10px;
+}
+.dados-perfil a {
+    background-color: #AAA;
+    color: #000;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+}
+.dados-perfil a:hover {
+    background-color: #777;
 }
