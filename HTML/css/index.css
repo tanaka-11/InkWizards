@@ -9,6 +9,9 @@ html {
 body {
     margin: 0;
 }
+main {
+    margin: 10px;
+}
 
 :root {
     --color-primary: #242C33;
@@ -247,11 +250,11 @@ footer a {
 } */
 
 /* CSS PÁGINA DE CADASTRO */
-#titulo-cadastro {
+.titulo-cadastro {
     text-align: center;
 }
 .form-cadastro {
-    padding: 20px;
+    padding: 10px;
 }
 .form-cadastro div {
     margin: 10px 0;
@@ -279,8 +282,27 @@ footer a {
     background-color: #BBB;
     cursor: pointer;
 }
+.form-rua-numero {
+    display: flex;
+    justify-content: space-between;
+}
+.form-bairro-complemento,
+.form-celular-telefone {
+    display: flex;
+    justify-content: space-between;
+}
+.form-bairro-complemento div,
+.form-celular-telefone div {
+    width: 48%;
+}
+.div-rua {
+    width: 68%;
+}
+.div-numero-casa {
+    width: 28%;
+}
 #foto-de-perfil {
-    background-color: #AAA;
+    background-color: #999;
     height: 150px;
     margin: auto;
     width: 150px;
@@ -291,13 +313,16 @@ footer a {
 .dados-perfil {
     padding: 10px;
 }
-.dados-perfil a {
-    background-color: #AAA;
+.dados-perfil a,
+.botao-voltar {
+    background-color: #CCC;
+    border-radius: 5px;
     color: #000;
     display: inline-block;
     padding: 5px;
     text-decoration: none;
 }
-.dados-perfil a:hover {
-    background-color: #777;
+.dados-perfil a:hover,
+.botao-voltar:hover {
+    background-color: #999;
 }

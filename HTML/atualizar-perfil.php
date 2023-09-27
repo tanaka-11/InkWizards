@@ -1,5 +1,6 @@
 <?php require "includes/cabecalho.php" ?>
-    <h1 id="titulo-cadastro">Cadastro</h1>
+    <h1 class="titulo-cadastro">Atualizar Dados</h1>
+    <p><a class="botao-voltar" href="perfil-logado.php">Voltar</a></p>
     <form action="#" method="post" class="form-cadastro">
         <div>
             <input type="file" name="foto-perfil" id="foto-perfil">
