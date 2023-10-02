@@ -1,11 +1,17 @@
 /* Regras Gerais */
 
-/* * {
+* {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+    font-size: 16px;
+}
+body {
     margin: 0;
-    padding: 0;
-} */
+}
+main {
+    margin: 10px;
+}
 
 :root {
     --color-primary: #242C33;
@@ -35,14 +41,14 @@ h1 {
 
 /* HEADER */
 header {
-    width: 20rem;
+    /* width: 20rem; */
     height: 6.25rem;
     flex-shrink: 0;
 }
 
 .navegacao nav {
     background: #BBB;
-    width: 20rem;
+    /* width: 20rem; */
     height: 1.875rem;
     flex-shrink: 0;
     display: flex;
@@ -223,7 +229,7 @@ nav a:hover {
 footer {
     background: #BBB;
 
-    width: 20rem;
+    /* width: 20rem; */
     height: 1.875rem;
     flex-shrink: 0;
    
@@ -242,3 +248,81 @@ footer a {
     color: #fff;
     cursor: pointer;
 } */
+
+/* CSS PÁGINA DE CADASTRO */
+.titulo-cadastro {
+    text-align: center;
+}
+.form-cadastro {
+    padding: 10px;
+}
+.form-cadastro div {
+    margin: 10px 0;
+}
+.form-cadastro input {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+.form-cadastro textarea {
+    border-radius: 5px;
+    height: 75px;
+    padding: 5px;
+    resize: none;
+    width: 100%;
+}
+.form-cadastro button {
+    background-color: #EEE;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+}
+.form-cadastro button:hover {
+    background-color: #BBB;
+    cursor: pointer;
+}
+.form-rua-numero {
+    display: flex;
+    justify-content: space-between;
+}
+.form-bairro-complemento,
+.form-celular-telefone {
+    display: flex;
+    justify-content: space-between;
+}
+.form-bairro-complemento div,
+.form-celular-telefone div {
+    width: 48%;
+}
+.div-rua {
+    width: 68%;
+}
+.div-numero-casa {
+    width: 28%;
+}
+#foto-de-perfil {
+    background-color: #999;
+    height: 150px;
+    margin: auto;
+    width: 150px;
+}
+.nome-perfil {
+    text-align: center;
+}
+.dados-perfil {
+    padding: 10px;
+}
+.dados-perfil a,
+.botao-voltar {
+    background-color: #CCC;
+    border-radius: 5px;
+    color: #000;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+}
+.dados-perfil a:hover,
+.botao-voltar:hover {
+    background-color: #999;
+}
