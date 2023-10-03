@@ -7,7 +7,6 @@ if(isset ($_POST['cadastrar'])) {
 
     $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
 
-    
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
     
     $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
@@ -24,7 +23,7 @@ if(isset ($_POST['cadastrar'])) {
 
     // $bairro = filter_input(INPUT_POST, "bairro", FILTER_SANITIZE_SPECIAL_CHARS);
 
-    $complemento = filter_input(INPUT_POST, "complemento", FILTER_SANITIZE_SPECIAL_CHARS);
+    // $complemento = filter_input(INPUT_POST, "complemento", FILTER_SANITIZE_SPECIAL_CHARS);
     
     $cadastro = inserirTatuador($conexao, $nome, $email, $senha, $descricao, $localizacao_id);
     
