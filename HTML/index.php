@@ -1,6 +1,11 @@
- 
-<?php require_once "./includes/cabecalho.php" ?>
+<?php require_once "./includes/cabecalho.php"; 
+require_once "./src/funcoes.php";
+
+$teste = verTatuadores($conexao);
+?>
     
+    <pre> <?=var_dump($teste)?> </pre>
+
     <section class="destaque-artista-index">
         <h1 class="text-center">Artistas</h1>
 

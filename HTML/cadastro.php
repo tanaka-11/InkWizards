@@ -1,36 +1,37 @@
-<?php require "includes/cabecalho.php";
+<?php 
+// Require do Header e Funções
+require_once "includes/cabecalho.php";
+
+require_once "./src/funcoes.php";
+
+$dadosDosTatuadores = verTatuadores($conexao);
 
 if(isset ($_POST['cadastrar'])) {
-    require_once "../HTML/src/funcoes.php";
-
-    // $dadosDoTatuador = verTatuadores($conexao);
 
     $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+    
+    $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
 
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
     
     $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
     
-    $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
-
-    $localizacao_id = filter_input(INPUT_POST, "localizacao_id", FILTER_SANITIZE_SPECIAL_CHARS);
-
-    // $cep = filter_input(INPUT_POST, "cep", FILTER_SANITIZE_NUMBER_INT);
-
-    // $logradouro = filter_input(INPUT_POST, "logradouro", FILTER_SANITIZE_SPECIAL_CHARS);
-
-    // $numero = filter_input(INPUT_POST, "numero", FILTER_SANITIZE_NUMBER_INT);
-
-    // $bairro = filter_input(INPUT_POST, "bairro", FILTER_SANITIZE_SPECIAL_CHARS);
-
-    // $complemento = filter_input(INPUT_POST, "complemento", FILTER_SANITIZE_SPECIAL_CHARS);
+    $cep = filter_input(INPUT_POST, "cep", FILTER_SANITIZE_SPECIAL_CHARS);
     
-    $cadastro = inserirTatuador($conexao, $nome, $email, $senha, $descricao, $localizacao_id);
+    $endereco = filter_input(INPUT_POST, "endereco", FILTER_SANITIZE_SPECIAL_CHARS);
     
+    $numero = filter_input(INPUT_POST, "numero", FILTER_SANITIZE_NUMBER_INT);
+    
+    $bairro = filter_input(INPUT_POST, "bairro", FILTER_SANITIZE_SPECIAL_CHARS);
+    
+    $complemento = filter_input(INPUT_POST, "complemento", FILTER_SANITIZE_SPECIAL_CHARS);
+    
+    inserirTatuador($conexao, $nome, $descricao, $email, $senha, $cep, $endereco, $numero, $bairro, $complemento);
+
     // header("location:/index.php");
-}
+}  
 ?>
-
+  
     <h1 class="titulo-cadastro">Cadastro</h1>
 
     <form action="#" method="post" class="form-cadastro">
@@ -50,9 +51,9 @@ if(isset ($_POST['cadastrar'])) {
             <input type="password" name="senha" id="senha" placeholder="Crie sua senha:" required>
         </div>
 
-        <div>
+        <!-- <div>
             <input type="password" name="senha-confirma" id="senha-confirma" placeholder="Confirme sua senha:" required>
-        </div>
+        </div> -->
 
         <div>
             <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Sobre você:"></textarea>
@@ -64,7 +65,7 @@ if(isset ($_POST['cadastrar'])) {
 
         <section class="form-rua-numero">
             <div class="div-rua">
-                <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro" required>
+                <input type="text" name="endereco" id="endereco" placeholder="Endereço" required>
             </div>
 
             <div class="div-numero-casa">
@@ -86,4 +87,5 @@ if(isset ($_POST['cadastrar'])) {
             <button type="submit" name="cadastrar">Cadastrar</button>
         </div>
     </form>
-    <?php require "includes/rodape.php" ?>
+
+    <?php require "includes/rodape.php"; ?>

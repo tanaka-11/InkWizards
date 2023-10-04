@@ -22,8 +22,13 @@ CREATE TABLE tatuadores(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(30) NOT NULL,
     descricao TEXT(500) NOT NULL,
-    localizacao VARCHAR(150) NOT NULL,
-    contato VARCHAR(50) NOT NULL
+    email VARCHAR(45) NOT NULL,
+    senha VARCHAR(45) NOT NULL,
+    cep TINYINT NOT NULL,
+    endereco VARCHAR(45) NOT NULL,
+    numero TINYINT NOT NULL,
+    bairro VARCHAR(45) NOT NULL,
+    complemento VARCHAR(30)
 );
 ```
 
@@ -48,24 +53,7 @@ CREATE TABLE contatos (
 );
 ```
 
-#### Localização
-```sql
-CREATE TABLE localizacao (
-    id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    cep TINYINT(8) NOT NULL,
-    endereco VARCHAR(45) NOT NULL,
-    numero TINYINT NOT NULL,
-    bairro VARCHAR(45) NOT NULL,
-    complemento VARCHAR(30)
-);
-```
-
 ### Adicionando Foreign Key das tabelas
-```sql
-ALTER TABLE tatuadores
-    ADD CONSTRAINT fk_tatuadores_localizacao
-    FOREIGN KEY (localizacao_id) REFERENCES localizacao(id);
-```
 
 ```sql
 ALTER TABLE contatos
