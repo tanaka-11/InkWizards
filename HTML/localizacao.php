@@ -13,8 +13,10 @@ if(isset ($_POST['add-att'])) {
     $bairro = filter_input(INPUT_POST, "bairro", FILTER_SANITIZE_SPECIAL_CHARS);
 
     $complemento = filter_input(INPUT_POST, "complemento", FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $tatuadoresId = filter_input(INPUT_POST, "tatuadoresId", FILTER_SANITIZE_NUMBER_INT);
     
-    // atualizarLocalizacao($conexao, $cep, $endereco, $numero, $bairro, $complemento);
+    inserirLocalizacao($conexao, $cep, $endereco, $numero, $bairro, $complemento, $tatuadoresId);
 
 }
 
@@ -28,6 +30,7 @@ if(isset ($_POST['add-att'])) {
     </p>
 
     <form action="#" method="post" class="form-cadastro">
+        <input type="hidden" name="tatuadoresId" value="1">
         <div>
             <input type="number" name="cep" id="cep" placeholder="CEP" required>
         </div>

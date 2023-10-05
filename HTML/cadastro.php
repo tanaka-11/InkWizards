@@ -16,17 +16,7 @@ if(isset ($_POST['cadastrar'])) {
     
     $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
     
-    $cep = filter_input(INPUT_POST, "cep", FILTER_SANITIZE_SPECIAL_CHARS);
-    
-    $endereco = filter_input(INPUT_POST, "endereco", FILTER_SANITIZE_SPECIAL_CHARS);
-    
-    $numero = filter_input(INPUT_POST, "numero", FILTER_SANITIZE_NUMBER_INT);
-    
-    $bairro = filter_input(INPUT_POST, "bairro", FILTER_SANITIZE_SPECIAL_CHARS);
-    
-    $complemento = filter_input(INPUT_POST, "complemento", FILTER_SANITIZE_SPECIAL_CHARS);
-    
-    inserirTatuador($conexao, $nome, $descricao, $email, $senha, $cep, $endereco, $numero, $bairro, $complemento);
+    inserirTatuador($conexao, $nome, $descricao, $email, $senha);
 
     // header("location:/index.php");
 }  
@@ -58,30 +48,6 @@ if(isset ($_POST['cadastrar'])) {
         <div>
             <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Sobre você:"></textarea>
         </div>
-        
-        <div>
-            <input type="number" name="cep" id="cep" placeholder="CEP" required>
-        </div>
-
-        <section class="form-rua-numero">
-            <div class="div-rua">
-                <input type="text" name="endereco" id="endereco" placeholder="Endereço" required>
-            </div>
-
-            <div class="div-numero-casa">
-                <input type="number" name="numero" id="numero" placeholder="Número" required>
-            </div>
-        </section>
-
-        <section class="form-bairro-complemento">
-            <div>
-                <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
-            </div>
-
-            <div>
-                <input type="text" name="complemento" id="complemento" placeholder="Complemento" required>
-            </div>
-        </section>
 
         <div>
             <button type="submit" name="cadastrar">Cadastrar</button>
