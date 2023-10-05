@@ -12,8 +12,30 @@ class Tatuador {
     private string $senha;
     private int $localizacao_id;
 
-    // Getters, Setters e Sanitização
+    // Propriedade de conexao
+    private PDO $conexao;
+    // Metodo da conexão
+    public function __construct(){
+        $this->conexao = Banco::conecta();
+    }
 
+    // Metodo para inserir dados de um tatuador
+    function verTatuadores(): array {
+        $sql = "SELECT * FROM tatuadores";
+    
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta -> execute();
+            $resultado = $consulta -> fetchAll(PDO::FETCH_ASSOC);
+    
+        } catch(Exception $erro) {
+            die("Falha na conexão do servidor: ".$erro->getMessage());
+        }
+    
+        return $resultado;
+    }
+
+    // Getters, Setters e Sanitização
     // ID
     public function getId(): int {
         return $this->id;

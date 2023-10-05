@@ -13,15 +13,30 @@ class Localizacao {
     private string $complemento;
     private int $tatuadoresId;
     
-
     // Propriedade de conexao
     private PDO $conexao;
+
     // Metodo da conexão
     public function __construct(){
         $this->conexao = Banco::conecta();
     }
 
-    // Metodo de inserir localização
+    // Metodo para exibir todos os dados da Localização
+    public function exibirLocalizacao():array {
+        $sql = "SELECT * FROM localizacao
+        INNER JOIN tatuadores ON localizacao.tatuador_id = tatuadores.id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao exibir localização: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+
+    // Metodo para inserir Localização
     public function inserirLocalizacao():void {
         $sql = "INSERT INTO localizacao(
             cep,
@@ -47,7 +62,7 @@ class Localizacao {
             $consulta -> bindValue(":numero", $this->numero, PDO::PARAM_INT);
             $consulta -> bindValue(":bairro", $this->bairro, PDO::PARAM_STR);
             $consulta -> bindValue(":complemento", $this->complemento, PDO::PARAM_STR);
-            $consulta->bindValue(":tatuadores_id", $this->tatuadoresId, PDO::PARAM_INT);
+            $consulta->bindValue(":tatuador_id", $this->tatuadoresId, PDO::PARAM_INT);
     
             $consulta -> execute();
         } catch (Exception $erro) {

@@ -2,20 +2,7 @@
 require_once "conecta.php";
 
 // Função para exibir os dados do tatuador
-function verTatuadores(PDO $conexao): array {
-    $sql = "SELECT * FROM tatuadores";
 
-    try {
-        $consulta = $conexao -> prepare($sql);
-        $consulta -> execute();
-        $resultado = $consulta -> fetchAll(PDO::FETCH_ASSOC);
-
-    } catch(Exception $erro) {
-        die("Falha na conexão do servidor: ".$erro->getMessage());
-    }
-
-    return $resultado;
-}
 
 // Função de inserir dados do tatuador
 function inserirTatuador(PDO $conexao, string $nome,string $descricao, string $email, string $senha): void {
