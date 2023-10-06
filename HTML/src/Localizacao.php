@@ -11,6 +11,7 @@ class Localizacao {
     private int $numero;
     private string $bairro;
     private string $complemento;
+    private string $tatuadoresId;
 
     // Propriedade de conexao
     private PDO $conexao;
