@@ -1,0 +1,9 @@
+{
+    "name" : "projeto/inkwizards",
+    "description" : "Projeto Integrador da QT2 de Back-End",
+    "autoload" : {
+        "psr-4" : {
+            "Inkwizards\\" : "src/"
+        }
+    }
+}
