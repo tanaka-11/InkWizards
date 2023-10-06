@@ -10,7 +10,6 @@ class Tatuador {
     private string $descricao;
     private string $email;
     private string $senha;
-    private int $localizacao_id;
 
     // Propriedade de conexao
     private PDO $conexao;
@@ -20,19 +19,26 @@ class Tatuador {
     }
 
     // Metodo para inserir dados de um tatuador
-    function verTatuadores(): array {
-        $sql = "SELECT * FROM tatuadores";
+    public function inserirTatuador(): void {
     
+        $sql = "INSERT INTO tatuadores 
+        (nome, descricao, email, senha) 
+        VALUES (:nome, :descricao, :email, :senha)";
+        
         try {
-            $consulta = $this->conexao->prepare($sql);
+            $consulta = $this->conexao -> prepare($sql);
+    
+            $consulta -> bindValue(":nome", $this->nome, PDO::PARAM_STR);
+            $consulta -> bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
+            $consulta -> bindValue(":email", $this->email, PDO::PARAM_STR);
+            $consulta -> bindValue(":senha", $this->senha, PDO::PARAM_STR);
+    
+    
             $consulta -> execute();
-            $resultado = $consulta -> fetchAll(PDO::FETCH_ASSOC);
     
-        } catch(Exception $erro) {
-            die("Falha na conexão do servidor: ".$erro->getMessage());
+        } catch (Exception $erro) {
+            die("Erro ao inserir tatuador: ".$erro->getMessage());
         }
-    
-        return $resultado;
     }
 
     // Getters, Setters e Sanitização
@@ -83,16 +89,6 @@ class Tatuador {
 
     public function setSenha(string $senha): self {
         $this->senha = $senha;
-        return $this;
-    }
-
-   
-    public function getLocalizacaoId(): int {
-        return $this->localizacao_id;
-    }
-
-    public function setLocalizacaoId(int $localizacao_id): self {
-        $this->localizacao_id = $localizacao_id;
         return $this;
     }
 }
