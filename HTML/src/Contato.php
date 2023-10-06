@@ -10,6 +10,41 @@ class Contato {
     private int $celular;
     private int $tatuadoresId;
 
+    private PDO $conexao;
+    public function __construct(){
+        $this->conexao = Banco::conecta();
+    }
+
+    // Métodos
+
+    // inserir contato
+    public function inserirContato():void {
+        $sql = "INSERT INTO contatos(
+            email,
+            telefone,
+            celular,
+            tatuador_id
+        ) VALUES (
+            :email,
+            :telefone,
+            :celular,
+            :tatuador_id
+        )";
+    
+        try {
+            $consulta = $this->conexao->prepare($sql);
+    
+            $consulta->bindValue(":email", $this->email, PDO::PARAM_STR);
+            $consulta->bindValue(":telefone", $this->telefone, PDO::PARAM_INT);
+            $consulta->bindValue(":celular", $this->celular, PDO::PARAM_INT);
+            $consulta->bindValue(":tatuador_id", $this->tatuadoresId, PDO::PARAM_INT);
+    
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao inserir contatos: ".$erro->getMessage());
+        }
+    }
+
     // getters e setters + sanitização
     public function getId(): int
     {
