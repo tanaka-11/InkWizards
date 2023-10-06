@@ -48,7 +48,7 @@ class Tatuador {
     }
 
     public function setId(int $id): self {
-        $this->id = $id;
+        $this->id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
 
@@ -58,7 +58,7 @@ class Tatuador {
     }
 
     public function setNome(string $nome): self {
-        $this->nome = $nome;
+        $this->nome = filter_var($nome, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
 
@@ -68,7 +68,7 @@ class Tatuador {
     }
 
     public function setDescricao(string $descricao): self {
-        $this->descricao = $descricao;
+        $this->descricao = filter_var($descricao, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
     
@@ -78,7 +78,7 @@ class Tatuador {
     }
 
     public function setEmail(string $email): self {
-        $this->email = $email;
+        $this->email = filter_var($email, FILTER_SANITIZE_EMAIL);
         return $this;
     }
 
@@ -88,7 +88,7 @@ class Tatuador {
     }
 
     public function setSenha(string $senha): self {
-        $this->senha = $senha;
+        $this->senha = password_hash($senha, PASSWORD_BCRYPT);
         return $this;
     }
 }
