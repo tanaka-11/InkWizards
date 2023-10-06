@@ -20,8 +20,32 @@ class Localizacao {
         $this->conexao = Banco::conecta();
     }
 
+<<<<<<< Updated upstream
     // Metodo de inserir localização
     public function inserirLocalizacao():void {
+=======
+    // Metodo para EXIBIR todos os dados da Localização
+    public function exibir():array {
+        $sql = "SELECT * FROM localizacao";
+        $consulta = $this->conexao->prepare($sql);
+        $consulta->execute();
+        $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        
+        try {
+            $sql = "SELECT * FROM localizacao";
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $erro) {
+            throw new Exception("Erro ao exibir localização: " . $erro->getMessage());
+        }
+    
+    }
+
+    // Metodo para INSERIR Localização
+    public function inserir(): void {
+>>>>>>> Stashed changes
         $sql = "INSERT INTO localizacao(
             cep,
             endereco,

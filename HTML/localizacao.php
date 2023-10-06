@@ -4,6 +4,7 @@ require_once "./includes/cabecalho.php";
 require_once "./src/funcoes.php";
 
 if(isset ($_POST['add-att'])) {
+<<<<<<< Updated upstream
     $cep = filter_input(INPUT_POST, "cep", FILTER_SANITIZE_SPECIAL_CHARS);
 
     $endereco = filter_input(INPUT_POST, "endereco", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -17,6 +18,22 @@ if(isset ($_POST['add-att'])) {
     $tatuadoresId = filter_input(INPUT_POST, "tatuadoresId", FILTER_SANITIZE_NUMBER_INT);
     
     inserirLocalizacao($conexao, $cep, $endereco, $numero, $bairro, $complemento, $tatuadoresId);
+=======
+    // Chamando metodos
+    // $dadosDoTatuador = $tatuador->verTatuadores();
+    $dadosDaLocalizacao = $localizacao->exibir();
+    
+    // Sanitização
+    $localizacao->setCep($_POST['cep']);
+    $localizacao->setEndereco($_POST['endereco']);
+    $localizacao->setNumero($_POST['numero']);
+    $localizacao->setBairro($_POST['bairro']);
+    $localizacao->setComplemento($_POST['complemento']);
+    $localizacao->setTatuadoresId($_POST['tatuadoresId']);
+    
+    // Acesso de um metodo da classe atraves do objeto.
+    $localizacao->inserir();
+>>>>>>> Stashed changes
 
 }
 
