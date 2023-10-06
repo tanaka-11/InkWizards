@@ -9,9 +9,6 @@ class Tatuador {
     private string $descricao;
     private string $email;
     private string $senha;
-<<<<<<< Updated upstream
-    private int $localizacao_id;
-=======
 
     // Propriedade de conexao
     private PDO $conexao;
@@ -93,5 +90,4 @@ class Tatuador {
         $this->senha = password_hash($senha, PASSWORD_BCRYPT);
         return $this;
     }
->>>>>>> Stashed changes
 }

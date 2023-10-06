@@ -20,10 +20,6 @@ class Localizacao {
         $this->conexao = Banco::conecta();
     }
 
-<<<<<<< Updated upstream
-    // Metodo de inserir localização
-    public function inserirLocalizacao():void {
-=======
     // Metodo para EXIBIR todos os dados da Localização
     public function exibir():array {
         $sql = "SELECT * FROM localizacao";
@@ -45,21 +41,20 @@ class Localizacao {
 
     // Metodo para INSERIR Localização
     public function inserir(): void {
->>>>>>> Stashed changes
         $sql = "INSERT INTO localizacao(
             cep,
             endereco,
             numero,
             bairro,
             complemento,
-            tatuador_id
+            tatuadores_id
         ) VALUES (
             :cep,
             :endereco,
             :numero,
             :bairro,
             :complemento,
-            :tatuador_id
+            :tatuadores_id
         )";
     
         try {
@@ -137,6 +132,16 @@ class Localizacao {
 
     public function setComplemento(string $complemento): self {
         $this->complemento = filter_var($complemento, FILTER_SANITIZE_SPECIAL_CHARS);
+        return $this;
+    }
+
+    // TATUADORES_ID
+    public function getTatuadoresId(): string {
+        return $this->tatuadoresId;
+    }
+
+    public function setTatuadoresId(string $tatuadoresId): self {
+        $this->tatuadoresId = filter_var($tatuadoresId, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
 }
