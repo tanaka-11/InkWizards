@@ -31,6 +31,21 @@ class Tatuador {
         }
         return $resultado;
     }
+
+    // Método para exibir os dados de um tatuador
+    public function exibirUm():array {
+        $sql = "SELECT * FROM tatuadores WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_STR);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao exibir: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
     
     // Metodo de inserir dados do tatuador
     public function cadastrar(): void {
