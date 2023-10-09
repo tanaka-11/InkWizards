@@ -1,6 +1,5 @@
 <?php
 namespace Inkwizards;
-
 use PDO, Exception;
 
 class Tatuador {
@@ -17,29 +16,7 @@ class Tatuador {
     public function __construct(){
         $this->conexao = Banco::conecta();
     }
-
-    // Metodo para inserir dados de um tatuador
-    public function inserirTatuador(): void {
-    
-        $sql = "INSERT INTO tatuadores 
-        (nome, descricao, email, senha) 
-        VALUES (:nome, :descricao, :email, :senha)";
-        
-        try {
-            $consulta = $this->conexao -> prepare($sql);
-    
-            $consulta -> bindValue(":nome", $this->nome, PDO::PARAM_STR);
-            $consulta -> bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
-            $consulta -> bindValue(":email", $this->email, PDO::PARAM_STR);
-            $consulta -> bindValue(":senha", $this->senha, PDO::PARAM_STR);
-    
-    
-            $consulta -> execute();
-    
-        } catch (Exception $erro) {
-            die("Erro ao inserir tatuador: ".$erro->getMessage());
-        }
-    }
+   
 
     // Metodo para exibir os dados do tatuador
     public function exibir(): array {
@@ -55,7 +32,7 @@ class Tatuador {
         return $resultado;
     }
     
-    // Função de inserir dados do tatuador
+    // Metodo de inserir dados do tatuador
     public function cadastrar(): void {
     
         $sql = "INSERT INTO tatuadores 

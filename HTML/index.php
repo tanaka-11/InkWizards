@@ -1,10 +1,10 @@
-<?php require_once "./includes/cabecalho.php"; 
-require_once "./src/funcoes.php";
+<?php 
+use Inkwizards\{Tatuador};
+require_once "./includes/cabecalho.php"; 
+require_once "../vendor/autoload.php";
 
 // $teste = verTatuadores($conexao);
 ?>
-    
-    <pre> <?=var_dump($teste)?> </pre>
 
     <section class="destaque-artista-index">
         <h1 class="text-center">Artistas</h1>
@@ -68,7 +68,7 @@ require_once "./src/funcoes.php";
 
         <div class="cadastro-login">
             <p  class="botao-cadastro">
-                <a href="">Cadastro</a>
+                <a href="./cadastro.php">Cadastro</a>
             </p>
         
             <p class="botao-login">
