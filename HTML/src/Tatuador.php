@@ -105,4 +105,4 @@ class Tatuador {
         $this->senha = password_hash($senha, PASSWORD_BCRYPT);
         return $this;
     }
-}
+} 
