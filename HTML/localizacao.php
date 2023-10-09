@@ -13,7 +13,7 @@ $tatuador = new Tatuador;
 
 if(isset ($_POST['add-att'])) {
     // Chamando metodos
-    $dadosDoTatuador = $tatuador->verTatuadores();
+    $dadosDoTatuador = $tatuador->exibir();
     $dadosDaLocalizacao = $localizacao->exibirLocalizacao();
     
     // Sanitização
