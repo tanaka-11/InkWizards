@@ -7,7 +7,6 @@ $tatuador = new Tatuador;
 $tatuador->setId($_GET['id']);
 $dadosTatuador = $tatuador->exibirUm();
 ?>
-    <pre><?=var_dump($dadosTatuador)?></pre>
     <section class="dados-perfil">
         <!-- AQUI SERÁ UMA TAG IMG (eu acho) -->
         <div id="foto-de-perfil"><a href="atualizar-perfil.php">E</a></div>
