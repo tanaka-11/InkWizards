@@ -1,7 +1,7 @@
 <?php require_once "./includes/cabecalho.php"; 
 require_once "./src/funcoes.php";
 
-$teste = verTatuadores($conexao);
+// $teste = verTatuadores($conexao);
 ?>
     
     <pre> <?=var_dump($teste)?> </pre>

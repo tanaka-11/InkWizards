@@ -1,6 +1,7 @@
 <?php
 require_once "conecta.php";
 
+<<<<<<< Updated upstream
 // Função para exibir os dados do tatuador
 
 
@@ -18,14 +19,10 @@ function inserirTatuador(PDO $conexao, string $nome,string $descricao, string $e
         $consulta -> bindValue(":descricao", $descricao, PDO::PARAM_STR);
         $consulta -> bindValue(":email", $email, PDO::PARAM_STR);
         $consulta -> bindValue(":senha", $senha, PDO::PARAM_STR);
+=======
+>>>>>>> Stashed changes
 
 
-        $consulta -> execute();
-
-    } catch (Exception $erro) {
-        die("Erro ao inserir tatuador: ".$erro->getMessage());
-    }
-}
 
 // função para inserir localização
 function inserirLocalizacao(PDO $conexao, string $cep, string $endereco, int $numero, string $bairro, string $complemento, int $tatuadoresId):void {

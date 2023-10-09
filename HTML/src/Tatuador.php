@@ -41,6 +41,43 @@ class Tatuador {
         }
     }
 
+    // Metodo para exibir os dados do tatuador
+    public function exibir(): array {
+        $sql = "SELECT * FROM tatuadores";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta -> execute();
+            $resultado = $consulta -> fetchAll(PDO::FETCH_ASSOC);
+        } catch(Exception $erro) {
+            die("Falha na conexão do servidor: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+    
+    // Função de inserir dados do tatuador
+    public function cadastrar(): void {
+    
+        $sql = "INSERT INTO tatuadores 
+        (nome, descricao, email, senha) 
+        VALUES (:nome, :descricao, :email, :senha)";
+    
+        try {
+        $consulta = $this->conexao->prepare($sql);
+
+        $consulta -> bindValue(":nome", $this->nome, PDO::PARAM_STR);
+        $consulta -> bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
+        $consulta -> bindValue(":email", $this->email, PDO::PARAM_STR);
+        $consulta -> bindValue(":senha", $this->senha, PDO::PARAM_STR);
+
+
+        $consulta -> execute();
+
+        } catch (Exception $erro) {
+            die("Erro ao inserir tatuador: ".$erro->getMessage());
+        }
+    }
+
     // Getters, Setters e Sanitização
     // ID
     public function getId(): int {
