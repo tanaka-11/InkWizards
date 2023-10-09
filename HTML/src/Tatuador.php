@@ -42,7 +42,7 @@ class Tatuador {
             $consulta->bindValue(":id", $this->id, PDO::PARAM_STR);
             
             $consulta->execute();
-            
+
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
             die("Erro ao exibir: ".$erro->getMessage());
@@ -94,6 +94,21 @@ class Tatuador {
             } catch (Exception $erro) {
                 die("Erro ao atualizar: ".$erro->getMessage());
             }
+    }
+
+    // Método para excluir um tatuador
+    public function excluir():void {
+        $sql = "DELETE FROM tatuadores WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao excluir ".$erro->getMessage());
+        }
     }
 
     // Getters, Setters e Sanitização
