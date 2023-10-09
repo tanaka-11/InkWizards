@@ -1,28 +1,36 @@
 <?php 
-// Require do Header e Funções
-require_once "./includes/cabecalho.php"; 
-require_once "./src/funcoes.php";
+// Require do autoload e use do namespace
+use Inkwizards\{Localizacao, Tatuador};
+require_once '../vendor/autoload.php';
+
+// Require do cabeçalho
+require_once './includes/cabecalho.php';
+
+// Criação dos objetos
+$localizacao = new Localizacao;
+$tatuador = new Tatuador;
+
 
 if(isset ($_POST['add-att'])) {
-    $cep = filter_input(INPUT_POST, "cep", FILTER_SANITIZE_SPECIAL_CHARS);
-
-    $endereco = filter_input(INPUT_POST, "endereco", FILTER_SANITIZE_SPECIAL_CHARS);
-
-    $numero = filter_input(INPUT_POST, "numero", FILTER_SANITIZE_NUMBER_INT);
-
-    $bairro = filter_input(INPUT_POST, "bairro", FILTER_SANITIZE_SPECIAL_CHARS);
-
-    $complemento = filter_input(INPUT_POST, "complemento", FILTER_SANITIZE_SPECIAL_CHARS);
-
-    $tatuadoresId = filter_input(INPUT_POST, "tatuadoresId", FILTER_SANITIZE_NUMBER_INT);
+    // Chamando metodos
+    $dadosDoTatuador = $tatuador->verTatuadores();
+    $dadosDaLocalizacao = $localizacao->exibirLocalizacao();
     
-    inserirLocalizacao($conexao, $cep, $endereco, $numero, $bairro, $complemento, $tatuadoresId);
+    // Sanitização
+    $localizacao->setCep($_POST['cep']);
+    $localizacao->setEndereco($_POST['endereco']);
+    $localizacao->setNumero($_POST['numero']);
+    $localizacao->setBairro($_POST['bairro']);
+    $localizacao->setComplemento($_POST['complemento']);
+    $localizacao->setTatuadoresId($_POST['tatuadoresId']);
+    
+    // Acesso da classe atraves do objeto
+    $localizacao->inserirLocalizacao();
 
 }
 
 ?>
-
-    
+    <!-- COMEÇO HTML -->
     <h1 class="titulo-cadastro">Localização</h1>
 
     <p>
@@ -60,4 +68,5 @@ if(isset ($_POST['add-att'])) {
         </div>
 
     </form>
-<?php require "./includes/rodape.php"; ?>
+
+<?php require_once './includes/rodape.php'; ?>
