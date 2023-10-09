@@ -73,6 +73,18 @@ class Localizacao {
         }
     }
 
+    // Metodo para excluir dados da localização
+    public function excluir() {
+        $sql = "DELETE FROM localizacao WHERE id = :id";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao deletar dados do tatuador. Tente Novamente".$erro->getMessage());
+        }
+    }
+
    // Getters, Setters e Sanitização
 
     // ID
