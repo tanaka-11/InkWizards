@@ -20,6 +20,7 @@ class Localizacao {
         $this->conexao = Banco::conecta();
     }
 
+<<<<<<< Updated upstream
     // Metodo para EXIBIR todos os dados da Localização
     public function exibir():array {
         $sql = "SELECT * FROM localizacao";
@@ -27,6 +28,13 @@ class Localizacao {
         $consulta->execute();
         $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
         
+=======
+    // Metodo para exibir todos os dados da Localização
+    public function exibir():array {
+        $sql = "SELECT * FROM localizacao
+        INNER JOIN tatuadores ON localizacao.tatuadores_id = tatuadores.id";
+
+>>>>>>> Stashed changes
         try {
             $sql = "SELECT * FROM localizacao";
             $consulta = $this->conexao->prepare($sql);
@@ -39,8 +47,13 @@ class Localizacao {
     
     }
 
+<<<<<<< Updated upstream
     // Metodo para INSERIR Localização
     public function inserir(): void {
+=======
+    // Metodo para inserir Localização
+    public function inserir():void {
+>>>>>>> Stashed changes
         $sql = "INSERT INTO localizacao(
             cep,
             endereco,
@@ -73,9 +86,23 @@ class Localizacao {
         }
     }
 
+<<<<<<< Updated upstream
     // Metodo para excluir dados da localização
     public function excluir() {
         $sql = "DELETE FROM localizacao WHERE id = :id";
+=======
+
+    // Metodo para atualizar dados da localização
+    public function atualizar():void {
+        $sql = "UPDATE localizacao SET
+        cep = :cep,
+        endereco = :endereco,
+        numero = :numero,
+        bairro = :bairro,
+        complemento = :complemento
+        WHERE id = :id";
+    
+>>>>>>> Stashed changes
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
@@ -84,6 +111,21 @@ class Localizacao {
             die("Erro ao deletar dados do tatuador. Tente Novamente".$erro->getMessage());
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    public function excluir():void {
+        $sql = "DELETE FROM localizacao WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao excluir: ".$erro->getMessage());
+        }
+    }
+>>>>>>> Stashed changes
 
    // Getters, Setters e Sanitização
 
@@ -152,7 +194,11 @@ class Localizacao {
         return $this->tatuadoresId;
     }
 
+<<<<<<< Updated upstream
     public function setTatuadoresId(string $tatuadoresId): self {
+=======
+    public function setTatuadoresId(int $tatuadoresId): self {
+>>>>>>> Stashed changes
         $this->tatuadoresId = filter_var($tatuadoresId, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
