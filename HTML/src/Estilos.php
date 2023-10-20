@@ -54,6 +54,19 @@ class Estilos {
         return $resultado;
     }
 
+    public function atualizar():void {
+        $sql = "UPDATE FROM estilos SET nome = :nome WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":nome", $this->nome, PDO::PARAM_STR);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao atualizar: ".$erro->getMessage());
+        }
+    }
+
 
     // Getters, Setters e Sanitização
     public function getId(): int
