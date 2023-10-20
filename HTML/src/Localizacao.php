@@ -24,7 +24,7 @@ class Localizacao {
     // Metodo para exibir todos os dados da Localização
     public function exibirLocalizacao():array {
         $sql = "SELECT * FROM localizacao
-        INNER JOIN tatuadores ON localizacao.tatuador_id = tatuadores.id";
+        INNER JOIN tatuadores ON localizacao.tatuadores_id = tatuadores.id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
@@ -44,14 +44,14 @@ class Localizacao {
             numero,
             bairro,
             complemento,
-            tatuador_id
+            tatuadores_id
         ) VALUES (
             :cep,
             :endereco,
             :numero,
             :bairro,
             :complemento,
-            :tatuador_id
+            :tatuadores_id
         )";
     
         try {
@@ -62,7 +62,7 @@ class Localizacao {
             $consulta -> bindValue(":numero", $this->numero, PDO::PARAM_INT);
             $consulta -> bindValue(":bairro", $this->bairro, PDO::PARAM_STR);
             $consulta -> bindValue(":complemento", $this->complemento, PDO::PARAM_STR);
-            $consulta->bindValue(":tatuador_id", $this->tatuadoresId, PDO::PARAM_INT);
+            $consulta->bindValue(":tatuadores_id", $this->tatuadoresId, PDO::PARAM_INT);
     
             $consulta -> execute();
         } catch (Exception $erro) {
