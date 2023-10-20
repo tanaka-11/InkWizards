@@ -28,6 +28,32 @@ class Estilos {
         }
     }
 
+    public function exibir():array {
+        $sql = "SELECT * FROM estilos";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll();
+        } catch (Exception $erro) {
+            die("Erro ao exibir: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+
+    public function exibirUm():array {
+        $sql = "SELECT * FROM estilos WHERE portifolio_id = :portifolio_id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetch();
+        } catch (Exception $erro) {
+            die("Erro ao exibir: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+
 
     // Getters, Setters e Sanitização
     public function getId(): int
