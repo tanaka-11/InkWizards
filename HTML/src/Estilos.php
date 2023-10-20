@@ -15,26 +15,35 @@ class Estilos {
     }
     
     // METODOS
+    public function inserir():void {
+        $sql = "INSERT INTO estilos(nome, portifolio_id) VALUES(:nome, :portifolio_id)";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":nome", $this->nome, PDO::PARAM_STR);
+            $consulta->bindValue(":portifolio_id", $this->portfolio_id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao inserir: ".$erro->getMessage());
+        }
+    }
 
 
     // Getters, Setters e Sanitização
     public function getId(): int
     {
         return $this->id;
-    }
-
-    
+    } 
     public function setId(int $id): self {
-        $this->id = $id;
+        $this->id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
 
     public function getNome(): string {
         return $this->nome;
     }
-
     public function setNome(string $nome): self {
-        $this->nome = $nome;
+        $this->nome = filter_var($nome, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
 
@@ -42,9 +51,8 @@ class Estilos {
     public function getPortfolioId(): int {
         return $this->portfolio_id;
     }
-
     public function setPortfolioId(int $portfolio_id): self {
-        $this->portfolio_id = $portfolio_id;
+        $this->portfolio_id = filter_var($portfolio_id, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
 }
