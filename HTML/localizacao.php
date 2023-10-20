@@ -11,10 +11,11 @@ $localizacao = new Localizacao;
 $tatuador = new Tatuador;
 
 
+// Chamando metodos
+$dadosDoTatuador = $tatuador->exibir();
+$dadosDaLocalizacao = $localizacao->exibir();
+
 if(isset ($_POST['add-att'])) {
-    // Chamando metodos
-    $dadosDoTatuador = $tatuador->exibir();
-    $dadosDaLocalizacao = $localizacao->exibir();
     
     // Sanitização
     $localizacao->setCep($_POST['cep']);
@@ -22,7 +23,7 @@ if(isset ($_POST['add-att'])) {
     $localizacao->setNumero($_POST['numero']);
     $localizacao->setBairro($_POST['bairro']);
     $localizacao->setComplemento($_POST['complemento']);
-    $localizacao->setTatuadoresId($_POST['tatuadoresId']);
+    $localizacao->setTatuadores_id($_POST['tatuadoresId']);
     
     // Acesso da classe atraves do objeto
     $localizacao->inserir();
@@ -38,7 +39,7 @@ if(isset ($_POST['add-att'])) {
     </p>
 
     <form action="#" method="post" class="form-cadastro">
-        <input type="hidden" name="tatuadoresId" value="1">
+        <!-- <input type="hidden" name="tatuadores_id"> -->
         <div>
             <input type="number" name="cep" id="cep" placeholder="CEP" required>
         </div>

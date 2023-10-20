@@ -2,6 +2,9 @@
 namespace Inkwizards;
 use PDO, Exception;
 
+// Use do Tatuador
+use Inkwizards\Tatuador;
+$tatuador = new Tatuador;
 
 class Localizacao {
     // Propriedades da classe
@@ -11,7 +14,7 @@ class Localizacao {
     private int $numero;
     private string $bairro;
     private string $complemento;
-    private int $tatuadoresId;
+    private int $tatuadores_id;
     
     // Propriedade de conexao
     private PDO $conexao;
@@ -23,8 +26,16 @@ class Localizacao {
 
     // Metodo para exibir todos os dados da Localização
     public function exibir():array {
-        $sql = "SELECT * FROM localizacao
-        INNER JOIN tatuadores ON localizacao.tatuadores_id = tatuadores.id";
+        $sql = "SELECT 
+        localizacao.id,
+        localizacao.cep,
+        localizacao.endereco,
+        localizacao.numero,
+        localizacao.bairro,
+        localizacao.complemento,
+        tatuadores.nome as tatuador
+        FROM localizacao INNER JOIN tatuadores 
+        ON localizacao.tatuadores_id = tatuadores.id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
@@ -62,7 +73,7 @@ class Localizacao {
             $consulta -> bindValue(":numero", $this->numero, PDO::PARAM_INT);
             $consulta -> bindValue(":bairro", $this->bairro, PDO::PARAM_STR);
             $consulta -> bindValue(":complemento", $this->complemento, PDO::PARAM_STR);
-            $consulta->bindValue(":tatuadores_id", $this->tatuadoresId, PDO::PARAM_INT);
+            $consulta->bindValue(":tatuadores_id", $this->tatuadores_id, PDO::PARAM_INT);
     
             $consulta -> execute();
         } catch (Exception $erro) {
@@ -158,12 +169,12 @@ class Localizacao {
     }
 
     // TATUADORES_ID
-    public function getTatuadoresId(): int {
-        return $this->tatuadoresId;
+    public function getTatuadores_id(): int {
+        return $this->tatuadores_id;
     }
 
-    public function setTatuadoresId(int $tatuadoresId): self {
-        $this->tatuadoresId = $tatuadoresId;
+    public function setTatuadores_id(int $tatuadores_id): self {
+        $this->tatuadores_id = filter_var($tatuadores_id, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
 }
