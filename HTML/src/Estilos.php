@@ -67,6 +67,17 @@ class Estilos {
         }
     }
 
+    public function excluir():void {
+        $sql = "DELETE * FROM estilos WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao excluir: ".$erro->getMessage());
+        }
+    }
 
     // Getters, Setters e Sanitização
     public function getId(): int
