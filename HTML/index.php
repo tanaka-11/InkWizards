@@ -4,6 +4,7 @@ require_once './includes/cabecalho.php';
 $tatuador = new Tatuador;
 
 $dadosDoTatuador = $tatuador->exibir();
+?>
 
     <pre> <?=var_dump($dadosDoTatuador)?> </pre>
 
