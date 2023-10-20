@@ -70,6 +70,31 @@ class Localizacao {
         }
     }
 
+
+    // Metodo para atualizar dados da localização
+    public function atualizarLocalizacao() {
+        $sql = "UPDATE tatuadores SET
+        cep = :cep,
+        endereco = :endereco,
+        numero = :numero,
+        bairro = :bairro,
+        complemento = :complemento
+        WHERE id = :id";
+    
+        try {
+            $consulta = $this->conexao->prepare($sql);
+    
+            $consulta -> bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta -> bindValue(":cep", $this->cep, PDO::PARAM_INT);
+            $consulta -> bindValue(":endereco", $this->endereco, PDO::PARAM_STR);
+            $consulta -> bindValue(":numero", $this->numero, PDO::PARAM_INT);
+            $consulta -> bindValue(":bairro", $this->bairro, PDO::PARAM_STR);
+            $consulta -> bindValue(":complemento", $this->complemento, PDO::PARAM_STR);
+        } catch (Exception $erro) {
+            die("Erro ao atualizar dados do tatuador. Tente Novamente".$erro->getMessage());
+        }
+    } 
+
    // Getters, Setters e Sanitização
 
     // ID

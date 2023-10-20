@@ -1,6 +1,5 @@
 <?php
 namespace Inkwizards;
-
 use PDO, Exception;
 
 class Tatuador {
@@ -10,7 +9,6 @@ class Tatuador {
     private string $descricao;
     private string $email;
     private string $senha;
-    private int $localizacao_id;
 
     // Propriedade de conexao
     private PDO $conexao;
@@ -18,21 +16,43 @@ class Tatuador {
     public function __construct(){
         $this->conexao = Banco::conecta();
     }
+   
 
-    // Metodo para inserir dados de um tatuador
-    function verTatuadores(): array {
+    // Metodo para exibir os dados do tatuador
+    public function exibir(): array {
         $sql = "SELECT * FROM tatuadores";
-    
+
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta -> execute();
             $resultado = $consulta -> fetchAll(PDO::FETCH_ASSOC);
-    
         } catch(Exception $erro) {
             die("Falha na conexão do servidor: ".$erro->getMessage());
         }
-    
         return $resultado;
+    }
+    
+    // Metodo de inserir dados do tatuador
+    public function cadastrar(): void {
+    
+        $sql = "INSERT INTO tatuadores 
+        (nome, descricao, email, senha) 
+        VALUES (:nome, :descricao, :email, :senha)";
+    
+        try {
+        $consulta = $this->conexao->prepare($sql);
+
+        $consulta -> bindValue(":nome", $this->nome, PDO::PARAM_STR);
+        $consulta -> bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
+        $consulta -> bindValue(":email", $this->email, PDO::PARAM_STR);
+        $consulta -> bindValue(":senha", $this->senha, PDO::PARAM_STR);
+
+
+        $consulta -> execute();
+
+        } catch (Exception $erro) {
+            die("Erro ao inserir tatuador: ".$erro->getMessage());
+        }
     }
 
     // Getters, Setters e Sanitização
@@ -42,7 +62,7 @@ class Tatuador {
     }
 
     public function setId(int $id): self {
-        $this->id = $id;
+        $this->id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
 
@@ -52,7 +72,7 @@ class Tatuador {
     }
 
     public function setNome(string $nome): self {
-        $this->nome = $nome;
+        $this->nome = filter_var($nome, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
 
@@ -62,7 +82,7 @@ class Tatuador {
     }
 
     public function setDescricao(string $descricao): self {
-        $this->descricao = $descricao;
+        $this->descricao = filter_var($descricao, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
     
@@ -72,7 +92,7 @@ class Tatuador {
     }
 
     public function setEmail(string $email): self {
-        $this->email = $email;
+        $this->email = filter_var($email, FILTER_SANITIZE_EMAIL);
         return $this;
     }
 
@@ -82,17 +102,7 @@ class Tatuador {
     }
 
     public function setSenha(string $senha): self {
-        $this->senha = $senha;
-        return $this;
-    }
-
-   
-    public function getLocalizacaoId(): int {
-        return $this->localizacao_id;
-    }
-
-    public function setLocalizacaoId(int $localizacao_id): self {
-        $this->localizacao_id = $localizacao_id;
+        $this->senha = password_hash($senha, PASSWORD_BCRYPT);
         return $this;
     }
 }

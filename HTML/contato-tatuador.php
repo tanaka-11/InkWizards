@@ -1,15 +1,19 @@
-<?php 
+<?php
+    use Inkwizards\{Contato};
+
+    require_once "../vendor/autoload.php";
     require "./includes/cabecalho.php";
-    require_once "./src/funcoes.php";
+
+    $contato = new Contato;
 
     if(isset($_POST['add-att'])) {
-        $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS);
-        $celular = filter_input(INPUT_POST, "celular", FILTER_SANITIZE_NUMBER_INT);
-        $telefone = filter_input(INPUT_POST, "telefone", FILTER_SANITIZE_NUMBER_INT);
-        $tatuadoresId = filter_input(INPUT_POST, "tatuadoresId", FILTER_SANITIZE_NUMBER_INT);
+        $contato->setEmail($_POST['email']);
+        $contato->setCelular($_POST['celular']);
+        $contato->setTelefone($_POST['telefone']);
+        $contato->setTatuadoresId($_POST['tatuadoresId']);
 
-        inserirContato($conexao, $email, $telefone, $celular, $tatuadoresId);
-    }
+        $contato->inserirContato();
+    }    
 ?>
     <h1 class="titulo-cadastro">Contato</h1>
     <p><a class="botao-voltar" href="perfil-logado.php">Voltar</a></p>

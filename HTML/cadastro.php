@@ -1,22 +1,25 @@
 <?php 
 // Require do Header e Funções
+use Inkwizards\Tatuador;
+require_once '../vendor/autoload.php';
 require_once "includes/cabecalho.php";
 
-require_once "./src/funcoes.php";
+// Criação do objeto
+$tatuador =  new Tatuador;
 
-$dadosDosTatuadores = verTatuadores($conexao);
+$dadosDosTatuadores = $tatuador->exibir();
 
 if(isset ($_POST['cadastrar'])) {
 
-    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+    $tatuador->setNome($_POST['nome']);
     
-    $descricao = filter_input(INPUT_POST, "descricao", FILTER_SANITIZE_SPECIAL_CHARS);
+    $tatuador->setDescricao($_POST['descricao']);
 
-    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+    $tatuador->setEmail($_POST['email']);
     
-    $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+    $tatuador->setSenha($_POST['senha']);
     
-    inserirTatuador($conexao, $nome, $descricao, $email, $senha);
+    $tatuador->cadastrar();
 
     // header("location:/index.php");
 }  
