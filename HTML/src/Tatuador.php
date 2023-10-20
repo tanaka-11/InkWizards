@@ -31,6 +31,24 @@ class Tatuador {
         }
         return $resultado;
     }
+
+    // Método para exibir os dados de um tatuador
+    public function exibirUm():array {
+        $sql = "SELECT * FROM tatuadores WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_STR);
+            
+            $consulta->execute();
+
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao exibir: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
     
     // Metodo de inserir dados do tatuador
     public function cadastrar(): void {
@@ -52,6 +70,44 @@ class Tatuador {
 
         } catch (Exception $erro) {
             die("Erro ao inserir tatuador: ".$erro->getMessage());
+        }
+    }
+
+    // Método para atualizar um tatuador
+    public function atualizar():void {
+        $sql = "UPDATE tatuadores SET
+            nome = :nome,
+            descricao = :descricao,
+            email = :email,
+            senha = :senha WHERE id = :id";
+
+            try {
+                $consulta = $this->conexao->prepare($sql);
+
+                $consulta->bindValue(":nome", $this->nome, PDO::PARAM_STR);
+                $consulta->bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
+                $consulta->bindValue(":email", $this->email, PDO::PARAM_STR);
+                $consulta->bindValue(":senha", $this->senha, PDO::PARAM_STR);
+                $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+
+                $consulta->execute();
+            } catch (Exception $erro) {
+                die("Erro ao atualizar: ".$erro->getMessage());
+            }
+    }
+
+    // Método para excluir um tatuador
+    public function excluir():void {
+        $sql = "DELETE FROM tatuadores WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao excluir ".$erro->getMessage());
         }
     }
 
