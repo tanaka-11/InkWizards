@@ -14,7 +14,7 @@ $tatuador = new Tatuador;
 if(isset ($_POST['add-att'])) {
     // Chamando metodos
     $dadosDoTatuador = $tatuador->exibir();
-    $dadosDaLocalizacao = $localizacao->exibirLocalizacao();
+    $dadosDaLocalizacao = $localizacao->exibir();
     
     // Sanitização
     $localizacao->setCep($_POST['cep']);
@@ -25,7 +25,7 @@ if(isset ($_POST['add-att'])) {
     $localizacao->setTatuadoresId($_POST['tatuadoresId']);
     
     // Acesso da classe atraves do objeto
-    $localizacao->inserirLocalizacao();
+    $localizacao->inserir();
 
 }
 

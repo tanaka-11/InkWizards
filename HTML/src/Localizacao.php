@@ -22,7 +22,7 @@ class Localizacao {
     }
 
     // Metodo para exibir todos os dados da Localização
-    public function exibirLocalizacao():array {
+    public function exibir():array {
         $sql = "SELECT * FROM localizacao
         INNER JOIN tatuadores ON localizacao.tatuadores_id = tatuadores.id";
 
@@ -37,7 +37,7 @@ class Localizacao {
     }
 
     // Metodo para inserir Localização
-    public function inserirLocalizacao():void {
+    public function inserir():void {
         $sql = "INSERT INTO localizacao(
             cep,
             endereco,
@@ -72,7 +72,7 @@ class Localizacao {
 
 
     // Metodo para atualizar dados da localização
-    public function atualizarLocalizacao() {
+    public function atualizar() {
         $sql = "UPDATE tatuadores SET
         cep = :cep,
         endereco = :endereco,
