@@ -1,14 +1,10 @@
-<?php 
+<?php
 use Inkwizards\{Tatuador};
-require_once "./includes/cabecalho.php"; 
-require_once "../vendor/autoload.php";
-
+require_once './includes/cabecalho.php';
 $tatuador = new Tatuador;
 
 $dadosDoTatuador = $tatuador->exibir();
 
-// $teste = verTatuadores($conexao);
-?>
     <pre> <?=var_dump($dadosDoTatuador)?> </pre>
 
     <section class="destaque-artista-index">
