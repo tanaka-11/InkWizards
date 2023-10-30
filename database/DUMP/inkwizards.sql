@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Out-2023 às 15:13
+-- Tempo de geração: 30-Out-2023 às 16:01
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -69,6 +69,13 @@ CREATE TABLE `localizacao` (
   `complemento` varchar(45) DEFAULT NULL,
   `usuario_id` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `localizacao`
+--
+
+INSERT INTO `localizacao` (`id`, `cep`, `endereco`, `numero`, `bairro`, `complemento`, `usuario_id`) VALUES
+(1, '03639000', 'Rua Francisco Coimbra', '403', 'Penha', 'Escola Doida', 1);
 
 -- --------------------------------------------------------
 
@@ -165,7 +172,7 @@ ALTER TABLE `estilos`
 -- AUTO_INCREMENT de tabela `localizacao`
 --
 ALTER TABLE `localizacao`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `portfolio`
