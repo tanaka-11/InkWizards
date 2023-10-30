@@ -1,7 +1,7 @@
 <?php
     use Inkwizards\{Contato};
 
-    require "./includes/cabecalho.php";
+    require "./includes/cabecalho-admin.php";
 
     $contato = new Contato;
 

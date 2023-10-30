@@ -1,4 +1,4 @@
-<?php require "includes/cabecalho.php" ?>
+<?php require "includes/cabecalho-admin.php" ?>
     <h1 class="titulo-cadastro">Atualizar Dados</h1>
     <p><a class="botao-voltar" href="perfil-logado.php">Voltar</a></p>
     <form action="#" method="post" class="form-cadastro">

@@ -3,7 +3,7 @@
 use Inkwizards\{Localizacao, Tatuador};
 
 // Require do cabeçalho
-require_once './includes/cabecalho.php';
+require_once './includes/cabecalho-admin.php';
 
 // Criação dos objetos
 $localizacao = new Localizacao;

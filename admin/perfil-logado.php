@@ -1,6 +1,6 @@
 <?php
 use Inkwizards\Tatuador;
-require "./includes/cabecalho.php";
+require "./includes/cabecalho-admin.php";
 
 $tatuador = new Tatuador;
 $tatuador->setId($_GET['id']);
