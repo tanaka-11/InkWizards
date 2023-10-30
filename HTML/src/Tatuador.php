@@ -5,10 +5,12 @@ use PDO, Exception;
 class Tatuador {
     // Propriedades da classe
     private int $id;
+    private string $fotoPerfil;
     private string $nome;
     private string $descricao;
     private string $email;
     private string $senha;
+    private string $tipo;
 
     // Propriedade de conexao
     private PDO $conexao;
@@ -20,7 +22,7 @@ class Tatuador {
 
     // Metodo para exibir os dados do tatuador
     public function exibir(): array {
-        $sql = "SELECT * FROM tatuadores";
+        $sql = "SELECT * FROM usuarios";
 
         try {
             $consulta = $this->conexao->prepare($sql);
@@ -34,7 +36,7 @@ class Tatuador {
 
     // Método para exibir os dados de um tatuador
     public function exibirUm():array {
-        $sql = "SELECT * FROM tatuadores WHERE id = :id";
+        $sql = "SELECT * FROM usuarios WHERE id = :id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
@@ -53,17 +55,19 @@ class Tatuador {
     // Metodo de inserir dados do tatuador
     public function cadastrar(): void {
     
-        $sql = "INSERT INTO tatuadores 
-        (nome, descricao, email, senha) 
-        VALUES (:nome, :descricao, :email, :senha)";
+        $sql = "INSERT INTO usuarios 
+        (foto_perfil, nome, descricao, email, senha, tipo)
+        VALUES (:foto_perfil, :nome, :descricao, :email, :senha, :tipo)";
     
         try {
         $consulta = $this->conexao->prepare($sql);
 
+        $consulta -> bindValue(":foto_perfil", $this->fotoPerfil, PDO::PARAM_STR);
         $consulta -> bindValue(":nome", $this->nome, PDO::PARAM_STR);
         $consulta -> bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
         $consulta -> bindValue(":email", $this->email, PDO::PARAM_STR);
         $consulta -> bindValue(":senha", $this->senha, PDO::PARAM_STR);
+        $consulta -> bindValue(":tipo", $this->tipo, PDO::PARAM_STR);
 
 
         $consulta -> execute();
@@ -159,6 +163,28 @@ class Tatuador {
 
     public function setSenha(string $senha): self {
         $this->senha = password_hash($senha, PASSWORD_BCRYPT);
+        return $this;
+    }
+
+    public function getFotoPerfil(): string
+    {
+        return $this->fotoPerfil;
+    }
+    public function setFotoPerfil(string $fotoPerfil): self
+    {
+        $this->fotoPerfil = filter_var($fotoPerfil, FILTER_SANITIZE_SPECIAL_CHARS);
+
+        return $this;
+    }
+
+    public function getTipo(): string
+    {
+        return $this->tipo;
+    }
+    public function setTipo(string $tipo): self
+    {
+        $this->tipo = filter_var($tipo, FILTER_SANITIZE_SPECIAL_CHARS);
+
         return $this;
     }
 } 

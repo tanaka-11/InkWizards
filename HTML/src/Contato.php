@@ -5,11 +5,9 @@ use PDO, Exception;
 class Contato {
     // Propriedades da classe
     private int $id;
-    private string $email;
-    private int $telefone;
-    private int $celular;
-    private int $tatuadoresId;
-
+    private string $telefone;
+    private string $celular;
+    private int $usuarioId;
     private PDO $conexao;
     public function __construct(){
         $this->conexao = Banco::conecta();
@@ -18,26 +16,23 @@ class Contato {
     // Métodos
 
     // inserir contato
-    public function inserirContato():void {
+    public function inserir():void {
         $sql = "INSERT INTO contatos(
-            email,
             telefone,
             celular,
-            tatuador_id
+            usuario_id
         ) VALUES (
-            :email,
             :telefone,
             :celular,
-            :tatuador_id
+            :usuario_id
         )";
     
         try {
             $consulta = $this->conexao->prepare($sql);
     
-            $consulta->bindValue(":email", $this->email, PDO::PARAM_STR);
-            $consulta->bindValue(":telefone", $this->telefone, PDO::PARAM_INT);
-            $consulta->bindValue(":celular", $this->celular, PDO::PARAM_INT);
-            $consulta->bindValue(":tatuador_id", $this->tatuadoresId, PDO::PARAM_INT);
+            $consulta->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);
+            $consulta->bindValue(":celular", $this->celular, PDO::PARAM_STR);
+            $consulta->bindValue(":usuario_id", $this->usuarioId, PDO::PARAM_INT);
     
             $consulta->execute();
         } catch (Exception $erro) {
@@ -57,46 +52,35 @@ class Contato {
         return $this;
     }
 
-    public function getEmail(): string
-    {
-        return $this->email;
-    }
-    public function setEmail(string $email): self
-    {
-        $this->email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-        return $this;
-    }
-
-    public function getTelefone(): int
+    public function getTelefone(): string
     {
         return $this->telefone;
     }
-    public function setTelefone(int $telefone): self
+    public function setTelefone(string $telefone): self
     {
-        $this->telefone = filter_var($telefone, FILTER_SANITIZE_NUMBER_INT);
+        $this->telefone = filter_var($telefone, FILTER_SANITIZE_SPECIAL_CHARS);
 
         return $this;
     }
 
-    public function getCelular(): int
+    public function getCelular(): string
     {
         return $this->celular;
     }
-    public function setCelular(int $celular): self
+    public function setCelular(string $celular): self
     {
-        $this->celular = filter_var($celular, FILTER_SANITIZE_NUMBER_INT);
+        $this->celular = filter_var($celular, FILTER_SANITIZE_SPECIAL_CHARS);
 
         return $this;
     }
 
-    public function getTatuadoresId(): int
+    public function getUsuarioId(): int
     {
-        return $this->tatuadoresId;
+        return $this->usuarioId;
     }
-    public function setTatuadoresId(int $tatuadoresId): self
+    public function setUsuarioId(int $usuarioId): self
     {
-        $this->tatuadoresId = filter_var($tatuadoresId, FILTER_SANITIZE_NUMBER_INT);
+        $this->usuarioId = filter_var($usuarioId, FILTER_SANITIZE_NUMBER_INT);
 
         return $this;
     }
