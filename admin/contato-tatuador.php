@@ -1,11 +1,11 @@
 <?php
     use Inkwizards\{Contato};
 
-    require "./includes/cabecalho-admin.php";
+    require "../includes/cabecalho-admin.php";
 
     $contato = new Contato;
-
-    if(isset($_POST['add-att'])) {
+    
+    if(isset($_POST['inserir'])) {
         $contato->setCelular($_POST['celular']);
         $contato->setTelefone($_POST['telefone']);
         $contato->setUsuarioId($_POST['usuarioId']);
@@ -26,7 +26,7 @@
             </div>
         </section>
         <div>
-            <button type="submit" name="add-att">Adicionar</button>
+            <button type="submit" name="inserir">Adicionar</button>
         </div>
     </form>
-<?php require "./includes/rodape.php"; ?>
+<?php require "../includes/rodape.php"; ?>

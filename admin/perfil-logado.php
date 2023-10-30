@@ -1,6 +1,6 @@
 <?php
 use Inkwizards\Tatuador;
-require "./includes/cabecalho-admin.php";
+require "../includes/cabecalho-admin.php";
 
 $tatuador = new Tatuador;
 $tatuador->setId($_GET['id']);
@@ -21,4 +21,4 @@ $dadosTatuador = $tatuador->exibirUm();
     </section>
 
     
-<?php require "./includes/rodape.php" ?>
+<?php require "../includes/rodape.php" ?>
