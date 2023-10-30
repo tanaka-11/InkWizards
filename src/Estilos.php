@@ -6,7 +6,6 @@ class Estilos {
     // Propriedades da classe
     private int $id;
     private string $nome;
-    private int $portfolio_id;
 
     // Conexão
     private PDO $conexao;
@@ -16,12 +15,11 @@ class Estilos {
     
     // METODOS
     public function inserir():void {
-        $sql = "INSERT INTO estilos(nome, portifolio_id) VALUES(:nome, :portifolio_id)";
+        $sql = "INSERT INTO estilos(nome) VALUES(:nome)";
 
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":nome", $this->nome, PDO::PARAM_STR);
-            $consulta->bindValue(":portifolio_id", $this->portfolio_id, PDO::PARAM_INT);
             $consulta->execute();
         } catch (Exception $erro) {
             die("Erro ao inserir: ".$erro->getMessage());
@@ -42,10 +40,12 @@ class Estilos {
     }
 
     public function exibirUm():array {
-        $sql = "SELECT * FROM estilos WHERE portifolio_id = :portifolio_id";
+        $sql = "SELECT * FROM estilos WHERE id = :id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
+
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetch();
         } catch (Exception $erro) {
@@ -94,15 +94,6 @@ class Estilos {
     }
     public function setNome(string $nome): self {
         $this->nome = filter_var($nome, FILTER_SANITIZE_SPECIAL_CHARS);
-        return $this;
-    }
-
-   
-    public function getPortfolioId(): int {
-        return $this->portfolio_id;
-    }
-    public function setPortfolioId(int $portfolio_id): self {
-        $this->portfolio_id = filter_var($portfolio_id, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
 }
