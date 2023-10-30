@@ -1,7 +1,6 @@
 <?php
     use Inkwizards\{Contato};
 
-    require_once "../vendor/autoload.php";
     require "./includes/cabecalho.php";
 
     $contato = new Contato;

@@ -1,7 +1,6 @@
 <?php 
 // Require do autoload e use do namespace
 use Inkwizards\{Localizacao, Tatuador};
-require_once '../vendor/autoload.php';
 
 // Require do cabeçalho
 require_once './includes/cabecalho.php';

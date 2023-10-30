@@ -3,7 +3,7 @@
     "description" : "Projeto Integrador da QT2 de Back-End",
     "autoload" : {
         "psr-4" : {
-            "Inkwizards\\" : "HTML/src/"
+            "Inkwizards\\" : "src/"
         }
     }
 }

@@ -1,6 +1,5 @@
 <?php
 use Inkwizards\Tatuador;
-require_once "../vendor/autoload.php";
 require "./includes/cabecalho.php";
 
 $tatuador = new Tatuador;

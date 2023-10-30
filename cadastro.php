@@ -1,7 +1,6 @@
 <?php 
 // Require do Header e Funções
 use Inkwizards\Tatuador;
-require_once '../vendor/autoload.php';
 require_once "includes/cabecalho.php";
 
 // Criação do objeto
@@ -54,7 +53,6 @@ if(isset ($_POST['cadastrar'])) {
         <div>
             <select name="tipo" id="tipo">
                 <option value="" disabled selected>Selecione um tipo</option>
-                <option value="admin">Administrador</option>
                 <option value="tatuador">Tatuador</option>
                 <option value="cliente">Cliente</option>
             </select>
