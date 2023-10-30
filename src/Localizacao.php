@@ -8,10 +8,10 @@ class Localizacao {
     private int $id;
     private string $cep;
     private string $endereco;
-    private int $numero;
+    private string $numero;
     private string $bairro;
     private string $complemento;
-    private int $tatuadoresId;
+    private int $usuarioId;
     
     // Propriedade de conexao
     private PDO $conexao;
@@ -22,12 +22,12 @@ class Localizacao {
     }
 
     // Metodo para exibir todos os dados da Localização
-    public function exibirLocalizacao():array {
-        $sql = "SELECT * FROM localizacao
-        INNER JOIN tatuadores ON localizacao.tatuadores_id = tatuadores.id";
+    public function exibirUm():array {
+        $sql = "SELECT * FROM localizacao WHERE id = :id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
@@ -37,32 +37,32 @@ class Localizacao {
     }
 
     // Metodo para inserir Localização
-    public function inserirLocalizacao():void {
+    public function inserir():void {
         $sql = "INSERT INTO localizacao(
             cep,
             endereco,
             numero,
             bairro,
             complemento,
-            tatuadores_id
+            usuario_id
         ) VALUES (
             :cep,
             :endereco,
             :numero,
             :bairro,
             :complemento,
-            :tatuadores_id
+            :usuario_id
         )";
     
         try {
             $consulta = $this->conexao->prepare($sql);
     
-            $consulta -> bindValue(":cep", $this->cep, PDO::PARAM_INT);
+            $consulta -> bindValue(":cep", $this->cep, PDO::PARAM_STR);
             $consulta -> bindValue(":endereco", $this->endereco, PDO::PARAM_STR);
-            $consulta -> bindValue(":numero", $this->numero, PDO::PARAM_INT);
+            $consulta -> bindValue(":numero", $this->numero, PDO::PARAM_STR);
             $consulta -> bindValue(":bairro", $this->bairro, PDO::PARAM_STR);
             $consulta -> bindValue(":complemento", $this->complemento, PDO::PARAM_STR);
-            $consulta->bindValue(":tatuadores_id", $this->tatuadoresId, PDO::PARAM_INT);
+            $consulta->bindValue(":usuario_id", $this->usuarioId, PDO::PARAM_INT);
     
             $consulta -> execute();
         } catch (Exception $erro) {
@@ -72,8 +72,8 @@ class Localizacao {
 
 
     // Metodo para atualizar dados da localização
-    public function atualizarLocalizacao() {
-        $sql = "UPDATE tatuadores SET
+    public function atualizar() {
+        $sql = "UPDATE localizacao SET
         cep = :cep,
         endereco = :endereco,
         numero = :numero,
@@ -85,11 +85,12 @@ class Localizacao {
             $consulta = $this->conexao->prepare($sql);
     
             $consulta -> bindValue(":id", $this->id, PDO::PARAM_INT);
-            $consulta -> bindValue(":cep", $this->cep, PDO::PARAM_INT);
+            $consulta -> bindValue(":cep", $this->cep, PDO::PARAM_STR);
             $consulta -> bindValue(":endereco", $this->endereco, PDO::PARAM_STR);
-            $consulta -> bindValue(":numero", $this->numero, PDO::PARAM_INT);
+            $consulta -> bindValue(":numero", $this->numero, PDO::PARAM_STR);
             $consulta -> bindValue(":bairro", $this->bairro, PDO::PARAM_STR);
             $consulta -> bindValue(":complemento", $this->complemento, PDO::PARAM_STR);
+            $consulta -> execute();
         } catch (Exception $erro) {
             die("Erro ao atualizar dados do tatuador. Tente Novamente".$erro->getMessage());
         }
@@ -112,7 +113,7 @@ class Localizacao {
         return $this->cep;
     }
 
-    public function setCep(int $cep):self {
+    public function setCep(string $cep):self {
         $this->cep = filter_var($cep, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
@@ -128,12 +129,12 @@ class Localizacao {
     }
 
     // NUMERO
-    public function getNumero():int {
+    public function getNumero():string {
         return $this->numero;
     }
 
-    public function setNumero(int $numero):self {
-        $this->numero = filter_var($numero, FILTER_SANITIZE_NUMBER_INT);
+    public function setNumero(string $numero):self {
+        $this->numero = filter_var($numero, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
 
@@ -157,13 +158,14 @@ class Localizacao {
         return $this;
     }
 
-    // TATUADORES_ID
-    public function getTatuadoresId(): int {
-        return $this->tatuadoresId;
+    public function getUsuarioId(): int
+    {
+        return $this->usuarioId;
     }
+    public function setUsuarioId(int $usuarioId): self
+    {
+        $this->usuarioId = filter_var($usuarioId, FILTER_SANITIZE_NUMBER_INT);
 
-    public function setTatuadoresId(int $tatuadoresId): self {
-        $this->tatuadoresId = $tatuadoresId;
         return $this;
     }
 }
