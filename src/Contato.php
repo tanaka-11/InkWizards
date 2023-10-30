@@ -40,6 +40,51 @@ class Contato {
         }
     }
 
+    public function exibirUm():array {
+        $sql = "SELECT * FROM contatos WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao exibir: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+
+    public function atualizar():void {
+        $sql = "UPDATE FROM contatos
+                SET telefone = :telefone, celular = :celular
+                WHERE id = :id";
+        
+        try {
+            $consulta = $this->conexao->prepare($sql);
+
+            $consulta->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);
+            $consulta->bindValue(":celular", $this->celular, PDO::PARAM_STR);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao atualizar: ".$erro->getMessage());
+        }
+    }
+
+    public function excluir():void {
+        $sql = "DELETE * FROM contatos WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao excluir: ".$erro->getMessage());
+        }
+    }
+
     // getters e setters + sanitização
     public function getId(): int
     {
