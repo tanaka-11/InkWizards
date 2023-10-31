@@ -217,7 +217,7 @@ class Usuario {
     }
 
     public function setSenha(string $senha): self {
-        $this->senha = password_hash($senha, PASSWORD_BCRYPT);
+        $this->senha = filter_var($senha, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
 

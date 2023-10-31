@@ -2,9 +2,6 @@
 use Inkwizards\{Usuario, ControleDeAcesso};
 require_once "inc/cabecalho.php";
 
-$usuario = new Usuario;
-$sessao = new ControleDeAcesso;
-
 // Mensagens de feedback
 if(isset($_GET['campos_obrigatorios'])) {
     $feedback = "Preencha e-mail e senha";
@@ -15,15 +12,14 @@ if(isset($_GET['campos_obrigatorios'])) {
 } elseif (isset($_GET['acesso_proibido'])) {
     $feedback = "Faça o Login";
 }
-
 ?>
 
     <h1 class="text-center">Login</h1>
 
     <form action="#" method="post" class="container">
-    <?php if(isset($feedback)) {?>
-        <p><?=$feedback?></p>
-    <?php } ?>
+        <?php if(isset($feedback)) {?>
+            <p class="alert alert warning text center"><?=$feedback?></p>
+        <?php } ?>
 
         <div class="form-floating m-3">
             <input class="form-control" type="email" id="email" name="email" placeholder="">
