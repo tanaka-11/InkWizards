@@ -1,13 +1,13 @@
 <?php 
 // Require do autoload e use do namespace
-use Inkwizards\{Localizacao, Tatuador};
+use Inkwizards\{Localizacao, Usuario};
 
 // Require do cabeçalho
 require_once '../inc/cabecalho-admin.php';
 
 // Criação dos objetos
 $localizacao = new Localizacao;
-$tatuador = new Tatuador;
+$usuario = new Usuario;
 
 
 if(isset ($_POST['inserir'])) {
