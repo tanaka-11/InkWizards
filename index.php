@@ -1,12 +1,10 @@
 <?php
-use Inkwizards\{Tatuador};
-require_once './includes/cabecalho.php';
-$tatuador = new Tatuador;
+use Inkwizards\{Usuario};
+require_once 'inc/cabecalho.php';
+$tatuador = new Usuario;
 
 $dadosDoTatuador = $tatuador->exibir();
 ?>
-
-    <pre> <?=var_dump($dadosDoTatuador)?> </pre>
 
     <section class="destaque-artista-index">
         <h1 class="text-center">Artistas</h1>
@@ -81,4 +79,4 @@ $dadosDoTatuador = $tatuador->exibir();
     </section>
 
 
-<?php require_once "./includes/rodape.php" ?>
+<?php require_once "inc/rodape.php" ?>
