@@ -119,6 +119,33 @@ class Usuario {
         }
     }
 
+    // Métodos para codificação e comparação de senha
+    public function codificaSenha(string $senha):string {
+        return password_hash($senha, PASSWORD_DEFAULT);
+    }
+
+    public function buscar():array | bool {
+        $sql = "SELECT * FROM usuarios WHERE email = :email";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":email", $this->email, PDO::PARAM_STR);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao buscar usuário: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+
+    public function verificaSenha(string $senhaForm, string $senhaBanco):string {
+        if(password_verify($senhaForm, $senhaBanco)) {
+            return $senhaBanco;
+        } else {
+            return $this->codificaSenha($senhaForm);
+        }
+    }
+
     // Getters, Setters e Sanitização
     // ID
     public function getId(): int {
