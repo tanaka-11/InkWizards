@@ -13,7 +13,6 @@ if(isset($_GET['campos_obrigatorios'])) {
     $feedback = "Faça o Login";
 }
 ?>
-
     <h1 class="text-center">Login</h1>
 
     <form action="#" method="post" class="container">
