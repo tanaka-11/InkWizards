@@ -2,7 +2,7 @@
 namespace Inkwizards;
 use PDO, Exception;
 
-class Tatuador {
+class Usuario {
     // Propriedades da classe
     private int $id;
     private string $fotoPerfil;
@@ -79,20 +79,24 @@ class Tatuador {
 
     // Método para atualizar um tatuador
     public function atualizar():void {
-        $sql = "UPDATE tatuadores SET
+        $sql = "UPDATE usuarios SET
+            foto_perfil = :foto_perfil,
             nome = :nome,
             descricao = :descricao,
             email = :email,
-            senha = :senha WHERE id = :id";
+            senha = :senha
+            tipo = :tipo WHERE id = :id";
 
             try {
                 $consulta = $this->conexao->prepare($sql);
 
+                $consulta->bindValue(":foto_perfil", $this->fotoPerfil, PDO::PARAM_STR);
                 $consulta->bindValue(":nome", $this->nome, PDO::PARAM_STR);
                 $consulta->bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
                 $consulta->bindValue(":email", $this->email, PDO::PARAM_STR);
                 $consulta->bindValue(":senha", $this->senha, PDO::PARAM_STR);
                 $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+                $consulta->bindValue(":tipo", $this->tipo, PDO::PARAM_STR);
 
                 $consulta->execute();
             } catch (Exception $erro) {
