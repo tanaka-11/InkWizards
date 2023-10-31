@@ -28,42 +28,48 @@ if(isset ($_POST['cadastrar'])) {
 }  
 ?>
   
-    <h1 class="titulo-cadastro">Cadastro</h1>
+    <h1 class="text-center">Cadastro</h1>
 
-    <form action="#" method="post" class="form-cadastro">
-        <div>
-            <input type="text" name="foto-perfil" id="foto-perfil" placeholder="Foto:">
+    <form action="#" method="post" class="container">
+        <div class="form-floating m-3">
+            <input class="form-control" type="file" name="foto-perfil" id="foto-perfil" placeholder="">
+            <label for="foto-perfil">Foto de Perfil:</label>
         </div>
 
-        <div>
-            <input type="text" name="nome" id="nome" placeholder="Nome:" required>
+        <div class="form-floating m-3">
+            <input class="form-control" type="text" name="nome" id="nome" placeholder="" required>
+            <label for="nome">Nome:</label>
         </div>
 
-        <div>
-            <input type="email" name="email" id="email" placeholder="E-mail:" required>
+        <div class="form-floating m-3">
+            <input class="form-control" type="email" name="email" id="email" placeholder="" required>
+            <label for="email">E-mail:</label>
         </div>
 
-        <div>
-            <input type="password" name="senha" id="senha" placeholder="Crie sua senha:" required>
+        <div class="form-floating m-3">
+            <input class="form-control" type="password" name="senha" id="senha" placeholder="" required>
+            <label for="senha">Crie sua senha:</label>
         </div>
 
         <!-- <div>
             <input type="password" name="senha-confirma" id="senha-confirma" placeholder="Confirme sua senha:" required>
         </div> -->
-        <div>
-            <select name="tipo" id="tipo">
-                <option value="" disabled selected>Selecione um tipo</option>
+        <div class="form-floating m-3">
+            <select class="form-select" name="tipo" id="tipo">
+                <option value="" disabled selected>Escolha um tipo</option>
                 <option value="tatuador">Tatuador</option>
                 <option value="cliente">Cliente</option>
             </select>
+            <label for="tipo">Tipo de usuário:</label>
         </div>
 
-        <div>
-            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Sobre você:"></textarea>
+        <div class="form-floating m-3">
+            <textarea class="form-control" style="resize: none;" name="descricao" id="descricao" cols="50" rows="10" placeholder=""></textarea>
+            <label for="descricao">Sobre você:</label>
         </div>
 
-        <div>
-            <button type="submit" name="cadastrar">Cadastrar</button>
+        <div class="m-3">
+            <button class="btn btn-primary" type="submit" name="cadastrar">Cadastrar</button>
         </div>
     </form>
 
