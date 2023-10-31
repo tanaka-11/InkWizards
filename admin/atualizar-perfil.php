@@ -1,4 +1,4 @@
-<?php require "../includes/cabecalho-admin.php" ?>
+<?php require "../inc/cabecalho-admin.php" ?>
     <h1 class="titulo-cadastro">Atualizar Dados</h1>
     <p><a class="botao-voltar" href="perfil-logado.php">Voltar</a></p>
     <form action="#" method="post" class="form-cadastro">
@@ -27,4 +27,4 @@
             <button type="submit" name="atualizar">Atualizar</button>
         </div>
     </form>
-<?php require "../includes/rodape.php" ?>
+<?php require "../inc/rodape.php" ?>
