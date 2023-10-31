@@ -24,7 +24,7 @@ if(isset ($_POST['cadastrar'])) {
     
     $usuario->cadastrar();
 
-    // header("location:/index.php");
+    header("location:/index.php");
 }  
 ?>
   
