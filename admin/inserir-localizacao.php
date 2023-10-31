@@ -10,7 +10,7 @@ $localizacao = new Localizacao;
 $tatuador = new Tatuador;
 
 
-if(isset ($_POST['add-att'])) {
+if(isset ($_POST['inserir'])) {
     
     // Sanitização
     $localizacao->setCep($_POST['cep']);
@@ -61,7 +61,7 @@ if(isset ($_POST['add-att'])) {
         </section>
 
         <div>
-            <button type="submit" name="add-att">Adicionar</button>
+            <button type="submit" name="inserir">Adicionar</button>
         </div>
 
     </form>
