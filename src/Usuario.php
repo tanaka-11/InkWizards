@@ -146,6 +146,30 @@ class Usuario {
         }
     }
 
+    // Método para upload de foto
+    public function uploadFotoPerfil(array $arquivo):void {
+        $tiposValidos = [
+            "image/png",
+            "image/jpeg",
+            "image/gif",
+            "image/svg+xml"
+        ];
+
+        if(!in_array($arquivo['type'], $tiposValidos)) {
+            die("
+                <script>
+                    alert('Formato inválido');
+                    history.back();
+                </script>
+            ");
+        }
+
+        $nome = $arquivo["name"];
+        $temporario = $arquivo["tmp_name"];
+        $pastaFinal = "assets/images/".$nome;
+        move_uploaded_file($temporario, $pastaFinal);
+    }
+
     // Getters, Setters e Sanitização
     // ID
     public function getId(): int {
