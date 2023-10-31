@@ -1,5 +1,8 @@
 <?php
 require_once '../vendor/autoload.php';
+use Inkwizards\ControleDeAcesso;
+$sessao = new ControleDeAcesso;
+$sessao->verificaAcesso();
 
 
 $pagina = basename($_SERVER['PHP_SELF']);
@@ -37,24 +40,20 @@ $titulo = match($pagina) {
     <title><?=$titulo?> - InkWizards</title>
 
 
-    <link rel="stylesheet" href="../css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
 
 <body>
 
-<header>
-    <div class="navegacao center">
-        <img src="" class="logo" alt="InkWizards">
-        
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Artistas</a>
-            <a href="#">Estilos</a>
-            <a href="#">Contato </a>
-            <a href="#">Login</a>
-        </nav>
-    </div>
+<header class="m-3">
+    <nav class="nav nav-underline justify-content-end">
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">Artistas</a>
+        <a class="nav-link" href="#">Estilos</a>
+        <a class="nav-link" href="#">Contato </a>
+        <a class="nav-link" href="#">Login</a>
+    </nav>
 </header>
 
 <main>

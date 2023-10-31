@@ -13,20 +13,19 @@
         $contato->inserir();
     }    
 ?>
-    <h1 class="titulo-cadastro">Contato</h1>
-    <p><a class="botao-voltar" href="perfil-logado.php">Voltar</a></p>
-    <form action="#" method="post" class="form-cadastro">
-        <section class="form-celular-telefone">
-            <input type="hidden" name="usuarioId" value="1">
-            <div>
-                <input type="number" name="celular" id="celular" placeholder="Celular" required>
-            </div>
-            <div>
-                <input type="number" name="telefone" id="telefone" placeholder="Telefone">
-            </div>
-        </section>
-        <div>
-            <button type="submit" name="inserir">Adicionar</button>
+    <h1 class="text-center">Contato</h1>
+    <p class="m-3"><a class="btn btn-primary" href="perfil-logado.php">Voltar</a></p>
+    <form action="#" method="post" class="container">
+        <div class="form-floating m-3">
+            <input class="form-control" type="number" name="celular" id="celular" placeholder="" required>
+            <label for="celular">Celular:</label>
+        </div>
+        <div class="form-floating m-3">
+            <input class="form-control" type="number" name="telefone" id="telefone" placeholder="">
+            <label for="telefone">Telefone:</label>
+        </div>
+        <div class="m-3">
+            <button class="btn btn-primary" type="submit" name="inserir">Adicionar</button>
         </div>
     </form>
 <?php require "../inc/rodape.php"; ?>
