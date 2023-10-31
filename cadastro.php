@@ -10,7 +10,6 @@ $dadosUsuarios = $usuario->exibir();
 
 if(isset ($_POST['cadastrar'])) {
 
-    $usuario->setFotoPerfil($_POST['foto-perfil']);
 
     $usuario->setNome($_POST['nome']);
     
@@ -18,21 +17,27 @@ if(isset ($_POST['cadastrar'])) {
 
     $usuario->setEmail($_POST['email']);
     
-    $usuario->setSenha($_POST['senha']);
+    $usuario->setSenha($usuario->codificaSenha($_POST['senha']));
 
     $usuario->setTipo($_POST['tipo']);
+
+    $imagem = $_FILES['foto-perfil'];
+
+    $usuario->uploadFotoPerfil($imagem);
+
+    $usuario->setFotoPerfil($imagem['name']);
     
     $usuario->cadastrar();
 
-    header("location:/index.php");
+    header("location:index.php");
 }  
 ?>
   
     <h1 class="text-center">Cadastro</h1>
 
-    <form action="#" method="post" class="container">
+    <form action="#" method="post" class="container" enctype="multipart/form-data">
         <div class="form-floating m-3">
-            <input class="form-control" type="file" name="foto-perfil" id="foto-perfil" placeholder="">
+            <input class="form-control" type="file" name="foto-perfil" id="foto-perfil" placeholder="" accept="image/png, image/jpeg, image/gif, image/svg+xml">
             <label for="foto-perfil">Foto de Perfil:</label>
         </div>
 
