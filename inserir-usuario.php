@@ -1,7 +1,7 @@
 <?php 
 // Require do Header e Funções
 use Inkwizards\{Usuario};
-require_once "includes/cabecalho.php";
+require_once "inc/cabecalho.php";
 
 // Criação do objeto
 $usuario = new Usuario;
@@ -67,4 +67,4 @@ if(isset ($_POST['cadastrar'])) {
         </div>
     </form>
 
-    <?php require "includes/rodape.php"; ?>
+    <?php require "inc/rodape.php"; ?>
