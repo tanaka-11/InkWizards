@@ -106,7 +106,7 @@ class Usuario {
 
     // Método para excluir um tatuador
     public function excluir():void {
-        $sql = "DELETE FROM tatuadores WHERE id = :id";
+        $sql = "DELETE FROM usuarios WHERE id = :id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
