@@ -1,7 +1,7 @@
 <?php
     use Inkwizards\{Contato};
 
-    require "../includes/cabecalho-admin.php";
+    require "../inc/cabecalho-admin.php";
 
     $contato = new Contato;
     
@@ -29,4 +29,4 @@
             <button type="submit" name="inserir">Adicionar</button>
         </div>
     </form>
-<?php require "../includes/rodape.php"; ?>
+<?php require "../inc/rodape.php"; ?>

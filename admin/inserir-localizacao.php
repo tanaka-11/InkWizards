@@ -3,7 +3,7 @@
 use Inkwizards\{Localizacao, Tatuador};
 
 // Require do cabeçalho
-require_once '../includes/cabecalho-admin.php';
+require_once '../inc/cabecalho-admin.php';
 
 // Criação dos objetos
 $localizacao = new Localizacao;
@@ -66,4 +66,4 @@ if(isset ($_POST['inserir'])) {
 
     </form>
 
-<?php require_once '../includes/rodape.php'; ?>
+<?php require_once '../inc/rodape.php'; ?>
