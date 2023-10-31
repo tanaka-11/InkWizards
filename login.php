@@ -18,24 +18,26 @@ if(isset($_GET['campos_obrigatorios'])) {
 
 ?>
 
-    <h1>Login</h1>
+    <h1 class="text-center">Login</h1>
 
-    <form action="#" method="post">
+    <form action="#" method="post" class="container">
     <?php if(isset($feedback)) {?>
         <p><?=$feedback?></p>
     <?php } ?>
 
-        <div>
+        <div class="form-floating m-3">
+            <input class="form-control" type="email" id="email" name="email" placeholder="">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email">
         </div>
 
-        <div>
+        <div class="form-floating m-3">
+            <input class="form-control" type="password" id="senha" name="senha" placeholder="">
             <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha">
         </div>
 
-        <button name="entrar" type="submit">Entrar</button>
+        <div class="m-3">
+            <button class="btn btn-primary" name="entrar" type="submit">Entrar</button>
+        </div>
     </form>
 
     <!-- Script da verificação de dados -->
