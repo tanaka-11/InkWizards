@@ -10,7 +10,7 @@ $dadosUsuario = $usuario->exibirUm();
     <section class="container">
         <!-- AQUI SERÁ UMA TAG IMG (eu acho) -->
         <div id="foto-de-perfil">
-            <img src="../assets/images/<?=$dadosUsuario['foto_perfil']?>" alt="Foto de perfil">
+            <img src="../assets/images/perfil/<?=$dadosUsuario['foto_perfil']?>" alt="Foto de perfil">
             <a href="perfil-atualizar.php">E</a>
         </div>
         

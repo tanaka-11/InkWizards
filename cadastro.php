@@ -23,7 +23,7 @@ if(isset ($_POST['cadastrar'])) {
 
     $imagem = $_FILES['foto-perfil'];
 
-    $usuario->uploadFotoPerfil($imagem);
+    $usuario->upload($imagem, $pagina);
 
     $usuario->setFotoPerfil($imagem['name']);
     
