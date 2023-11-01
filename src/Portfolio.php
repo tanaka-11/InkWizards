@@ -8,6 +8,8 @@ class Portfolio {
     private int $id;
     private string $imagem;
     private string $descricao;
+    private string $usuario_id;
+    private string $estilo_id;
     private PDO $conexao;
     
     public Usuario $usuario;
@@ -151,12 +153,34 @@ class Portfolio {
         return $this;
     }
 
+    
+    // Usuario_id
+    public function getUsuarioId(): string {
+        return $this->usuario_id;
+    }
+    
+    public function setUsuarioId(string $usuario_id): self {
+        $this->usuario_id = filter_var($usuario_id, FILTER_SANITIZE_NUMBER_INT);
+        return $this;
+    }
+    
+    
+    // Estilo_id
+    public function getEstiloId(): string {
+        return $this->estilo_id;
+    }
+    
+    public function setEstiloId(string $estilo_id): self {
+        $this->estilo_id = filter_var($estilo_id, FILTER_SANITIZE_NUMBER_INT);
+        return $this;
+    }
 
+    
     // // CONEXÃO
     // public function getConexao(): PDO {
     //     return $this->conexao;
     // }
-
+    
     // public function setConexao(PDO $conexao): self {
     //     $this->conexao = $conexao;
     //     return $this;
