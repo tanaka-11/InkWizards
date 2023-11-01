@@ -4,6 +4,8 @@ use Inkwizards\ControleDeAcesso;
 $sessao = new ControleDeAcesso;
 $sessao->verificaAcesso();
 
+if(isset($_GET['sair'])) $sessao->logout();
+
 
 $pagina = basename($_SERVER['PHP_SELF']);
 
@@ -54,6 +56,7 @@ $titulo = match($pagina) {
         <a class="nav-link" href="#">Contato</a>
         <a class="nav-link" href="../cadastro.php">Cadastro</a>
         <a class="nav-link" href="../login.php">Login</a>
+        <a class="nav-link" href="?sair">Sair</a>
     </nav>
 </header>
 
