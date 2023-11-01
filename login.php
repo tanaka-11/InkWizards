@@ -51,7 +51,7 @@ if(isset($_GET['campos_obrigatorios'])) {
                     if(password_verify($_POST['senha'], $dados['senha'])) {
                         $sessao = new ControleDeAcesso;
                         $sessao->login($dados['id'], $dados['nome'], $dados['tipo']);
-                        header('location:index.php');
+                        header('location:./admin/usuarios.php');
                     } else {
                         header('location:login.php?dados_incorretos');
                     }

@@ -9,8 +9,8 @@ $dadosEstilo = $portfolio->estilo->exibir();
 
 if(isset($_POST['inserir'])){
     $portfolio->setDescricao($_POST['descricao']);
-    $portfolio->usuario->setId($_SESSION['id']);
-    $portfolio->estilo->setId($_POST['estilo']);
+    $portfolio->setEstiloId($_POST['estilo']);
+    $portfolio->setUsuarioId($_SESSION['id']);
 
     $imagem = $_FILES['imagem'];
     $portfolio->usuario->upload($imagem, $pagina);
@@ -19,14 +19,15 @@ if(isset($_POST['inserir'])){
 
     // 
 }
-?>
 
+?>
+<pre><?=var_dump($_SESSION['id'])?></pre>
 <h1 class="text-center">Portfolio</h1>
 
 <form action="#" method="post" class="container" enctype="multipart/form-data">
     <div class="form-floating m-3">
-        <input class="form-control" type="file" name="foto-perfil" id="foto-perfil" placeholder="" accept="image/png, image/jpeg, image/gif, image/svg+xml">
-        <label for="foto-perfil">Inserir sua arte</label>
+        <input class="form-control" type="file" name="imagem" id="imagem" placeholder="" accept="image/png, image/jpeg, image/gif, image/svg+xml">
+        <label for="imagem">Inserir sua arte</label>
     </div>
 
     <div class="form-floating m-3">
