@@ -110,7 +110,7 @@ class Portfolio {
 
         $nome = $arquivo['name'];
         $temporario = $arquivo['tmp_name'];
-        $pastaFinal = '../assets/imagens'.$nome;
+        $pastaFinal = '../assets/imagens/portfolio'.$nome;
         move_uploaded_file($temporario, $pastaFinal);
     }
 
