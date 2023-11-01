@@ -83,6 +83,19 @@ class Portfolio {
     }
 
     // Excluir
+    public function excluir(): void {
+        $sql = "DELETE * FROM portfolio WHERE id = :id";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao deletar". $erro->getMessage());
+        }
+    }
+
+    
+    // Metodo de Upload
     
 
 
