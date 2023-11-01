@@ -31,10 +31,10 @@ $dadosUsuario = $usuario->exibirUm();
         </p>
 
         <p>
-            <a class="btn btn-primary" href="localizacao-inserir.php">Adicionar/Editar localização</a>
+            <a class="btn btn-primary" href="localizacao-inserir.php">Adicionar localização</a>
         </p>
         <p>
-            <a class="btn btn-primary" href="contato-inserir.php">Adicionar/Editar contato</a>
+            <a class="btn btn-primary" href="contato-inserir.php">Adicionar contato</a>
         </p>
         <p>
             <a class="btn btn-primary" href="portfolio-inserir.php">Adicionar portfolio</a>
