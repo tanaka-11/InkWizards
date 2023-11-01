@@ -45,11 +45,12 @@ $titulo = match($pagina) {
 
 <header class="m-3">
     <nav class="nav nav-underline justify-content-end">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="index.php">Home</a>
         <a class="nav-link" href="#">Artistas</a>
         <a class="nav-link" href="#">Estilos</a>
-        <a class="nav-link" href="#">Contato </a>
-        <a class="nav-link" href="#">Login</a>
+        <a class="nav-link" href="#">Contato</a>
+        <a class="nav-link" href="cadastro.php">Cadastro</a>
+        <a class="nav-link" href="login.php">Login</a>
     </nav>
 </header>
 

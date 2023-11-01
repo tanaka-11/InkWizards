@@ -10,32 +10,32 @@ $usuario = new Usuario;
 $dadosUsuario = $usuario->exibir();
 
 ?>
-    <h1>Usuarios - <?=count($dadosUsuario)?></h1>
-    <p>
-        <a href="">Voltar</a>
-    </p>
-
+    <h1 class="text-center">Usuarios - <?=count($dadosUsuario)?></h1>
+    
     <!-- Tabela com os dados dos usuarios -->
-    <div>
-        <table>
+    <div class="container">
+        <p>
+            <a class="btn btn-primary" href="">Voltar</a>
+        </p>
+        <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th>Nome</th>
                     <th>E-mail</th>
                     <th>Tipo</th>
-                    <th>Operações</th>
+                    <th class="text-center">Operações</th>
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody class="table-group-divider">
                 <?php foreach($dadosUsuario as $umUsuario) {?>
                 <tr>
                     <td><?=$umUsuario['nome']?></td>
                     <td><?=$umUsuario['email']?></td>
                     <td><?=$umUsuario['tipo']?></td>
-                    <td>
-                        <a href="">Atualizar</a>
-                        <a href="">Excluir</a>
+                    <td class="text-center">
+                        <a class="btn btn-warning" href="usuario-atualizar.php?id=<?=$umUsuario['id']?>">Atualizar</a>
+                        <a class="btn btn-danger" href="usuario-excluir.php?id=<?=$umUsuario['id']?>">Excluir</a>
                     </td>
                 </tr>
                 <?php }?>
