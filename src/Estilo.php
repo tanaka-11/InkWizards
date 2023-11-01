@@ -55,7 +55,7 @@ class Estilo {
     }
 
     public function atualizar():void {
-        $sql = "UPDATE FROM estilos SET nome = :nome WHERE id = :id";
+        $sql = "UPDATE estilos SET nome = :nome WHERE id = :id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
