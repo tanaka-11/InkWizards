@@ -6,8 +6,6 @@ require_once "inc/cabecalho.php";
 // Criação do objeto
 $usuario = new Usuario;
 
-$dadosUsuarios = $usuario->exibir();
-
 if(isset ($_POST['cadastrar'])) {
 
 
