@@ -34,6 +34,7 @@ class Portfolio {
             $consulta->bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
             $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->bindValue(":estilo_id", $this->estilo->getId(), PDO::PARAM_INT);
+            $consulta->execute();
         } catch (Exception $erro) {
             die("Erro ao inserir". $erro->getMessage());
         }

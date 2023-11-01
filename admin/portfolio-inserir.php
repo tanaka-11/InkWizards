@@ -9,8 +9,8 @@ $dadosEstilo = $portfolio->estilo->exibir();
 
 if(isset($_POST['inserir'])){
     $portfolio->setDescricao($_POST['descricao']);
-    $portfolio->setEstiloId($_POST['estilo']);
-    $portfolio->setUsuarioId($_SESSION['id']);
+    $portfolio->estilo->setId($_POST['estilo']);
+    $portfolio->usuario->setId($_SESSION['id']);
 
     $imagem = $_FILES['imagem'];
     $portfolio->usuario->upload($imagem, $pagina);
@@ -21,7 +21,7 @@ if(isset($_POST['inserir'])){
 }
 
 ?>
-<pre><?=var_dump($_SESSION['id'])?></pre>
+
 <h1 class="text-center">Portfolio</h1>
 
 <form action="#" method="post" class="container" enctype="multipart/form-data">
@@ -39,7 +39,7 @@ if(isset($_POST['inserir'])){
         <select class="form-select" name="estilo" id="estilo">
                 <option value="" disabled selected>Escolha um estilo</option>
             <?php foreach($dadosEstilo as $umEstilo){?>
-                <option value="estilo"><?=$umEstilo['nome']?></option>
+                <option value="<?=$umEstilo['id']?>"><?=$umEstilo['nome']?></option>
             <?php }?>
         </select>
             <label for="estilo">Estilos:</label>

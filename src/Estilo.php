@@ -84,6 +84,7 @@ class Estilo {
     {
         return $this->id;
     } 
+    
     public function setId(int $id): self {
         $this->id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
         return $this;
