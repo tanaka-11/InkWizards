@@ -168,11 +168,11 @@ class Usuario {
         $temporario = $arquivo["tmp_name"];
 
         if($pagina === "cadastro.php") {
-            $pastaFinal = "assets/images/perfil".$nome;
+            $pastaFinal = "assets/images/perfil/".$nome;
         } elseif($pagina === "portfolio-inserir.php" || $pagina === "portfolio-atualizar.php") {
-            $pastaFinal = "../assets/images/portfolio".$nome;
+            $pastaFinal = "../assets/images/portfolio/".$nome;
         } else {
-            $pastaFinal = "../assets/images/perfil".$nome;
+            $pastaFinal = "../assets/images/perfil/".$nome;
         }
 
         move_uploaded_file($temporario, $pastaFinal);
