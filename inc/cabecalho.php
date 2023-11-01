@@ -2,7 +2,7 @@
 require_once 'vendor/autoload.php';
 use Inkwizards\ControleDeAcesso;
 $sessao = new ControleDeAcesso;
-$sessao->verificaAcesso();
+// $sessao->verificaAcesso();
 
 if(isset($_GET['sair'])) $sessao->logout();
 
