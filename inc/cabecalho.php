@@ -1,5 +1,10 @@
 <?php
 require_once 'vendor/autoload.php';
+use Inkwizards\ControleDeAcesso;
+$sessao = new ControleDeAcesso;
+$sessao->verificaAcesso();
+
+if(isset($_GET['sair'])) $sessao->logout();
 
 
 $pagina = basename($_SERVER['PHP_SELF']);
