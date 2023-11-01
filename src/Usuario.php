@@ -147,7 +147,7 @@ class Usuario {
     }
 
     // Método para upload de foto
-    public function uploadFotoPerfil(array $arquivo):void {
+    public function upload(array $arquivo, string $pagina):void {
         $tiposValidos = [
             "image/png",
             "image/jpeg",
@@ -166,7 +166,15 @@ class Usuario {
 
         $nome = $arquivo["name"];
         $temporario = $arquivo["tmp_name"];
-        $pastaFinal = "assets/images/".$nome;
+
+        if($pagina === "cadastro.php") {
+            $pastaFinal = "assets/images/perfil".$nome;
+        } elseif($pagina === "portfolio-inserir.php" || $pagina === "portfolio-atualizar.php") {
+            $pastaFinal = "../assets/images/portfolio".$nome;
+        } else {
+            $pastaFinal = "../assets/images/perfil".$nome;
+        }
+
         move_uploaded_file($temporario, $pastaFinal);
     }
 
