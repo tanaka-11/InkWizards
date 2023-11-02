@@ -7,19 +7,18 @@ $portfolio = new Portfolio;
 $dadosPortfolio = $portfolio->exibir();
 ?>
 
-    <section class="container">
-    <?php foreach($dadosPortfolio as $umPortfolio){?>
-        <div id="portfolio">
-            <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Imagem Portfolio">
-            <a href="portfolio-atualizar.php">E</a>
+<section class="container">
+<?php foreach($dadosPortfolio as $umPortfolio){?>    
+        <div id="imagemPortfolio">
+            <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto do portfolio">
+            <a href="portfolio-atualizar.php">Editar</a>
         </div>
-        
-        <!-- <h1 class="nome-portfolio">
-            <?=$umPortfolio['']?> <a href="portfolio-atualizar.php">E</a>
-        </h1> -->
 
-        <p>
-            <?=$umPortfolio['descricao']?> <a href="portfolio-atualizar.php">E</a>
-        </p>
-    <?php } ?>    
-    </section>
+        <h2>
+            <?=$umPortfolio['descricao']?> <a href="portfolio-atualizar.php">Editar</a>
+        </h2>
+        <?php } ?>
+    </section>    
+<?php 
+require_once "../inc/rodape.php";
+?>
