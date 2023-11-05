@@ -62,7 +62,7 @@ class Portfolio {
             $consulta->execute();
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
-            die("Erro ao exibir dados de um usuário". $erro->getMessage());
+            die("Erro ao exibir dados de um portfolio". $erro->getMessage());
         }
         return $resultado;
     }
@@ -76,7 +76,8 @@ class Portfolio {
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
-            $consulta->bindValue("imagem", $this->imagem, PDO::PARAM_STR);
+            $consulta->bindValue(":imagem", $this->imagem, PDO::PARAM_STR);
+            $consulta->bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
             $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->bindValue(":estilo_id", $this->estilo->getId(), PDO::PARAM_INT);
             $consulta->execute();
