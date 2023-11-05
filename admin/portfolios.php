@@ -11,11 +11,11 @@ $dadosPortfolio = $portfolio->exibir();
 <?php foreach($dadosPortfolio as $umPortfolio){?>    
         <div id="imagemPortfolio">
             <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto do portfolio">
-            <a href="portfolio-atualizar.php">Editar</a>
+            <a href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Editar</a>
         </div>
 
         <h2>
-            <?=$umPortfolio['descricao']?> <a href="portfolio-atualizar.php">Editar</a>
+            <?=$umPortfolio['descricao']?> <a href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Editar</a>
         </h2>
         <?php } ?>
     </section>    
