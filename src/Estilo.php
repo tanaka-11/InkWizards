@@ -68,7 +68,7 @@ class Estilo {
     }
 
     public function excluir():void {
-        $sql = "DELETE * FROM estilos WHERE id = :id";
+        $sql = "DELETE FROM estilos WHERE id = :id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
