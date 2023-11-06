@@ -4,7 +4,6 @@ require "../inc/cabecalho-admin.php";
 
 $usuario = new Usuario;
 $usuario->setId($_SESSION['id']);
-$usuario->setTipo($_SESSION['tipo']);
 
 $localizacao = new Localizacao;
 $localizacao->usuario->setId($_SESSION['id']);
@@ -16,6 +15,7 @@ $dadosContato = $contato->exibirUm();
 
 $portfolio = new Portfolio;
 $portfolio->usuario->setId($_SESSION['id']);
+$portfolio->usuario->setTipo($_SESSION['tipo']);
 $dadosPortfolio = $portfolio->exibirUsuario();
 $dadosEstilos = $portfolio->estilo->exibir();
 
