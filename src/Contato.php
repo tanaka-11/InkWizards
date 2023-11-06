@@ -58,8 +58,8 @@ class Contato {
     }
 
     public function atualizar():void {
-        $sql = "UPDATE FROM contatos
-                SET telefone = :telefone, celular = :celular
+        $sql = "UPDATE contatos
+                SET telefone = :telefone, celular = :celular, usuario_id = :usuario_id
                 WHERE id = :id";
         
         try {
@@ -68,6 +68,7 @@ class Contato {
             $consulta->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);
             $consulta->bindValue(":celular", $this->celular, PDO::PARAM_STR);
             $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->execute();
         } catch (Exception $erro) {
             die("Erro ao atualizar: ".$erro->getMessage());
