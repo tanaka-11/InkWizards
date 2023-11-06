@@ -67,6 +67,19 @@ class Portfolio {
         return $resultado;
     }
 
+    public function exibirUsuario(): array {
+        $sql = "SELECT * FROM portfolio WHERE usuario_id = :usuario_id";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao exibir: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+
     // Atualizar
     public function atualizar(): void {
         $sql = "UPDATE portfolio 

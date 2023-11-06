@@ -4,6 +4,7 @@ namespace Inkwizards;
 
 // Classe
 final class ControleDeAcesso {
+    private string $pagina;
     // Metodo construtor para iniciar a sessão
     public function __construct(){
         if(!isset($_SESSION)){
@@ -37,10 +38,34 @@ final class ControleDeAcesso {
     }
 
     // Metodo de saida dos usuarios (LOGOUT)
-    public function logout(): void {
+    public function logout(string $pagina): void {
         session_start();
         session_destroy();
-        header('location:../login.php?logout');
+        switch($pagina) {
+            case "cadastro.php":
+            case "index.php":
+            case "login.php":
+            case "artistas.php":
+            case "estilos.php":
+            case "contato.php":
+                "location:login.php?logout";
+                break;
+            default:
+                "location:../login.php?logout";
+        }
+
+        header($pagina);
         die();
+    }
+
+    public function getPagina(): string
+    {
+        return $this->pagina;
+    }
+    public function setPagina(string $pagina): self
+    {
+        $this->pagina = filter_var($pagina, FILTER_SANITIZE_SPECIAL_CHARS);
+
+        return $this;
     }
 }

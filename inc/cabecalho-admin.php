@@ -4,10 +4,11 @@ use Inkwizards\ControleDeAcesso;
 $sessao = new ControleDeAcesso;
 // $sessao->verificaAcesso();
 
-if(isset($_GET['sair'])) $sessao->logout();
-
 
 $pagina = basename($_SERVER['PHP_SELF']);
+
+$sessao->setPagina($pagina);
+if(isset($_GET['sair'])) $sessao->logout($sessao->getPagina());
 
 // Definindo constantes para os títulos das páginas.
 define("TITULO_INICIAL", "Página Inicial");
