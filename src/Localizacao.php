@@ -12,6 +12,8 @@ class Localizacao {
     private string $bairro;
     private string $complemento;
     private int $usuarioId;
+
+    public Usuario $usuario;
     
     // Propriedade de conexao
     private PDO $conexao;
@@ -19,17 +21,18 @@ class Localizacao {
     // Metodo da conexão
     public function __construct(){
         $this->conexao = Banco::conecta();
+        $this->usuario = new Usuario;
     }
 
     // Metodo para exibir todos os dados da Localização
     public function exibirUm():array {
-        $sql = "SELECT * FROM localizacao WHERE id = :id";
+        $sql = "SELECT * FROM localizacao WHERE usuario_id = :usuario_id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
-            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->execute();
-            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
             die("Erro ao exibir localização: ".$erro->getMessage());
         }
@@ -62,7 +65,7 @@ class Localizacao {
             $consulta -> bindValue(":numero", $this->numero, PDO::PARAM_STR);
             $consulta -> bindValue(":bairro", $this->bairro, PDO::PARAM_STR);
             $consulta -> bindValue(":complemento", $this->complemento, PDO::PARAM_STR);
-            $consulta->bindValue(":usuario_id", $this->usuarioId, PDO::PARAM_INT);
+            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
     
             $consulta -> execute();
         } catch (Exception $erro) {
