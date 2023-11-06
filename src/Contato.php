@@ -73,7 +73,7 @@ class Contato {
     }
 
     public function excluir():void {
-        $sql = "DELETE * FROM contatos WHERE id = :id";
+        $sql = "DELETE FROM contatos WHERE id = :id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
