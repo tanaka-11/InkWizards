@@ -7,14 +7,16 @@ class Contato {
     private int $id;
     private string $telefone;
     private string $celular;
-    private int $usuarioId;
+    private int $usuario_id;
     private PDO $conexao;
+    public Usuario $usuario;
+
     public function __construct(){
+        $this->usuario = new Usuario;
         $this->conexao = Banco::conecta();
     }
 
     // Métodos
-
     // inserir contato
     public function inserir():void {
         $sql = "INSERT INTO contatos(
@@ -32,7 +34,7 @@ class Contato {
     
             $consulta->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);
             $consulta->bindValue(":celular", $this->celular, PDO::PARAM_STR);
-            $consulta->bindValue(":usuario_id", $this->usuarioId, PDO::PARAM_INT);
+            $consulta->bindValue(":usuario_id",  $this->usuario->getId(), PDO::PARAM_INT);
     
             $consulta->execute();
         } catch (Exception $erro) {
@@ -86,47 +88,39 @@ class Contato {
     }
 
     // getters e setters + sanitização
-    public function getId(): int
-    {
+    public function getId(): int {
         return $this->id;
     }
-    public function setId(int $id): self
-    {
-        $this->id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
 
+    public function setId(int $id): self {
+        $this->id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
 
-    public function getTelefone(): string
-    {
+    public function getTelefone(): string {
         return $this->telefone;
     }
-    public function setTelefone(string $telefone): self
-    {
-        $this->telefone = filter_var($telefone, FILTER_SANITIZE_SPECIAL_CHARS);
 
+    public function setTelefone(string $telefone): self {
+        $this->telefone = filter_var($telefone, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
 
-    public function getCelular(): string
-    {
+    public function getCelular(): string {
         return $this->celular;
     }
-    public function setCelular(string $celular): self
-    {
-        $this->celular = filter_var($celular, FILTER_SANITIZE_SPECIAL_CHARS);
 
+    public function setCelular(string $celular): self {
+        $this->celular = filter_var($celular, FILTER_SANITIZE_SPECIAL_CHARS);
         return $this;
     }
 
-    public function getUsuarioId(): int
-    {
-        return $this->usuarioId;
+    public function getUsuarioId(): int {
+        return $this->usuario_id;
     }
-    public function setUsuarioId(int $usuarioId): self
-    {
-        $this->usuarioId = filter_var($usuarioId, FILTER_SANITIZE_NUMBER_INT);
 
+    public function setUsuarioId(int $usuario_id): self{
+        $this->usuario_id = filter_var($usuario_id, FILTER_SANITIZE_NUMBER_INT);
         return $this;
     }
 }
