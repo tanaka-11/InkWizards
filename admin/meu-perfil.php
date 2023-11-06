@@ -4,8 +4,7 @@ require "../inc/cabecalho-admin.php";
 
 $usuario = new Usuario;
 $usuario->setId($_SESSION['id']);
-$dadosUsuario = $usuario->exibirUm();
-$usuario->setTipo($dadosUsuario['tipo']);
+$usuario->setTipo($_SESSION['tipo']);
 
 $localizacao = new Localizacao;
 $localizacao->usuario->setId($_SESSION['id']);
@@ -20,6 +19,7 @@ $portfolio->usuario->setId($_SESSION['id']);
 $dadosPortfolio = $portfolio->exibirUsuario();
 $dadosEstilos = $portfolio->estilo->exibir();
 
+$dadosUsuario = $usuario->exibirUm();
 ?>
     <section class="container">
         <!-- AQUI SERÁ UMA TAG IMG (eu acho) -->
