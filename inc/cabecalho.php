@@ -2,7 +2,6 @@
 require_once 'vendor/autoload.php';
 use Inkwizards\ControleDeAcesso;
 $sessao = new ControleDeAcesso;
-// $sessao->verificaAcesso();
 
 if(isset($_GET['sair'])) $sessao->logout();
 
@@ -54,8 +53,16 @@ $titulo = match($pagina) {
         <a class="nav-link" href="#">Artistas</a>
         <a class="nav-link" href="#">Estilos</a>
         <a class="nav-link" href="#">Contato</a>
+        
+
+        <?php if(empty($_SESSION['id'])) {?>
         <a class="nav-link" href="cadastro.php">Cadastro</a>
         <a class="nav-link" href="login.php">Login</a>
+        <?php } else { ?>
+        <a class="nav-link" href="./admin/meu-perfil.php">Meu Perfil</a>
+        <a class="nav-link" href="?sair">Sair</a>
+        <?php }?>
+
     </nav>
 </header>
 

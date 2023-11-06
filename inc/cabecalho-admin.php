@@ -51,10 +51,23 @@ $titulo = match($pagina) {
 <header class="m-3">
     <nav class="nav nav-underline justify-content-end">
         <a class="nav-link" href="../index.php">Home</a>
+
+        <?php if($pagina === $_SERVER['PHP_SELF']) {?>
         <a class="nav-link" href="meu-perfil.php">Meu Perfil</a>
+        <?php } ?>
+            
+        <?php if($_SESSION['tipo'] === 'tatuador') {?>
         <a class="nav-link" href="portfolios.php">Portfolios</a>
+        <?php } ?>
+
+        <?php if($_SESSION['tipo'] === 'admin') {?>
         <a class="nav-link" href="usuarios.php">Usuários</a>
+        <?php } ?>
+
+        <?php if($_SESSION['tipo'] === 'tatuador') {?>
         <a class="nav-link" href="estilos.php">Estilos</a>
+        <?php } ?>
+
         <a class="nav-link" href="?sair">Sair</a>
     </nav>
 </header>
