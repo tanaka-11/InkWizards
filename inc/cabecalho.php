@@ -3,10 +3,10 @@ require_once 'vendor/autoload.php';
 use Inkwizards\ControleDeAcesso;
 $sessao = new ControleDeAcesso;
 
-if(isset($_GET['sair'])) $sessao->logout();
-
-
 $pagina = basename($_SERVER['PHP_SELF']);
+
+$sessao->setPagina($pagina);
+if(isset($_GET['sair'])) $sessao->logout($sessao->getPagina());
 
 // Definindo constantes para os títulos das páginas.
 define("TITULO_INICIAL", "Página Inicial");
@@ -26,7 +26,6 @@ $titulo = match($pagina) {
     default => $titulo // Valor padrão
 };
 ?>
-
 
 <!-- Começo HTML  -->
 <!DOCTYPE html>
