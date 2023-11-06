@@ -42,13 +42,13 @@ class Contato {
         }
     }
 
-    public function exibirUm():array {
-        $sql = "SELECT * FROM contatos WHERE id = :id";
+    public function exibirUm():array | bool {
+        $sql = "SELECT * FROM contatos WHERE usuario_id = :usuario_id";
 
         try {
             $consulta = $this->conexao->prepare($sql);
 
-            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
