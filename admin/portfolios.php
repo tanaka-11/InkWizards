@@ -18,9 +18,7 @@ $dadosEstilo = $portfolio->estilo->exibir();
 
         <p><?=$umPortfolio['descricao']?></p> 
 
-        <?php foreach($dadosEstilo as $umEstilo){?>
-            <p value="<?=$umEstilo['id']?>"><?=$umEstilo['nome']?></p>
-        <?php }?>
+        <p><?=$dadosEstilo[$umPortfolio['estilo_id'] - 1]['nome']?></p>
 
         <a class="btn btn-warning" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
         <a class="btn btn-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
