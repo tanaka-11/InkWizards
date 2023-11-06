@@ -69,6 +69,8 @@ $titulo = match($pagina) {
         <a class="nav-link" href="estilos.php">Estilos</a>
         <?php } ?>
 
+        <a class="nav-link" href="meu-perfil.php">Meu Perfil</a>
+
         <a class="nav-link" href="?sair">Sair</a>
     </nav>
 </header>
