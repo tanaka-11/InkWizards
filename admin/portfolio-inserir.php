@@ -17,7 +17,7 @@ if(isset($_POST['inserir'])){
     $portfolio->setImagem($imagem['name']);
     $portfolio->inserir();
 
-    // 
+    header('location:portfolios.php');
 }
 
 ?>

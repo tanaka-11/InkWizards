@@ -9,7 +9,8 @@ $dadosEstilo = $portfolio->estilo->exibir();
 ?>
 
 <section class="container">
-
+    <h1 class="text-center">Portfolio</h1>
+    <p><a class="btn btn-primary" href="portfolio-inserir.php">Inserir portfolio</a></p>
 <?php foreach($dadosPortfolio as $umPortfolio){?>    
         <div id="imagemPortfolio">
             <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto do portfolio">

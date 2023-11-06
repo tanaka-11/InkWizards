@@ -88,7 +88,7 @@ class Portfolio {
 
     // Excluir
     public function excluir(): void {
-        $sql = "DELETE * FROM portfolio WHERE id = :id";
+        $sql = "DELETE FROM portfolio WHERE id = :id";
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
