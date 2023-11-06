@@ -47,6 +47,8 @@ $dadosUsuario = $usuario->exibirUm();
         <?php } else { ?>
             <p><?=$dadosContato['celular']?> <a class="btn btn-primary" href="contato-atualizar.php?id=<?=$dadosContato['id']?>">E</a></p>
         <?php } ?>
+
+    <?php if($_SESSION['tipo'] === 'tatuador') {?>
         <p><a class="btn btn-primary" href="portfolio-inserir.php">Adicionar portfolio</a></p>
 
         <?php foreach($dadosPortfolio as $umPortfolio){ ?>
@@ -62,7 +64,7 @@ $dadosUsuario = $usuario->exibirUm();
                 </div>
             </div>
         <?php } ?>
-        
+    <?php } ?>    
     </section>
 
     
