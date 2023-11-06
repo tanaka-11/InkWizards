@@ -8,7 +8,7 @@ $portfolio = new Portfolio;
 $portfolio->usuario->setId($_SESSION['id']);
 $portfolio->setId($_GET['id']);
 
-$dados = $portfolio->exibirUm();
+$dadosPortfolio = $portfolio->exibirUm();
 $dadosEstilo = $portfolio->estilo->exibir();
 
 if(isset($_POST['atualizar'])) {
@@ -32,17 +32,16 @@ if(isset($_POST['atualizar'])) {
 <section class="container">
     <h1 class="text-center">Atualizar portfolio</h1>
     <form action="#" method="post" enctype="multipart/form-data">
-        <!-- <div class="form-floating m-3">
+        <!-- <div class="">
             <input class="form-control" type="file" name="imagemPortfolio" id="imagemPortfolio" accept="image/png, image/jpeg, image/gif, image/svg+xml">
         </div> -->
 
-        <div class="mb-3">
+        <div class="form-floating m-3">
                 <label for="imagem-existente" class="form-label">Imagem existente:</label>
-                <!-- campo somente leitura, meramente informativo -->
-                <input value="<?=$dados['imagem']?>" class="form-control" type="text" id="imagem-existente" name="imagem-existente" readonly>
+                <input value="<?=$dadosPortfolio['imagem']?>" class="form-control" type="text" id="imagem-existente" name="imagem-existente" readonly>
             </div>
 
-            <div class="mb-3">
+            <div class="form-floating m-3">
                 <label for="imagem" class="form-label">Caso queira mudar, selecione outra imagem:</label>
                 <input class="form-control" type="file" id="imagem" name="imagem" accept="image/png, image/jpeg, image/gif, image/svg+xml">
             </div>
@@ -54,7 +53,7 @@ if(isset($_POST['atualizar'])) {
                     <option value=""></option>
 
                 <?php foreach($dadosEstilo as $umEstilo) { ?>	
-					<option <?php if($dados['estilo_id'] === $umEstilo['id']) echo " selected "?> value="<?=$umEstilo['id']?>">
+					<option <?php if($dadosPortfolio['estilo_id'] === $umEstilo['id']) echo " selected "?> value="<?=$umEstilo['id']?>">
 						<?=$umEstilo['nome']?>
 					</option>
 				<?php } ?>

@@ -13,18 +13,16 @@ $dadosEstilo = $portfolio->estilo->exibir();
 <?php foreach($dadosPortfolio as $umPortfolio){?>    
         <div id="imagemPortfolio">
             <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto do portfolio">
-            <a href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Editar</a>
         </div>
 
-        <p>
-            <?=$umPortfolio['descricao']?> <a href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Editar</a>
-        </p> 
+        <p><?=$umPortfolio['descricao']?></p> 
 
         <?php foreach($dadosEstilo as $umEstilo){?>
             <p value="<?=$umEstilo['id']?>"><?=$umEstilo['nome']?></p>
         <?php }?>
-       
 
+        <a class="btn btn-warning" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
+        <a class="btn btn-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
 <?php } ?>
         
     </section>    
