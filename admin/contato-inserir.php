@@ -8,13 +8,15 @@
     if(isset($_POST['inserir'])) {
         $contato->setCelular($_POST['celular']);
         $contato->setTelefone($_POST['telefone']);
-        $contato->setUsuarioId($_POST['usuarioId']);
+        $contato->usuario->setId($_SESSION['id']);
 
         $contato->inserir();
+        
+        header('location:meu-perfil.php');
     }    
 ?>
     <h1 class="text-center">Contato</h1>
-    <p class="m-3"><a class="btn btn-primary" href="perfil-logado.php">Voltar</a></p>
+    <p class="m-3"><a class="btn btn-primary" href="meu-perfil.php">Voltar</a></p>
     <form action="#" method="post" class="container">
         <div class="form-floating m-3">
             <input class="form-control" type="number" name="celular" id="celular" placeholder="" required>
