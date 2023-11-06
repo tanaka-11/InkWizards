@@ -55,8 +55,8 @@ $titulo = match($pagina) {
         <?php if($pagina === $_SERVER['PHP_SELF']) {?>
         <a class="nav-link" href="meu-perfil.php">Meu Perfil</a>
         <?php } ?>
-            
-        <?php if($_SESSION['tipo'] === 'tatuador') {?>
+
+        <?php if($_SESSION['tipo'] === 'tatuador' || 'admin') {?>
         <a class="nav-link" href="portfolios.php">Portfolios</a>
         <?php } ?>
 
@@ -64,7 +64,7 @@ $titulo = match($pagina) {
         <a class="nav-link" href="usuarios.php">Usuários</a>
         <?php } ?>
 
-        <?php if($_SESSION['tipo'] === 'tatuador') {?>
+        <?php if($_SESSION['tipo'] === 'admin') {?>
         <a class="nav-link" href="estilos.php">Estilos</a>
         <?php } ?>
 
