@@ -25,7 +25,7 @@ class Localizacao {
     }
 
     // Metodo para exibir todos os dados da Localização
-    public function exibirUm():array {
+    public function exibirUm():array | bool {
         $sql = "SELECT * FROM localizacao WHERE usuario_id = :usuario_id";
 
         try {
