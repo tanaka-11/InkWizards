@@ -2,6 +2,7 @@
 // Require do Header e Funções
 use Inkwizards\{Usuario};
 require_once "../inc/cabecalho-admin.php";
+$sessao->verificaAcessoAdmin();
 
 // Criação do objeto
 $usuario = new Usuario;

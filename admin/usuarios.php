@@ -2,6 +2,7 @@
 // Namespace e requires
 use Inkwizards\{Usuario};
 require_once "../inc/cabecalho-admin.php";
+$sessao->verificaAcessoAdmin();
 
 // Objeto do usuario e verificação de acesso
 $usuario = new Usuario;

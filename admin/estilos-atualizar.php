@@ -3,6 +3,7 @@
 use Inkwizards\Estilo;
 
     require_once "../inc/cabecalho-admin.php";
+    $sessao->verificaAcessoAdmin();
 
     $estilo = new Estilo;
     $estilo->setId($_GET['id']);

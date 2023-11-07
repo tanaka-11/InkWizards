@@ -39,13 +39,13 @@ $dadosUsuario = $usuario->exibirUm();
         <?php if(empty($dadosLocalizacao)) { ?>
             <p><a class="btn btn-primary" href="localizacao-inserir.php">Adicionar localização</a></p>
         <?php } else { ?>
-            <p><?=$dadosLocalizacao['endereco']?> <a class="btn btn-primary" href="localizacao-atualizar.php?id=<?=$dadosLocalizacao['id']?>">E</a></p>
+            <p><?=$dadosLocalizacao['endereco']?> <a class="btn btn-warning" href="localizacao-atualizar.php?id=<?=$dadosLocalizacao['id']?>">E</a> <a class="btn btn-danger" href="localizacao-excluir.php?id=<?=$dadosLocalizacao['id']?>">E</a></p>
         <?php } ?>
 
         <?php if(empty($dadosContato)) { ?>
             <p><a class="btn btn-primary" href="contato-inserir.php">Adicionar contato</a></p>
         <?php } else { ?>
-            <p><?=$dadosContato['celular']?> <a class="btn btn-primary" href="contato-atualizar.php?id=<?=$dadosContato['id']?>">E</a></p>
+            <p><?=$dadosContato['celular']?> <a class="btn btn-warning" href="contato-atualizar.php?id=<?=$dadosContato['id']?>">E</a> <a class="btn btn-danger" href="contato-excluir.php?id=<?=$dadosContato['id']?>">E</a></p>
         <?php } ?>
 
     <?php if($_SESSION['tipo'] === 'tatuador') {?>

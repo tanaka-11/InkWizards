@@ -6,6 +6,7 @@ require_once "../vendor/autoload.php";
 
 $sessao = new ControleDeAcesso;
 $sessao->verificaAcesso();
+$sessao->verificaAcessoAdmin();
 
 $estilo = new Estilo;
 $estilo->setId($_GET['id']);
