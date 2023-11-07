@@ -55,7 +55,7 @@ $dadosDoTatuador = $tatuador->exibir();
 
         <div class="botao-contato">
             <p>
-                <a href="#">Contato</a>
+                <a href="contato.php">Contato</a>
             </p>
         </div>
         
