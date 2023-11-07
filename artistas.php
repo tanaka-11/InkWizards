@@ -31,7 +31,7 @@ $dadosUsuario = $usuario->exibir();
                 <!-- FAZER METODO PARA APARECER PORTFOLIO (Na classe Usuario) -->
                 
                 <div class="card-body">
-                    <a href="artista?id=<?=$dadosUsuario['id']?>" class="btn btn-outline-primary">Clique para ver mais trabalhos</a>
+                    <a href="artista.php?id=<?=$umUsuario['id']?>" class="btn btn-outline-primary">Clique para ver mais trabalhos</a>
                 </div>
                 </div>
             </div>
