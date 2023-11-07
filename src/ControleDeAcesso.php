@@ -55,14 +55,14 @@ final class ControleDeAcesso {
             case "artistas.php":
             case "estilos.php":
             case "contato.php":
-                "location:login.php?logout";
+                $urlRedirecionamento = "login.php?logout";
                 break;
             default:
-                "location:../login.php?logout";
+            $urlRedirecionamento = "../login.php?logout";
         }
 
-        header($pagina);
-        die();
+        header("Location: " . $urlRedirecionamento);
+        exit();
     }
 
     public function getPagina(): string
