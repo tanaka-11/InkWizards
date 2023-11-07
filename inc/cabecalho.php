@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once 'vendor/autoload.php';
 use Inkwizards\ControleDeAcesso;
 $sessao = new ControleDeAcesso;
@@ -46,15 +47,15 @@ $titulo = match($pagina) {
 
 <body>
 
-<header class="m-3">
-<nav class="navbar navbar-expand-sm">
+<header>
+<nav class="navbar navbar-expand-md border-bottom bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="index.php"><img src="assets/images/logo-VER1.png" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
@@ -65,7 +66,7 @@ $titulo = match($pagina) {
                     <a class="nav-link" href="#">Estilos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
+                    <a class="nav-link" href="contato.php">Contato</a>
                 </li>
                 <?php if(empty($_SESSION['id'])) {?>
                     <li class="nav-item">
