@@ -25,7 +25,7 @@ $dadosUsuario = $usuario->exibirUm();
 
 <div class="card text-bg-dark text-center m-3 p-3" style="width: 100%;">
     <div id="foto-de-perfil">
-        <img src="../assets/images/perfil/<?=$dadosUsuario['foto_perfil']?>" class="card-img-top" alt="Foto de perfil">
+        <img src="../assets/images/perfil/<?=$dadosUsuario['foto_perfil']?>" class="card-img-top foto-perfil" alt="Foto de perfil">
     </div>
 
   <div class="card-body">
