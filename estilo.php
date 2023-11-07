@@ -6,7 +6,7 @@ $estilo = new Estilo;
 $dadosEstilo = $estilo->exibir();
 ?>
 
-    <h1 class="text-center">Estilos</h1>
+    <h1 class="text-center m-3">Estilos</h1>
     <section class="d-flex justify-content-center container">
 <?php foreach($dadosEstilo as $umEstilo) {?>    
     <div class="card w-75 m-3 text-center">

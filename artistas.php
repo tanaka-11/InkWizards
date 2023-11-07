@@ -11,15 +11,15 @@ $dadosUsuario = $usuario->exibir();
 
 ?>
 
-<h1 class="text-center"> Nossos Artistas</h1>
+<h1 class="text-center m-3"> Nossos Artistas</h1>
 
 <section class="d-flex justify-content-center container">
     <?php foreach($dadosUsuario as $umUsuario){ ?>
         <?php if($umUsuario['tipo'] === 'tatuador'){ ?>
-        <div class="card  m-3" style="max-width: 540px;">
+        <div class="card  m-3" style="width: 650px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                <img src="assets/images/perfil/<?=$umUsuario['foto_perfil'];?>" class="img-fluid rounded-start" alt="Imagem do perfil">
+                <img style="height: 350px;" src="assets/images/perfil/<?=$umUsuario['foto_perfil'];?>" class="img-fluid rounded-start" alt="Imagem do perfil">
                 </div>
 
                 <div class="col-md-8">
