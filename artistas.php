@@ -31,7 +31,7 @@ $dadosUsuario = $usuario->exibir();
                 <!-- FAZER METODO PARA APARECER PORTFOLIO (Na classe Usuario) -->
                 
                 <div class="card-body">
-                    <a href="artista.php?id=<?=$umUsuario['id']?>" class="btn btn-outline-primary">Clique para ver mais trabalhos</a>
+                    <a href="artista.php?id=<?=$umUsuario['id']?>" class="btn btn-outline-danger">Clique para ver mais trabalhos</a>
                 </div>
                 </div>
             </div>
@@ -39,3 +39,5 @@ $dadosUsuario = $usuario->exibir();
         <?php }?>
     <?php } ?>
 </section>
+
+<?php require_once 'inc/rodape.php'; ?>
