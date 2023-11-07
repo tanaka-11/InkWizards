@@ -13,27 +13,28 @@ if(isset($_GET['campos_obrigatorios'])) {
     $feedback = "Faça o Login";
 }
 ?>
-    <h1 class="text-center">Login</h1>
-
-    <form action="#" method="post" class="container">
+    <h1 class="text-center m-3">Login</h1>
+    <section class="container">
         <?php if(isset($feedback)) {?>
-            <p class="alert alert warning text center"><?=$feedback?></p>
+            <p class="alert alert-warning text-center"><?=$feedback?></p>
         <?php } ?>
-
-        <div class="form-floating m-3">
-            <input class="form-control" type="email" id="email" name="email" placeholder="">
-            <label for="email">E-mail</label>
-        </div>
-
-        <div class="form-floating m-3">
-            <input class="form-control" type="password" id="senha" name="senha" placeholder="">
-            <label for="senha">Senha</label>
-        </div>
-
-        <div class="m-3">
-            <button class="btn btn-primary" name="entrar" type="submit">Entrar</button>
-        </div>
-    </form>
+        <form action="#" method="post">
+    
+            <div class="form-floating m-3">
+                <input class="form-control" type="email" id="email" name="email" placeholder="">
+                <label for="email">E-mail</label>
+            </div>
+    
+            <div class="form-floating m-3">
+                <input class="form-control" type="password" id="senha" name="senha" placeholder="">
+                <label for="senha">Senha</label>
+            </div>
+    
+            <div class="m-3">
+                <button class="btn btn-primary" name="entrar" type="submit">Entrar</button>
+            </div>
+        </form>
+    </section>
 
     <!-- Script da verificação de dados -->
     <?php
