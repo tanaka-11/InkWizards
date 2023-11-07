@@ -15,17 +15,26 @@ $dadosEstilo = $portfolio->estilo->exibir();
     <p><a class="btn btn-primary" href="portfolio-inserir.php">Inserir portfolio</a></p>
 
 <?php foreach($dadosPortfolio as $umPortfolio){ ?>
-        <div id="imagemPortfolio">
-            <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto do portfolio">
+    <div class="card m-3 text-bg-dark d-flex justify-content-center text-center">
+        
+        <div class="card-body">
+            <p><?=$umPortfolio['descricao']?></p>
+            <p><?=$dadosEstilo[$umPortfolio['estilo_id'] - 1]['nome']?></p>    
+        
+            <p>
+                <a class="btn btn-outline-primary" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
+
+                <a class="btn btn-outline-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
+            </p>
+
+            <div style="text-align: center;" id="imagemPortfolio">
+                <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom foto-portfolio">
+            </div>
         </div>
-        
-        <p><?=$umPortfolio['descricao']?></p> 
-        
-        <p><?=$dadosEstilo[$umPortfolio['estilo_id'] - 1]['nome']?></p>
-        
-        <a class="btn btn-warning" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
-        <a class="btn btn-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
+    </div>
 <?php } ?>
+
+
 
         
     </section>    
