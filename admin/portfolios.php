@@ -20,8 +20,8 @@ $dadosEstilo = $portfolio->estilo->exibir();
     <div class="card m-3 text-bg-dark text-center">
 
         <div class="card-body">
-            <p><?=$umPortfolio['descricao']?></p>
             <p><?=$dadosEstilo[$umPortfolio['estilo_id'] - 1]['nome']?></p>    
+            <p><?=$umPortfolio['descricao']?></p>
         
             <p>
                 <a class="btn btn-outline-primary" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
