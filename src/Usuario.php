@@ -11,11 +11,11 @@ class Usuario {
     private string $email;
     private string $senha;
     private string $tipo;
-
+    
     // Propriedade de conexao
     private PDO $conexao;
-    // Metodo da conexão
-    public function __construct(){
+
+    public function __construct(){    
         $this->conexao = Banco::conecta();
     }
    
