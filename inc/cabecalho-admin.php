@@ -50,29 +50,47 @@ $titulo = match($pagina) {
 
 <body>
 
-<header class="m-3">
-    <nav class="nav nav-underline justify-content-end">
-        <a class="nav-link" href="../index.php">Home</a>
-
-        <?php if($pagina === $_SERVER['PHP_SELF']) {?>
-        <a class="nav-link" href="meu-perfil.php">Meu Perfil</a>
-        <?php } ?>
-
-        <?php if($_SESSION['tipo'] === 'tatuador' || 'admin') {?>
-        <a class="nav-link" href="portfolios.php">Portfolios</a>
-        <?php } ?>
-
-        <?php if($_SESSION['tipo'] === 'admin') {?>
-        <a class="nav-link" href="usuarios.php">Usuários</a>
-        <?php } ?>
-
-        <?php if($_SESSION['tipo'] === 'admin') {?>
-        <a class="nav-link" href="estilos.php">Estilos</a>
-        <?php } ?>
-
-        <a class="nav-link" href="meu-perfil.php">Meu Perfil</a>
-
-        <a class="nav-link" href="?sair">Sair</a>
+<header>
+    <nav class="navbar navbar-expand-md border-bottom bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.php"><img src="../assets/images/logo-VER1.png" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.php">Home</a>
+                    </li>
+                    <?php if($pagina === $_SERVER['PHP_SELF']) {?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="meu-perfil.php">Meu Perfil</a>
+                        </li>
+                    <?php } ?>
+                    <?php if($_SESSION['tipo'] === 'tatuador' || 'admin') {?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolios.php">Portfolios</a>
+                        </li>
+                    <?php } ?>
+                    <?php if($_SESSION['tipo'] === 'admin') {?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="usuarios.php">Usuários</a>
+                        </li>
+                    <?php } ?>
+                    <?php if($_SESSION['tipo'] === 'admin') {?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="estilos.php">Estilos</a>
+                        </li>
+                    <?php } ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meu-perfil.php">Meu Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?sair">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>
 
