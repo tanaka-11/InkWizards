@@ -60,10 +60,10 @@ $titulo = match($pagina) {
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Artistas</a>
+                    <a class="nav-link" href="artistas.php">Artistas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Estilos</a>
+                    <a class="nav-link" href="estilo.php">Estilos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contato.php">Contato</a>
