@@ -47,22 +47,45 @@ $titulo = match($pagina) {
 <body>
 
 <header class="m-3">
-    <nav class="nav nav-underline justify-content-end">
-        <a class="nav-link" href="index.php">Home</a>
-        <a class="nav-link" href="#">Artistas</a>
-        <a class="nav-link" href="#">Estilos</a>
-        <a class="nav-link" href="#">Contato</a>
-        
-
-        <?php if(empty($_SESSION['id'])) {?>
-        <a class="nav-link" href="cadastro.php">Cadastro</a>
-        <a class="nav-link" href="login.php">Login</a>
-        <?php } else { ?>
-        <a class="nav-link" href="./admin/meu-perfil.php">Meu Perfil</a>
-        <a class="nav-link" href="?sair">Sair</a>
-        <?php }?>
-
-    </nav>
+<nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Artistas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Estilos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contato</a>
+                </li>
+                <?php if(empty($_SESSION['id'])) {?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.php">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Login</a>
+                    </li>
+                <?php } else { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./admin/meu-perfil.php">Meu Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?sair">Sair</a>
+                    </li>
+                <?php }?>
+            </ul>
+        </div>
+    </div>
+</nav>
 </header>
 
 <main>
