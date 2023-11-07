@@ -21,51 +21,73 @@ $dadosEstilos = $portfolio->estilo->exibir();
 
 $dadosUsuario = $usuario->exibirUm();
 ?>
-    <section class="container">
-        <!-- AQUI SERÁ UMA TAG IMG (eu acho) -->
-        <div id="foto-de-perfil">
-            <img src="../assets/images/perfil/<?=$dadosUsuario['foto_perfil']?>" alt="Foto de perfil">
-            <a href="perfil-atualizar.php">E</a>
-        </div>
-        
-        <h1 class="nome-perfil"><?=$dadosUsuario['nome']?> <a href="perfil-atualizar.php">E</a></h1>
+<section class="container">
 
-        <p><?=$dadosUsuario['email']?> <a href="perfil-atualizar.php">E</a></p>
+<div class="card text-bg-dark text-center m-3 p-3" style="width: 100%;">
+    <div id="foto-de-perfil">
+        <img src="../assets/images/perfil/<?=$dadosUsuario['foto_perfil']?>" class="card-img-top" alt="Foto de perfil">
+    </div>
 
-        <p>Senha (***) <a href="perfil-atualizar.php">E</a></p>
+  <div class="card-body">
+    <h3 class="card-title"> <?=$dadosUsuario['nome']?> </h5>
+    <p class="card-text"><?=$dadosUsuario['descricao']?></p>
+  </div>
 
-        <p><?=$dadosUsuario['descricao']?> <a href="perfil-atualizar.php">E</a></p>
-
-        <?php if(empty($dadosLocalizacao)) { ?>
-            <p><a class="btn btn-primary" href="localizacao-inserir.php">Adicionar localização</a></p>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-bg-dark"><?=$dadosUsuario['email']?></li>
+  </ul>
+  
+  <?php if(empty($dadosLocalizacao)) { ?>
+            <p><a class="btn btn-outline-primary" href="localizacao-inserir.php">Adicionar localização</a></p>
         <?php } else { ?>
-            <p><?=$dadosLocalizacao['endereco']?> <a class="btn btn-warning" href="localizacao-atualizar.php?id=<?=$dadosLocalizacao['id']?>">E</a> <a class="btn btn-danger" href="localizacao-excluir.php?id=<?=$dadosLocalizacao['id']?>">E</a></p>
+            <p><?=$dadosLocalizacao['endereco']?> <br>
+                <a class="btn btn-outline-primary" href="localizacao-atualizar.php?id=<?=$dadosLocalizacao['id']?>">Editar</a> 
+                <a class="btn btn-outline-danger" href="localizacao-excluir.php?id=<?=$dadosLocalizacao['id']?>">Excluir</a>
+            </p>
         <?php } ?>
 
         <?php if(empty($dadosContato)) { ?>
-            <p><a class="btn btn-primary" href="contato-inserir.php">Adicionar contato</a></p>
+            <p>
+                <a class="btn btn-outline-primary" href="contato-inserir.php">Adicionar contato</a>
+            </p>
         <?php } else { ?>
-            <p><?=$dadosContato['celular']?> <a class="btn btn-warning" href="contato-atualizar.php?id=<?=$dadosContato['id']?>">E</a> <a class="btn btn-danger" href="contato-excluir.php?id=<?=$dadosContato['id']?>">E</a></p>
+            <p><?=$dadosContato['celular']?>  <br>
+            <a class="btn btn-outline-primary" href="contato-atualizar.php?id=<?=$dadosContato['id']?>">Editar</a> 
+            <a class="btn btn-outline-danger" href="contato-excluir.php?id=<?=$dadosContato['id']?>">Excluir</a></p>
         <?php } ?>
 
+    <div class="card-body">
+        <a class="btn btn-outline-danger" href="perfil-atualizar.php">Editar Dados de Perfil</a>
+    </div>       
+</div>
+
+<div class="text-center">           
     <?php if($_SESSION['tipo'] === 'tatuador') {?>
-        <p><a class="btn btn-primary" href="portfolio-inserir.php">Adicionar portfolio</a></p>
-
-        <?php foreach($dadosPortfolio as $umPortfolio){ ?>
-            <div class="card m-3">
-                <div class="card-header">
-                    <p><?=$umPortfolio['descricao']?></p>
+        <p>
+            <a class="btn btn-outline-primary m-3 text-center " href="portfolio-inserir.php">Adicionar portfolio</a>
+        </p>
+</div>         
+    
+    <?php foreach($dadosPortfolio as $umPortfolio){ ?>
+                <div class="card m-3">
+                    <div class="card-header">
+                        <p><?=$umPortfolio['descricao']?></p>
+                    </div>
+                    <div class="card-body">
+                        <p><?=$dadosEstilos[$umPortfolio['estilo_id'] - 1]['nome']?></p>
+                        <p>
+                            <a class="btn btn-warning" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
+                        </p>
+                        <p>
+                            <a class="btn btn-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
+                        </p>
+                        <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom">
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p><?=$dadosEstilos[$umPortfolio['estilo_id'] - 1]['nome']?></p>
-                    <p><a class="btn btn-warning" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a></p>
-                    <p><a class="btn btn-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a></p>
-                    <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom">
-                </div>
-            </div>
+            <?php } ?>
         <?php } ?>
-    <?php } ?>    
-    </section>
+     
+</section>
 
     
 <?php require "../inc/rodape.php" ?>

@@ -19,7 +19,7 @@ $dadosUsuario = $usuario->exibir();
         <div class="card  m-3" style="width: 650px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                <img style="height: 350px;" src="assets/images/perfil/<?=$umUsuario['foto_perfil'];?>" class="img-fluid rounded-start" alt="Imagem do perfil">
+                <img  src="assets/images/perfil/<?=$umUsuario['foto_perfil'];?>" class="img-fluid rounded-start" alt="Imagem do perfil">
                 </div>
 
                 <div class="col-md-8">
