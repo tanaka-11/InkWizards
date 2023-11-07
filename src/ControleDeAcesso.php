@@ -29,6 +29,13 @@ final class ControleDeAcesso {
         }
     }
 
+    public function verificaAcessoTatuador():void {
+        if($_SESSION['tipo'] !== 'tatuador'){
+            header("location:nao-autorizado.php");
+            die();
+        }
+    }
+
     // Metodo de acesso dos usuarios (LOGIN)
     public function login(int $id, string $nome, string $tipo): void {
         // Variaveis de sessão

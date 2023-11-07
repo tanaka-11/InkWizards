@@ -1,5 +1,6 @@
 <?php
     require_once "../inc/cabecalho-admin.php";
+    $sessao->verificaAcessoAdmin();
 ?>
 <section class="container">
     <h1 class="text-center">Atualizar usuário</h1>
