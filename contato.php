@@ -28,7 +28,7 @@ use Inkwizards\Usuario;
                             <!-- FAZER METODO PARA APARECER PORTFOLIO (Na classe Usuario) -->
                             
                             <div class="card-body">
-                                <a href="artista.php?id=<?=$umUsuario['id']?>" class="btn btn-outline-danger">Clique para entrar em contato</a>
+                                <a href="artista.php?id=<?=$umUsuario['id']?>" class="btn btn-danger">Clique para entrar em contato</a>
                             </div>
                             </div>
                         </div>
