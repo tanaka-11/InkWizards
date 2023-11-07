@@ -17,21 +17,22 @@ $dadosEstilo = $portfolio->estilo->exibir();
     </p>
 
 <?php foreach($dadosPortfolio as $umPortfolio){ ?>
-    <div class="card m-3 text-bg-dark text-center">
+    <div class="card m-3 text-bg-dark ">
 
         <div class="card-body">
             <p><?=$dadosEstilo[$umPortfolio['estilo_id'] - 1]['nome']?></p>    
             <p><?=$umPortfolio['descricao']?></p>
-        
-            <p>
+            
+            <div style="text-align: center;" id="imagemPortfolio">
+                <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom foto-portfolio">
+            </div>
+
+            <p class="m-3 text-center">
                 <a class="btn btn-outline-primary" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
 
                 <a class="btn btn-outline-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
             </p>
 
-            <div style="text-align: center;" id="imagemPortfolio">
-                <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom foto-portfolio">
-            </div>
         </div>
     </div>
 <?php } ?>
