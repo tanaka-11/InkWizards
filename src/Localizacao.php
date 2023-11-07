@@ -97,7 +97,19 @@ class Localizacao {
         } catch (Exception $erro) {
             die("Erro ao atualizar dados do tatuador. Tente Novamente".$erro->getMessage());
         }
-    } 
+    }
+
+    public function excluir():void {
+        $sql = "DELETE FROM localizacao WHERE id = :id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro ao excluir: ".$erro->getMessage());
+        }
+    }
 
    // Getters, Setters e Sanitização
 
