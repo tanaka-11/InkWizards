@@ -11,12 +11,14 @@ $dadosEstilo = $portfolio->estilo->exibir();
 ?>
 
 <section class="container">
-    <h1 class="text-center">Portfolio</h1>
-    <p><a class="btn btn-primary" href="portfolio-inserir.php">Inserir portfolio</a></p>
+    <h1 class="text-center m-3 p-3">Seu portfolio</h1>
+    <p class="text-center">
+        <a class="btn btn-outline-danger" href="portfolio-inserir.php">Inserir tatuagem</a>
+    </p>
 
 <?php foreach($dadosPortfolio as $umPortfolio){ ?>
     <div class="card m-3 text-bg-dark d-flex justify-content-center text-center">
-        
+
         <div class="card-body">
             <p><?=$umPortfolio['descricao']?></p>
             <p><?=$dadosEstilo[$umPortfolio['estilo_id'] - 1]['nome']?></p>    
