@@ -9,72 +9,74 @@ $estilo = new Estilo;
 $dadosUsuario = $usuario->exibir();
 $dadosEstilo = $estilo->exibir();
 
-?>
-    <section class="usuarios">
-    <h1 class="text-center">Nossos artistas</h1>
-    <div class="d-flex justify-content-center container text-center">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-        <?php foreach($dadosUsuario as $umUsuario){ ?>
-            <?php if($umUsuario['tipo'] === 'tatuador') {?>
-            <div class="col">    
-                <div class="card text-center m-3 text-bg-dark">
-                    <p>
-                        <img src="assets/images/perfil/<?=$umUsuario['foto_perfil']?>" class="card-img-top foto-perfil m-4" alt="foto perfil">
-                        <br>
-                        <a class="btn btn-outline-danger m-4" href="#">Veja as artes deste artista</a>
-                    </p>
-                </div>
-            </div>    
-            <?php }?>
-        <?php } ?>
-        </div>
-    </div>        
-    </section>
-    
-    <section class="estilos">
-    <h1 class="text-center">Estilos</h1>
-    <div class="d-flex justify-content-center container text-center">   
-    <?php foreach($dadosEstilo as $umEstilo){?>
-        <div class="card m-5 text-bg-dark" style="width: 12rem;">
-            <div class="card-body">
-                <h3 style="color: #CA012E;" class="card-text"><?=$umEstilo['nome']?></h3>
-            </div>
-        </div>
-            
-    <?php } ?>
-    </section>
 
+?>
+
+<h1 class="text-center m-3">Artistas Destaque</h1>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <?php foreach ($dadosUsuario as $umUsuario) { ?>
+            <?php if ($umUsuario['tipo'] === 'tatuador') { ?>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card text-bg-dark m-4">
+                        <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio" alt="Imagem do perfil">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title"><?= $umUsuario['nome'] ?></h5>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        <?php } ?>
+    </div>
+</div>
+</section>
+
+
+
+
+
+<section class="estilos">
+    <h1 class="text-center">Estilos</h1>
+    <div class="container text-center">
+        <div class="row">
+            <?php foreach ($dadosEstilo as $umEstilo) { ?>
+                <div class="col-md-3">
+                    <div class="card m-5" style="background-color: grey">
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h3 style="color: #242C33; height: 60px;" class="card-text"><?=$umEstilo['nome']?></h3>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+
+
+<!-- 
     <section class="contatos">
         <h1 class="text-center">Contato</h1>
-        <div class="contato text-center">
+        <div class="botao-contato text-center">
             <p>
-            Entre em contato conosco no email InkWizards@gmail.com
-            </p>
-
-        <div class="botao-contato">
-            <p>
-                <a href="contato.php">Contato</a>
+                <a class="btn btn-outline-danger" href="contato.php">Contato</a>
             </p>
         </div>
         
         </div>
-    </section>    
+    </section>     -->
     
-    <section class="cadastro">
+    <!-- <section class="cadastro">
 
     <h1 class="text-center">Cadastro/Login</h1>
 
-        <div class="cadastro-login">
+        <div class="cadastro-login text-center">
             <p  class="botao-cadastro">
-                <a href="./cadastro.php">Cadastro</a>
-            </p>
-        
-            <p class="botao-login">
-                <a href="">Login</a>
+                <a class="btn btn-primary" href="cadastro.php">Cadastro</a>
+                <a class="btn btn-primary" href="login.php">Login</a>
             </p>
         </div>
             
-    </section>
+    </section> -->
 
 
 <?php require_once "inc/rodape.php" ?>

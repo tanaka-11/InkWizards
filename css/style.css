@@ -8,7 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: grey;
+    background-color: #242C33; 
+    color: #CB002D;
 }
 
 .foto-perfil {
@@ -22,9 +23,4 @@ body {
     height: 350px;
     width: 350px;
     object-fit: cover;
-}
-
-.flex-portfolio {
-    display: flex;
-    justify-content: space-between;
 }
