@@ -13,13 +13,13 @@ use Inkwizards\Usuario;
         <?php foreach($dadosUsuario as $umUsuario){
             if($umUsuario['tipo'] === 'admin'){ ?>
                 <div class="col">
-                    <div class="card m-3 text-center text-bg-dark" style="width: 650px;">
+                    <div class="card m-3 text-center text-bg-dark">
                         <div class="row g-0">
-                            <div class="col-md-4">
+                            <div class="col-4">
                                 <img src="assets/images/perfil/<?=$umUsuario['foto_perfil'];?>" class="img-fluid rounded-start foto-perfil" alt="Imagem do perfil">
                             </div>
             
-                            <div class="col-md-8">
+                            <div class="col-8">
                             <div class="card-body">
                                 <h5 class="card-title"><?=$umUsuario['nome']?></h5>
                                 <p class="card-text"><?=$umUsuario['descricao']?></p>
