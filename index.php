@@ -13,26 +13,28 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
 
 ?>
 
-<h1 class="text-center m-3">Artistas Destaque</h1>
-<div class="container">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-        <?php foreach ($dadosUsuario as $umUsuario) { ?>
-            <?php if ($umUsuario['tipo'] === 'tatuador') { ?>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card text-bg-dark m-4">
-                        
-                            <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio align-self-center" alt="Imagem do perfil">
+<section class="usuarios">
+    <h1 class="text-center m-3">Artistas Destaque</h1>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <?php foreach ($dadosUsuario as $umUsuario) { ?>
+                <?php if ($umUsuario['tipo'] === 'tatuador') { ?>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card text-bg-dark m-4">
+                            <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio w-100" alt="Imagem do perfil">
+
                             <div class="card-img-overlay">
-                                <h5 class="card-title" style="color:#CB002D"><?= $umUsuario['nome'] ?></h5>
+                                <h5 class="card-title"><?= $umUsuario['nome'] ?></h5>
                             </div>
-                      
+                        </div>
                     </div>
-                </div>
+                <?php } ?>
             <?php } ?>
-        <?php } ?>
+        </div>
     </div>
-</div>
 </section>
+
+
 
 
 <section class="estilos">
@@ -59,7 +61,7 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
             <?php foreach ($dadosPortfolio as $umPortfolio) { ?>
                 <div class="col mb-4">
                     <div class="card text-bg-dark">
-                        <img src="assets/images/portfolio/<?= $umPortfolio['imagem'] ?>" class="card-img foto-portfolio align-self-center" alt="...">
+                        <img src="assets/images/portfolio/<?= $umPortfolio['imagem'] ?>" class="card-img foto-portfolio align-self-center w-100" alt="...">
 
                         <div class="card-img-overlay">
                             <h5 class="card-title"><?= $umPortfolio['estilo'] ?></h5>
