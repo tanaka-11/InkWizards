@@ -13,7 +13,7 @@ use Inkwizards\Usuario;
         <?php foreach($dadosUsuario as $umUsuario){
             if($umUsuario['tipo'] === 'admin'){ ?>
                 <div class="col">
-                    <div class="card m-3 text-center text-bg-dark">
+                    <div class="card m-3 text-center text-bg-dark" style="width: 650px;">
                         <div class="row g-0">
                             <div class="col-md-4">
                                 <img src="assets/images/perfil/<?=$umUsuario['foto_perfil'];?>" class="img-fluid rounded-start foto-perfil" alt="Imagem do perfil">

@@ -84,7 +84,7 @@ class Usuario {
             nome = :nome,
             descricao = :descricao,
             email = :email,
-            senha = :senha
+            senha = :senha,
             tipo = :tipo WHERE id = :id";
 
             try {
