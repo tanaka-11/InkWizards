@@ -55,13 +55,15 @@ final class ControleDeAcesso {
             case "artistas.php":
             case "estilos.php":
             case "contato.php":
+            case "artista.php":
+            case "admin.php":
                 $urlRedirecionamento = "login.php?logout";
                 break;
             default:
             $urlRedirecionamento = "../login.php?logout";
         }
 
-        header("Location:" . $urlRedirecionamento);
+        header("Location:".$urlRedirecionamento);
         exit();
     }
 
