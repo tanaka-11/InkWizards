@@ -67,7 +67,7 @@ $titulo = match($pagina) {
                             <a class="nav-link" href="meu-perfil.php">Meu Perfil</a>
                         </li>
                     <?php } ?>
-                    <?php if($_SESSION['tipo'] === 'tatuador' || 'admin') {?>
+                    <?php if($_SESSION['tipo'] === 'tatuador' || $_SESSION['tipo'] === 'admin') {?>
                         <li class="nav-item">
                             <a class="nav-link" href="portfolios.php">Portfolios</a>
                         </li>
