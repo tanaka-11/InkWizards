@@ -12,7 +12,7 @@ $dadosEstilo = $estilo->exibir();
     <div class="card w-75 m-3 text-center text-bg-dark">
         <div class="card-body">
             <h5 class="card-title"><?=$umEstilo['nome']?></h5>
-            <a href="#" class="btn btn-outline-danger">Acesse todas tatuagens deste estilo</a>
+            <a href="estilo.php?id=<?=$umEstilo['id']?>" class="btn btn-outline-danger">Acesse todas tatuagens deste estilo</a>
         </div>
     </div>
 <?php } ?>        
