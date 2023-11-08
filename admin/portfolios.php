@@ -22,6 +22,9 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
                 <div class="card m-3 text-bg-dark ">
     
                     <div class="card-body">
+                        <?php if($_SESSION['tipo'] === "admin") { ?>
+                            <h3><?=$umPortfolio['usuario']?></h3>
+                        <?php } ?>
                         <p><?=$umPortfolio['estilo']?></p>    
                         <p><?=$umPortfolio['descricao']?></p>
                         
