@@ -23,25 +23,13 @@ use Inkwizards\Usuario;
     </div>
 
 
-    <?php if (empty($dadosLocalizacao)) { ?>
-        <p>
-            <a class="btn btn-outline-primary" href="localizacao-inserir.php">Adicionar localização</a>
-        </p>
-    <?php } else { ?>
-        <p>
-            <?= $dadosLocalizacao['endereco'] ?> <br>
-            <a class="btn btn-outline-primary" href="localizacao-atualizar.php?id=<?= $dadosLocalizacao['id'] ?>">Editar</a>
-            <a class="btn btn-outline-danger" href="localizacao-excluir.php?id=<?= $dadosLocalizacao['id'] ?>">Excluir</a>
-        </p>
+    <?php if (!empty($dadosLocalizacao)) { ?>
+        <p><?=$dadosLocalizacao['endereco']?></p>
     <?php } ?>
 
     <?php if (!empty($dadosContato)) { ?>
         <p><?=$dadosContato['celular']?></p>
     <?php } ?>
-
-    <div class="card-body">
-        <a class="btn btn-outline-danger" href="perfil-atualizar.php">Editar Dados de Perfil</a>
-    </div>
 </div>
 
 </section>
