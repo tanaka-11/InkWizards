@@ -6,7 +6,7 @@ require_once "inc/cabecalho.php";
 if(isset($_GET['campos_obrigatorios'])) {
     $feedback = "Preencha e-mail e senha";
 } elseif (isset($_GET['dados_incorretos'])) {
-    $feedback = "Preencha novamente";
+    $feedback = "Dados incorretos, preencha novamente";
 } elseif (isset($_GET['logout'])) {
     $feedback = "Você saiu do sistema";
 } elseif (isset($_GET['acesso_proibido'])) {
