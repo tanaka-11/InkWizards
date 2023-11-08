@@ -1,70 +1,49 @@
 <?php
-use Inkwizards\{Usuario};
+use Inkwizards\{Estilo, Usuario};
 require_once 'inc/cabecalho.php';
-$tatuador = new Usuario;
 
-$dadosDoTatuador = $tatuador->exibir();
+$usuario = new Usuario;
+$estilo = new Estilo;
+
+
+$dadosUsuario = $usuario->exibir();
+$dadosEstilo = $estilo->exibir();
+
 ?>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <section class="usuarios">
+    <h1 class="text-center">Nossos artistas</h1>
+    <div class="d-flex justify-content-center container text-center">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <?php foreach($dadosUsuario as $umUsuario){?>
+            <div class="col">    
+                <div class="card text-center m-3 text-bg-dark">
+                    <p>
+                        <img src="assets/images/perfil/<?=$umUsuario['foto_perfil']?>" class="card-img-top foto-perfil m-4" alt="foto perfil">
+                        <br>
+                        <a class="btn btn-outline-danger m-4" href="#">Veja as artes deste artista</a>
+                    </p>
+                </div>
+            </div>    
+            <?php } ?>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets/images/perfil/dog.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/images/perfil/loira.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/images/perfil/menina.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <section class="destaque-artista-index">
-        <h1 class="text-center">Artistas</h1>
-
-        <div class="destaqueArtistas">
-            <!-- <img src="" alt=""> -->
-        </div>
-        
-        <div class="botao-saiba-mais-index">
-            <p class="text-center">
-                <a href="#">Ver Mais</a>
-            </p>
-        </div>
+    </div>        
     </section>
     
     <section class="estilos">
-        <h1 class="text-center">Estilos</h1>
-
-        <div class="cardsEstilos text-center">
-            <img src="./assets/estilos/teste.png" alt="">
-
-            <img src="./assets/estilos/teste.png" alt="">
-
-            <img src="./assets/estilos/teste.png" alt="">
-
-            <img src="./assets/estilos/teste.png" alt="">
-
-            <img src="./assets/estilos/teste.png" alt="">
-
-            <img src="./assets/estilos/teste.png" alt="">
+    <h1 class="text-center">Estilos</h1>
+    <div class="d-flex justify-content-center container text-center">   
+    <?php foreach($dadosEstilo as $umEstilo){?>
+        <div class="card m-5 text-bg-dark" style="width: 12rem;">
+            <div class="card-body">
+                <h3 style="color: #CA012E;" class="card-text"><?=$umEstilo['nome']?></h3>
+            </div>
         </div>
-
-        <div class="botao-saiba-mais-index">
+            
+    <?php } ?>
+    </div>    
+        <div class="text-center">
             <p>
-                <a href="#">Ver Mais</a>
+                <a class="btn btn-outline-primary" href="#">Ver Mais</a>
             </p>
         </div>
         
