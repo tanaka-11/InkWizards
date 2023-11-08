@@ -19,7 +19,7 @@ $dadosUsuario = $usuario->exibir();
             <a class="btn btn-primary" href="">Voltar</a>
         </p>
         <p class="text-center"><a class="btn btn-primary" href="usuario-inserir.php">Inserir usuário</a></p>
-        <table class="table table-striped table-hover">
+        <table class="table table-dark table-striped table-hover">
             <thead>
                 <tr>
                     <th>Nome</th>
