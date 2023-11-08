@@ -19,10 +19,12 @@ $dadosEstilo = $estilo->exibir();
             <?php if ($umUsuario['tipo'] === 'tatuador') { ?>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card text-bg-dark m-4">
-                        <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio" alt="Imagem do perfil">
-                        <div class="card-img-overlay">
-                            <h5 class="card-title"><?= $umUsuario['nome'] ?></h5>
-                        </div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio" alt="Imagem do perfil">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title"><?= $umUsuario['nome'] ?></h5>
+                            </div>
+                        </div>    
                     </div>
                 </div>
             <?php } ?>
