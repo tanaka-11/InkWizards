@@ -8,12 +8,12 @@ use Inkwizards\Usuario;
     $dadosUsuario = $usuario->exibir();
 ?>
 <h1 class="text-center m-3">Contato</h1>
-<section class="d-flex justify-content-center container">
+<section class="justify-content-center container">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
         <?php foreach($dadosUsuario as $umUsuario){
             if($umUsuario['tipo'] === 'admin'){ ?>
                 <div class="col">
-                    <div class="card m-3 text-center text-bg-dark">
+                    <div class="card m-3 text-center text-bg-dark" style="min-width: 200px;">
                         <div class="row g-0">
                             <div class="col-4">
                                 <img src="assets/images/perfil/<?=$umUsuario['foto_perfil'];?>" class="img-fluid rounded-start foto-perfil" alt="Imagem do perfil">
