@@ -45,10 +45,10 @@ final class ControleDeAcesso {
     }
 
     // Metodo de saida dos usuarios (LOGOUT)
-    public function logout(string $pagina): void {
+    public function logout(): void {
         session_start();
         session_destroy();
-        switch($pagina) {
+        switch($this->getPagina()) {
             case "cadastro.php":
             case "index.php":
             case "login.php":
@@ -63,7 +63,7 @@ final class ControleDeAcesso {
             $urlRedirecionamento = "../login.php?logout";
         }
 
-        header("Location:".$urlRedirecionamento);
+        header("location:".$urlRedirecionamento);
         exit();
     }
 
