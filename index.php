@@ -31,19 +31,15 @@ $dadosEstilo = $estilo->exibir();
 </div>
 </section>
 
-
-
-
-
 <section class="estilos">
     <h1 class="text-center">Estilos</h1>
     <div class="container text-center">
         <div class="row">
             <?php foreach ($dadosEstilo as $umEstilo) { ?>
                 <div class="col-md-3">
-                    <div class="card m-5" style="background-color: grey">
+                    <div class="card text-bg-dark m-4">
                         <div class="card-body d-flex align-items-center justify-content-center">
-                            <h3 style="color: #242C33; height: 60px;" class="card-text"><?=$umEstilo['nome']?></h3>
+                            <h3 style="color: #CB002D; height: 60px;" class="card-text"><?=$umEstilo['nome']?></h3>
                         </div>
                     </div>
                 </div>
