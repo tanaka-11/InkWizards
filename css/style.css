@@ -1,6 +1,15 @@
 * {
     box-sizing: border-box;
 }
+main {
+    flex: 1;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: grey;
+}
 
 .foto-perfil {
     height: 200px;
@@ -19,12 +28,3 @@
     display: flex;
     justify-content: space-between;
 }
-
-body {background-color: grey;}
-
-
-main {
-    min-height: 85vh;
-}
-
-  
