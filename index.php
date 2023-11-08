@@ -14,7 +14,8 @@ $dadosEstilo = $estilo->exibir();
     <h1 class="text-center">Nossos artistas</h1>
     <div class="d-flex justify-content-center container text-center">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
-            <?php foreach($dadosUsuario as $umUsuario){?>
+        <?php foreach($dadosUsuario as $umUsuario){ ?>
+            <?php if($umUsuario['tipo'] === 'tatuador') {?>
             <div class="col">    
                 <div class="card text-center m-3 text-bg-dark">
                     <p>
@@ -24,7 +25,8 @@ $dadosEstilo = $estilo->exibir();
                     </p>
                 </div>
             </div>    
-            <?php } ?>
+            <?php }?>
+        <?php } ?>
         </div>
     </div>        
     </section>
@@ -40,18 +42,10 @@ $dadosEstilo = $estilo->exibir();
         </div>
             
     <?php } ?>
-    </div>    
-        <div class="text-center">
-            <p>
-                <a class="btn btn-outline-primary" href="#">Ver Mais</a>
-            </p>
-        </div>
-        
     </section>
 
     <section class="contatos">
         <h1 class="text-center">Contato</h1>
-        
         <div class="contato text-center">
             <p>
             Entre em contato conosco no email InkWizards@gmail.com
