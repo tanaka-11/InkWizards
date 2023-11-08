@@ -1,13 +1,14 @@
 <?php
-use Inkwizards\{Estilo, Usuario};
+use Inkwizards\{Estilo, Portfolio, Usuario};
 require_once 'inc/cabecalho.php';
 
 $usuario = new Usuario;
 $estilo = new Estilo;
-
+$portfolio = new Portfolio;
 
 $dadosUsuario = $usuario->exibir();
 $dadosEstilo = $estilo->exibir();
+$dadosPortfolio = $portfolio->exibirComEstilo();
 
 
 ?>
@@ -19,12 +20,12 @@ $dadosEstilo = $estilo->exibir();
             <?php if ($umUsuario['tipo'] === 'tatuador') { ?>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card text-bg-dark m-4">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio" alt="Imagem do perfil">
+                        
+                            <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio align-self-center" alt="Imagem do perfil">
                             <div class="card-img-overlay">
-                                <h5 class="card-title"><?= $umUsuario['nome'] ?></h5>
+                                <h5 class="card-title" style="color:#CB002D"><?= $umUsuario['nome'] ?></h5>
                             </div>
-                        </div>    
+                      
                     </div>
                 </div>
             <?php } ?>
@@ -32,6 +33,7 @@ $dadosEstilo = $estilo->exibir();
     </div>
 </div>
 </section>
+
 
 <section class="estilos">
     <h1 class="text-center">Estilos</h1>
@@ -50,31 +52,30 @@ $dadosEstilo = $estilo->exibir();
     </div>
 </section>
 
+<section class="portfolio">
+    <h1 class="text-center m-3 p-3">Tatuagens Destaque</h1>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <?php foreach ($dadosPortfolio as $umPortfolio) { ?>
+                <div class="col mb-4">
+                    <div class="card text-bg-dark">
+                        <img src="assets/images/portfolio/<?= $umPortfolio['imagem'] ?>" class="card-img foto-portfolio align-self-center" alt="...">
 
-<!-- 
-    <section class="contatos">
-        <h1 class="text-center">Contato</h1>
-        <div class="botao-contato text-center">
-            <p>
-                <a class="btn btn-outline-danger" href="contato.php">Contato</a>
-            </p>
+                        <div class="card-img-overlay">
+                            <h5 class="card-title"><?= $umPortfolio['estilo'] ?></h5>
+                            <p class="card-text"><?= $umPortfolio['descricao'] ?></p>
+                            <p class="card-text"><small><?= $umPortfolio['usuario'] ?></small></p>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
-        
-        </div>
-    </section>     -->
-    
-    <!-- <section class="cadastro">
+    </div>
+</section>
 
-    <h1 class="text-center">Cadastro/Login</h1>
 
-        <div class="cadastro-login text-center">
-            <p  class="botao-cadastro">
-                <a class="btn btn-primary" href="cadastro.php">Cadastro</a>
-                <a class="btn btn-primary" href="login.php">Login</a>
-            </p>
-        </div>
-            
-    </section> -->
+
+
 
 
 <?php require_once "inc/rodape.php" ?>
