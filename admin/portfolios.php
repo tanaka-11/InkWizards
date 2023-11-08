@@ -10,12 +10,13 @@ $dadosPortfolio = $portfolio->exibirUsuario();
 $dadosEstilo = $portfolio->estilo->exibir();
 ?>
 
-<section class="container" style="width: 550px;">
+<section>
     <h1 class="text-center m-3 p-3">Seu portfolio</h1>
     <p class="text-center">
         <a class="btn btn-outline-danger" href="portfolio-inserir.php">Inserir tatuagem</a>
     </p>
 
+<div class="d-flex justify-content-md-between">
 <?php foreach($dadosPortfolio as $umPortfolio){ ?>
     <div class="card m-3 text-bg-dark ">
 
@@ -36,7 +37,7 @@ $dadosEstilo = $portfolio->estilo->exibir();
         </div>
     </div>
 <?php } ?>
-
+</div>
 
 
         
