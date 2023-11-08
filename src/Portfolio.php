@@ -139,6 +139,27 @@ class Portfolio {
         move_uploaded_file($temporario, $pastaFinal);
     }
 
+    public function exibirComEstilo():array {
+        $sql = "SELECT 
+                    portfolio.id,
+                    portfolio.imagem,
+                    portfolio.descricao,
+                    estilos.nome AS estilo,
+                    usuarios.nome AS usuario
+                FROM portfolio
+                    INNER JOIN estilos ON portfolio.estilo_id = estilos.id
+                    INNER JOIN usuarios ON portfolio.usuario_id = usuarios.id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao exibir: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+
 
 
 

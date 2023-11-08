@@ -6,8 +6,7 @@ $portfolio = new Portfolio;
 $portfolio->usuario->setTipo($_SESSION['tipo']);
 $portfolio->usuario->setId($_SESSION['id']);
 
-$dadosPortfolio = $portfolio->exibirUsuario();
-$dadosEstilo = $portfolio->estilo->exibir();
+$dadosPortfolio = $portfolio->exibirComEstilo();
 ?>
 
 <section>
@@ -21,7 +20,7 @@ $dadosEstilo = $portfolio->estilo->exibir();
     <div class="card m-3 text-bg-dark ">
 
         <div class="card-body">
-            <p><?=$dadosEstilo[$umPortfolio['estilo_id'] - 1]['nome']?></p>    
+            <p><?=$umPortfolio['estilo']?></p>    
             <p><?=$umPortfolio['descricao']?></p>
             
             <div style="text-align: center;" id="imagemPortfolio">
