@@ -14,7 +14,7 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
 ?>
 
 <section class="usuarios">
-    <h1 class="text-center m-3">Artistas Destaque</h1>
+    <h2 class="text-center m-3">Artistas Destaque</h2>
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
             <?php foreach ($dadosUsuario as $umUsuario) { ?>
@@ -38,7 +38,7 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
 
 
 <section class="estilos">
-    <h1 class="text-center">Estilos</h1>
+    <h2 class="text-center">Estilos</h2>
     <div class="container text-center">
         <div class="row">
             <?php foreach ($dadosEstilo as $umEstilo) { ?>
@@ -55,7 +55,7 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
 </section>
 
 <section class="portfolio">
-    <h1 class="text-center m-3 p-3">Tatuagens Destaque</h1>
+    <h2 class="text-center m-3 p-3">Tatuagens Destaque</h2>
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php foreach ($dadosPortfolio as $umPortfolio) { ?>

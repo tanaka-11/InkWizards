@@ -1,21 +1,23 @@
 <?php
-use Inkwizards\{Estilo};
-require_once 'inc/cabecalho.php';
-$estilo = new Estilo;
-
-$dadosEstilo = $estilo->exibir();
+    require_once "inc/cabecalho.php";
 ?>
+<section class="portfolio">
+    <h2 class="text-center m-3 p-3">Tatuagens Destaque</h2>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <?php foreach ($dadosPortfolio as $umPortfolio) { ?>
+                <div class="col mb-4">
+                    <div class="card text-bg-dark">
+                        <img src="assets/images/portfolio/<?= $umPortfolio['imagem'] ?>" class="card-img foto-portfolio align-self-center w-100" alt="...">
 
-    <h1 class="text-center m-3">Estilos</h1>
-    <section class="d-flex justify-content-center container">
-<?php foreach($dadosEstilo as $umEstilo) {?>    
-    <div class="card w-75 m-3 text-center text-bg-dark">
-        <div class="card-body">
-            <h5 class="card-title"><?=$umEstilo['nome']?></h5>
-            <a href="#" class="btn btn-outline-danger">Acesse todas tatuagens deste estilo</a>
+                        <div class="card-img-overlay">
+                            <h5 class="card-title"><?= $umPortfolio['estilo'] ?></h5>
+                            <p class="card-text"><?= $umPortfolio['descricao'] ?></p>
+                            <p class="card-text"><small><?= $umPortfolio['usuario'] ?></small></p>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
     </div>
-<?php } ?>        
-    </section>
-
-<?php require_once 'inc/rodape.php'; ?>
+</section>

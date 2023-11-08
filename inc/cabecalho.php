@@ -64,7 +64,7 @@ $titulo = match($pagina) {
                     <a class="nav-link" href="artistas.php">Artistas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="estilo.php">Estilos</a>
+                    <a class="nav-link" href="estilos.php">Estilos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contato.php">Contato</a>
