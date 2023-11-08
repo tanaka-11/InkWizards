@@ -16,7 +16,7 @@ $dadosUsuario = $usuario->exibir();
 <section class="d-flex justify-content-center container">
     <?php foreach($dadosUsuario as $umUsuario){ ?>
         <?php if($umUsuario['tipo'] === 'tatuador'){ ?>
-        <div class="card  m-3 text-bg-dark " style="width: 650px;">
+        <div class="card m-3 text-bg-dark " style="width: 650px;">
             <div class="row g-0">
                 <div class="col-md-4">
                 <img  src="assets/images/perfil/<?=$umUsuario['foto_perfil'];?>" class="img-fluid rounded-start foto-portfolio" alt="Imagem do perfil">
