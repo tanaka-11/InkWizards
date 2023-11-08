@@ -30,39 +30,40 @@ if(isset($_POST['atualizar'])) {
 ?>
 
 <section class="container">
-    <h1 class="text-center">Atualizar portfolio</h1>
+    <h1 class="text-center m-3">Atualizar portfolio</h1>
     <form action="#" method="post" enctype="multipart/form-data">
         <!-- <div class="">
             <input class="form-control" type="file" name="imagemPortfolio" id="imagemPortfolio" accept="image/png, image/jpeg, image/gif, image/svg+xml">
         </div> -->
 
         <div class="form-floating m-3">
-                <label for="imagem-existente" class="form-label">Imagem existente:</label>
-                <input value="<?=$dadosPortfolio['imagem']?>" class="form-control" type="text" id="imagem-existente" name="imagem-existente" readonly>
+            <input value="<?=$dadosPortfolio['imagem']?>" class="form-control" type="text" id="imagem-existente" name="imagem-existente" readonly>
+            <label for="imagem-existente" class="form-label">Imagem existente:</label>
             </div>
 
             <div class="form-floating m-3">
-                <label for="imagem" class="form-label">Caso queira mudar, selecione outra imagem:</label>
                 <input class="form-control" type="file" id="imagem" name="imagem" accept="image/png, image/jpeg, image/gif, image/svg+xml">
+                <label for="imagem" class="form-label">Caso queira mudar, selecione outra imagem:</label>
             </div>
 
 
         <div class="form-floating m-3">
-                <label class="form-label" for="estilo">Estilo:</label>
-                <select class="form-select" name="estilo" id="estilo" required>
-                    <option value=""></option>
-
+            <select class="form-select" name="estilo" id="estilo" required>
+                <option value=""></option>
+                
                 <?php foreach($dadosEstilo as $umEstilo) { ?>	
 					<option <?php if($dadosPortfolio['estilo_id'] === $umEstilo['id']) echo " selected "?> value="<?=$umEstilo['id']?>">
-						<?=$umEstilo['nome']?>
-					</option>
+                    <?=$umEstilo['nome']?>
+                </option>
 				<?php } ?>
-
+                
                 </select>
+                <label class="form-label" for="estilo">Estilo:</label>
             </div>
 
         <div class="form-floating m-3">
-                <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Preencha se for alterar:"></textarea>
+                <textarea class="form-control" style="resize: none;" name="descricao" id="descricao" cols="30" rows="10" placeholder=""><?=$dadosPortfolio['descricao']?></textarea>
+                <label for="descricao">Descrição</label>
             </div>
 
         <div class="m-3">
