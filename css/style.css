@@ -1,6 +1,14 @@
 * {
     box-sizing: border-box;
 }
+main {
+    flex: 1;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 .foto-perfil {
     height: 200px;
@@ -13,14 +21,3 @@
     width: 350px;
     object-fit: cover;
 }
-
-.flex-portfolio {
-    display: flex;
-    justify-content: space-between;
-}
-
-main {
-    min-height: 85vh;
-}
-
-  
