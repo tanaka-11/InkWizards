@@ -61,7 +61,7 @@ final class ControleDeAcesso {
             $urlRedirecionamento = "../login.php?logout";
         }
 
-        header("Location: " . $urlRedirecionamento);
+        header("Location:" . $urlRedirecionamento);
         exit();
     }
 
