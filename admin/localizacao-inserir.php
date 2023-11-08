@@ -29,14 +29,16 @@ if(isset ($_POST['inserir'])) {
 ?>
     <!-- COMEÇO HTML -->
     <section class="container">
-        <h1 class="text-center">Localização</h1>
+        <h1 class="text-center m-3">Localização</h1>
         <p>
             <a class="btn btn-primary" href="meu-perfil.php">Voltar</a>
         </p>
         <form action="#" method="post" class="form-cadastro">
             <div class="form-floating m-3">
-                <input class="form-control" type="number" name="cep" id="cep" placeholder="" required>
+                <input class="form-control" type="text" name="cep" id="cep" placeholder="" maxlength="9" required>
                 <label for="cep">CEP:</label>
+                <button id="localizar-cep" class="btn btn-primary">Localizar CEP</button>
+                <b id="status"></b>
             </div>
             <div class="form-floating m-3">
                 <input class="form-control" type="text" name="endereco" id="endereco" placeholder="" required>

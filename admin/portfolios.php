@@ -15,29 +15,32 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
         <a class="btn btn-outline-danger" href="portfolio-inserir.php">Inserir tatuagem</a>
     </p>
 
-<div class="d-flex justify-content-md-between">
-<?php foreach($dadosPortfolio as $umPortfolio){ ?>
-    <div class="card m-3 text-bg-dark ">
-
-        <div class="card-body">
-            <p><?=$umPortfolio['estilo']?></p>    
-            <p><?=$umPortfolio['descricao']?></p>
-            
-            <div style="text-align: center;" id="imagemPortfolio">
-                <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom foto-portfolio">
+<div class="d-flex justify-content-center">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <?php foreach($dadosPortfolio as $umPortfolio){ ?>
+            <div class="col">
+                <div class="card m-3 text-bg-dark ">
+    
+                    <div class="card-body">
+                        <p><?=$umPortfolio['estilo']?></p>    
+                        <p><?=$umPortfolio['descricao']?></p>
+                        
+                        <div style="text-align: center;" id="imagemPortfolio">
+                            <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom foto-portfolio">
+                        </div>
+    
+                        <p class="m-3 text-center">
+                            <a class="btn btn-outline-primary" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
+    
+                            <a class="btn btn-outline-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
+                        </p>
+    
+                    </div>
+                </div>
             </div>
-
-            <p class="m-3 text-center">
-                <a class="btn btn-outline-primary" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
-
-                <a class="btn btn-outline-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
-            </p>
-
-        </div>
+        <?php } ?>
     </div>
-<?php } ?>
 </div>
-
 
         
     </section>    

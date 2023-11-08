@@ -19,11 +19,11 @@
     <p class="m-3"><a class="btn btn-primary" href="meu-perfil.php">Voltar</a></p>
     <form action="#" method="post" class="container">
         <div class="form-floating m-3">
-            <input class="form-control" type="number" name="celular" id="celular" placeholder="" required>
+            <input class="form-control" type="tel" name="celular" id="celular" placeholder="" required>
             <label for="celular">Celular:</label>
         </div>
         <div class="form-floating m-3">
-            <input class="form-control" type="number" name="telefone" id="telefone" placeholder="">
+            <input class="form-control" type="tel" name="telefone" id="telefone" placeholder="">
             <label for="telefone">Telefone:</label>
         </div>
         <div class="m-3">
