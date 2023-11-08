@@ -9,7 +9,7 @@ use Inkwizards\Usuario;
 ?>
 <h1 class="text-center m-3">Contato</h1>
 <section class="d-flex justify-content-center container">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
         <?php foreach($dadosUsuario as $umUsuario){
             if($umUsuario['tipo'] === 'admin'){ ?>
                 <div class="col">
@@ -28,7 +28,7 @@ use Inkwizards\Usuario;
                             <!-- FAZER METODO PARA APARECER PORTFOLIO (Na classe Usuario) -->
                             
                             <div class="card-body">
-                                <a href="artista.php?id=<?=$umUsuario['id']?>" class="btn btn-danger">Clique para entrar em contato</a>
+                                <a href="admin.php?id=<?=$umUsuario['id']?>" class="btn btn-danger">Clique para entrar em contato</a>
                             </div>
                             </div>
                         </div>
