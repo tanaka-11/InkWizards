@@ -4,10 +4,10 @@
 <footer>
     <div class="text-center text-bg-dark">
         <p class="p-4 pb-1">Alguns direitos reservados &copy;</p>
-        <div class="btn-group m-3">
-            <button class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></button>
-            <button class="btn btn-outline-secondary"><i class="bi bi-linkedin"></i></button>
-            <button class="btn btn-outline-secondary"><i class="bi bi-github"></i></button>
+        <div class="btn-group p-3">
+            <a href="https://linktr.ee/inkwizards" target="_blank" class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></a>
+            <a href="https://linktr.ee/inkwizards" target="_blank" class="btn btn-outline-secondary"><i class="bi bi-linkedin"></i></a>
+            <a href="https://linktr.ee/inkwizards" target="_blank" class="btn btn-outline-secondary"><i class="bi bi-github"></i></a>
         </div>
     </div>
 </footer>
