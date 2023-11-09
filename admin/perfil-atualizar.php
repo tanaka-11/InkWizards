@@ -26,7 +26,7 @@ use Inkwizards\Usuario;
         }
 
         $usuario->setDescricao($_POST['descricao']);
-        $usuario->setTipo($_POST['tipo']);
+        $usuario->setTipo($_SESSION['tipo']);
 
         $usuario->atualizar();
         header("location:meu-perfil.php");
@@ -57,17 +57,6 @@ use Inkwizards\Usuario;
             <div class="form-floating m-3">
                 <input class="form-control" type="password" name="senha" id="senha" placeholder="">
                 <label for="senha">Senha:</label>
-            </div>
-            <div class="form-floating m-3">
-                <select class="form-select" name="tipo" id="tipo">
-                    <option value="" disabled>Escolha um tipo</option>
-                    <option <?php if($dados['tipo'] === "tatuador") echo "selected" ?> value="tatuador">Tatuador</option>
-                    <option <?php if($dados['tipo'] === "cliente") echo "selected" ?> value="cliente">Cliente</option>
-                    <?php if($_SESSION['tipo'] === "admin") { ?>
-                        <option <?php if($dados['tipo'] === "admin") echo "selected" ?> value="admin">Administrador</option>
-                    <?php } ?>
-                </select>
-                <label for="tipo">Tipo de usuário:</label>
             </div>
             <div class="form-floating m-3">
                 <textarea class="form-control" name="descricao" id="descricao" style="resize: none;" cols="30" rows="10" placeholder=""><?=$dados['descricao']?></textarea>
