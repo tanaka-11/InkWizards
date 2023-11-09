@@ -30,10 +30,8 @@ if(isset ($_POST['inserir'])) {
     <!-- COMEÇO HTML -->
     <section class="container">
         <h1 class="text-center m-3">Localização</h1>
-        <p>
-            <a class="btn btn-primary" href="meu-perfil.php">Voltar</a>
-        </p>
         <form action="#" method="post" class="form-cadastro">
+            <p><a class="btn btn-danger" href="meu-perfil.php">Voltar</a></p>
             <div class="form-floating m-3">
                 <input class="form-control" type="text" name="cep" id="cep" placeholder="" maxlength="9" required>
                 <label for="cep">CEP:</label>
@@ -57,7 +55,7 @@ if(isset ($_POST['inserir'])) {
                 <label for="complemento">Complemento:</label>
             </div>
             <div class="m-3">
-                <button class="btn btn-primary" type="submit" name="inserir">Adicionar</button>
+                <button class="btn btn-danger" type="submit" name="inserir">Adicionar</button>
             </div>
         </form>
     </section>

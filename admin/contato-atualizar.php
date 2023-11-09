@@ -15,9 +15,9 @@ if(isset($_POST['atualizar'])){
 }
 ?>
 
-<h1 class="text-center">Atualizar contato</h1>
-    <p class="m-3"><a class="btn btn-primary" href="meu-perfil.php">Voltar</a></p>
-    <form action="#" method="post" class="container">
+<h1 class="text-center m-3">Atualizar contato</h1>
+<form action="#" method="post" class="container">
+        <p class="m-3"><a class="btn btn-danger" href="meu-perfil.php">Voltar</a></p>
         <div class="form-floating m-3">
             <input value="<?=$dadosContato['celular']?>" class="form-control" type="number" name="celular" id="celular" placeholder="" required>
             <label for="celular">Celular:</label>
@@ -27,7 +27,7 @@ if(isset($_POST['atualizar'])){
             <label for="telefone">Telefone:</label>
         </div>
         <div class="m-3">
-            <button class="btn btn-primary" type="submit" name="atualizar">Atualizar</button>
+            <button class="btn btn-danger" type="submit" name="atualizar">Atualizar</button>
         </div>
     </form>
 <?php require "../inc/rodape.php"; ?>

@@ -33,6 +33,7 @@ if(isset($_POST['atualizar'])) {
 <section class="container">
     <h1 class="text-center m-3">Atualizar portfolio</h1>
     <form action="#" method="post" enctype="multipart/form-data">
+        <p><a class="btn btn-danger" href="portfolios.php">Voltar</a></p>
         <!-- <div class="">
             <input class="form-control" type="file" name="imagemPortfolio" id="imagemPortfolio" accept="image/png, image/jpeg, image/gif, image/svg+xml">
         </div> -->
@@ -68,7 +69,7 @@ if(isset($_POST['atualizar'])) {
             </div>
 
         <div class="m-3">
-            <button type="submit" name="atualizar" class="btn btn-primary">Atualizar</button>
+            <button type="submit" name="atualizar" class="btn btn-danger">Atualizar</button>
         </div>
     </form>
 </section>

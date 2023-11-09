@@ -8,8 +8,8 @@ use Inkwizards\Estilo;
     $estilos = $estilo->exibir();
 ?>
 <section class="container">
-    <h1 class="text-center">Estilos</h1>
-    <p><a class="btn btn-primary" href="estilos-inserir.php">Inserir estilo</a></p>
+    <h1 class="text-center m-3">Estilos</h1>
+    <p><a class="btn btn-danger" href="estilos-inserir.php">Inserir estilo</a></p>
     <table class="table table-dark table-striped table-hover">
         <thead>
             <tr>

@@ -15,9 +15,9 @@
         header('location:meu-perfil.php');
     }    
 ?>
-    <h1 class="text-center">Contato</h1>
-    <p class="m-3"><a class="btn btn-primary" href="meu-perfil.php">Voltar</a></p>
+    <h1 class="text-center m-3">Contato</h1>
     <form action="#" method="post" class="container">
+        <p class="m-3"><a class="btn btn-danger" href="meu-perfil.php">Voltar</a></p>
         <div class="form-floating m-3">
             <input class="form-control" type="tel" name="celular" id="celular" placeholder="" required>
             <label for="celular">Celular:</label>
@@ -27,7 +27,7 @@
             <label for="telefone">Telefone:</label>
         </div>
         <div class="m-3">
-            <button class="btn btn-primary" type="submit" name="inserir">Adicionar</button>
+            <button class="btn btn-danger" type="submit" name="inserir">Adicionar</button>
         </div>
     </form>
 <?php require "../inc/rodape.php"; ?>

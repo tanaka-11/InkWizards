@@ -7,7 +7,11 @@ $portfolio = new Portfolio;
 $portfolio->usuario->setTipo($_SESSION['tipo']);
 $portfolio->usuario->setId($_SESSION['id']);
 
-$dadosPortfolio = $portfolio->exibirComEstilo();
+if($_SESSION['tipo'] === 'admin'){
+    $dadosPortfolio = $portfolio->exibirComEstilo();
+} elseif($_SESSION['tipo'] === 'tatuador') {
+    $dadosPortfolio = $portfolio->exibirPorUsuario();
+}
 ?>
 
 <section>

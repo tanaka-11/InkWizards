@@ -21,11 +21,9 @@ use Inkwizards\Localizacao;
     }
 ?>
 <section class="container">
-        <h1 class="text-center">Localização</h1>
-        <p>
-            <a class="btn btn-primary" href="meu-perfil.php">Voltar</a>
-        </p>
+        <h1 class="text-center m-3">Localização</h1>
         <form action="#" method="post" class="form-cadastro">
+            <p><a class="btn btn-danger" href="meu-perfil.php">Voltar</a></p>
             <div class="form-floating m-3">
                 <input value="<?=$dadosLocalizacao['cep']?>" class="form-control" type="number" name="cep" id="cep" placeholder="" required>
                 <label for="cep">CEP:</label>
@@ -47,7 +45,7 @@ use Inkwizards\Localizacao;
                 <label for="complemento">Complemento:</label>
             </div>
             <div class="m-3">
-                <button class="btn btn-primary" type="submit" name="atualizar">Atualizar</button>
+                <button class="btn btn-danger" type="submit" name="atualizar">Atualizar</button>
             </div>
         </form>
     </section>

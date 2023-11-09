@@ -36,8 +36,8 @@ use Inkwizards\Usuario;
 ?>
     <section class="container">
         <h1 class="text-center m-3">Atualizar Dados</h1>
-        <p><a class="btn btn-primary" href="meu-perfil.php">Voltar</a></p>
         <form action="#" method="post" enctype="multipart/form-data">
+            <p><a class="btn btn-danger" href="meu-perfil.php">Voltar</a></p>
             <div class="form-floating m-3">
                 <input class="form-control" value="<?=$dados['foto_perfil']?>" type="text" name="foto-perfil-atual" id="foto-perfil-atual" readonly>
                 <label for="foto-perfil-atual">Foto de perfil atual:</label>
@@ -63,7 +63,7 @@ use Inkwizards\Usuario;
                 <label for="descricao">Descrição</label>
             </div>
             <div class="m-3">
-                <button class="btn btn-primary" type="submit" name="atualizar">Atualizar</button>
+                <button class="btn btn-danger" type="submit" name="atualizar">Atualizar</button>
             </div>
         </form>
     </section>

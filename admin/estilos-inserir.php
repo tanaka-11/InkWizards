@@ -13,14 +13,15 @@ use Inkwizards\Estilo;
     }
 ?>
 <div class="container">
-    <h1 class="text-center">Inserir estilo</h1>
+    <h1 class="text-center m-3">Inserir estilo</h1>
     <form action="#" method="post">
+        <p><a class="btn btn-danger" href="estilos.php">Voltar</a></p>
         <div class="form-floating m-3">
             <input class="form-control" type="text" name="nome" id="nome" placeholder="">
             <label for="nome">Nome:</label>
         </div>
         <div class="m-3">
-            <button class="btn btn-primary" type="submit" name="inserir">Inserir</button>
+            <button class="btn btn-danger" type="submit" name="inserir">Inserir</button>
         </div>
     </form>
 </div>
