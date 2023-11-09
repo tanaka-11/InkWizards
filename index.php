@@ -21,7 +21,7 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
                 <?php if ($umUsuario['tipo'] === 'tatuador') { ?>
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card text-bg-dark m-4">
-                            <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio w-100" alt="Imagem do perfil">
+                            <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio w-100 h-100" alt="Imagem do perfil" style="min-height: 520px;">
 
                             <div class="card-img-overlay d-flex flex-column justify-content-between">
                                 <h5 class="card-title"><?= $umUsuario['nome'] ?></h5>
@@ -65,7 +65,7 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
             <?php foreach ($dadosPortfolio as $umPortfolio) { ?>
                 <div class="col mb-4">
                     <div class="card text-bg-dark">
-                        <img src="assets/images/portfolio/<?= $umPortfolio['imagem'] ?>" class="card-img foto-portfolio align-self-center w-100" alt="...">
+                        <img src="assets/images/portfolio/<?= $umPortfolio['imagem'] ?>" class="card-img foto-portfolio align-self-center w-100 h-100" alt="Foto Portfolio" style="min-height: 460px;">
 
                         <div class="card-img-overlay">
                             <h5 class="card-title"><?= $umPortfolio['estilo'] ?></h5>
