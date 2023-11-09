@@ -1,12 +1,13 @@
 <?php
 
-use Inkwizards\Usuario;
+use Inkwizards\Portfolio;
 
     require_once "inc/cabecalho.php";
 
-    $usuario = new Usuario;
-    $usuario->setId($_GET['id']);
-    $dadosUsuario = $usuario->exibirUm();
+    $portfolio = new Portfolio;
+    $portfolio->usuario->setId($_GET['id']);
+    $dadosUsuario = $portfolio->usuario->exibirUm();
+    $dadosPortfolio = $portfolio->exibirPorUsuario();
 ?>
 <section class="container">
     
@@ -30,6 +31,21 @@ use Inkwizards\Usuario;
     <?php if (!empty($dadosContato)) { ?>
         <p><?=$dadosContato['celular']?></p>
     <?php } ?>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <?php foreach ($dadosPortfolio as $umPortfolio) { ?>
+            <div class="col mb-4">
+                <div class="card text-bg-dark">
+                    <img src="assets/images/portfolio/<?= $umPortfolio['imagem'] ?>" class="card-img foto-portfolio align-self-center w-100" alt="...">
+
+                    <div class="card-img-overlay">
+                        <h5 class="card-title"><?= $umPortfolio['estilo'] ?></h5>
+                        <p class="card-text"><?= $umPortfolio['descricao'] ?></p>
+                        <p class="card-text"><small><?= $umPortfolio['usuario'] ?></small></p>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
 </div>
 
 </section>

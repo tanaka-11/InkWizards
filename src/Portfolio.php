@@ -71,7 +71,7 @@ class Portfolio {
         if ($this->usuario->getTipo() !== 'admin') {
             $sql = "SELECT * FROM portfolio WHERE usuario_id = :usuario_id";
         } else {
-            $sql = "SELECT * FROM portfolio"; 
+            $sql = "SELECT * FROM portfolio";
         }
 
         try {
@@ -175,6 +175,29 @@ class Portfolio {
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":estilo_id", $this->estilo->getId(), PDO::PARAM_INT);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro ao exibir: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+
+    public function exibirPorUsuario():array {
+        $sql = "SELECT
+                    portfolio.id,
+                    portfolio.imagem,
+                    portfolio.descricao,
+                    estilos.nome AS estilo,
+                    usuarios.nome AS usuario
+                FROM portfolio
+                    INNER JOIN estilos ON portfolio.estilo_id = estilos.id
+                    INNER JOIN usuarios ON portfolio.usuario_id = usuarios.id
+                WHERE usuario_id = :usuario_id";
+
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":usuario_id", $this->usuario->getId(), PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {
