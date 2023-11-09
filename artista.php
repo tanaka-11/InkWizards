@@ -35,7 +35,7 @@ use Inkwizards\Portfolio;
         <?php foreach ($dadosPortfolio as $umPortfolio) { ?>
             <div class="col mb-4">
                 <div class="card text-bg-dark">
-                    <img src="assets/images/portfolio/<?= $umPortfolio['imagem'] ?>" class="card-img foto-portfolio align-self-center w-100" alt="...">
+                    <img src="assets/images/portfolio/<?= $umPortfolio['imagem'] ?>" class="card-img foto-portfolio align-self-center w-100 h-100" style="min-height:436px" alt="...">
 
                     <div class="card-img-overlay">
                         <h5 class="card-title"><?= $umPortfolio['estilo'] ?></h5>
