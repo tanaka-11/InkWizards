@@ -23,9 +23,9 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
                         <div class="card text-bg-dark m-4">
                             <img src="assets/images/perfil/<?= $umUsuario['foto_perfil'] ?>" class="card-img foto-portfolio w-100" alt="Imagem do perfil">
 
-                            <div class="card-img-overlay">
+                            <div class="card-img-overlay d-flex flex-column justify-content-between">
                                 <h5 class="card-title"><?= $umUsuario['nome'] ?></h5>
-                                <p class="text-center" style="padding-top: 85%;">
+                                <p class="text-center">
                                     <a href="artista.php?id=<?= $umUsuario['id'] ?>" class="btn btn-danger">Veja mais</a>
                                 </p>
                             </div>
