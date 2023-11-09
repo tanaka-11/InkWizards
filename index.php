@@ -25,11 +25,11 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
 
                             <div class="card-img-overlay">
                                 <h5 class="card-title"><?= $umUsuario['nome'] ?></h5>
+                                <p class="text-center" style="padding-top: 85%;">
+                                    <a href="artista.php?id=<?= $umUsuario['id'] ?>" class="btn btn-danger">Veja mais</a>
+                                </p>
                             </div>
 
-                            <p class="text-center m-3">
-                                <a href="artista.php?id=<?= $umUsuario['id'] ?>" class="btn btn-outline-danger">Veja mais</a>
-                            </p>
                         </div>
                     </div>
                 <?php } ?>
