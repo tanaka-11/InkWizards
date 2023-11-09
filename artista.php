@@ -40,7 +40,6 @@ use Inkwizards\Portfolio;
                     <div class="card-img-overlay">
                         <h5 class="card-title"><?= $umPortfolio['estilo'] ?></h5>
                         <p class="card-text"><?= $umPortfolio['descricao'] ?></p>
-                        <p class="card-text"><small><?= $umPortfolio['usuario'] ?></small></p>
                     </div>
                 </div>
             </div>
