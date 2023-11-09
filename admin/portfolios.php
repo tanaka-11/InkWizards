@@ -14,10 +14,10 @@ if($_SESSION['tipo'] === 'admin'){
 }
 ?>
 
-<section>
+<section class="container">
     <h1 class="text-center m-3 p-3">Seu portfolio</h1>
     <p class="text-center">
-        <a class="btn btn-outline-danger" href="portfolio-inserir.php">Inserir tatuagem</a>
+        <a class="btn btn-danger" href="portfolio-inserir.php">Inserir tatuagem</a>
     </p>
 
     <div class="d-flex justify-content-center">
@@ -36,11 +36,11 @@ if($_SESSION['tipo'] === 'admin'){
                             <p><?=$umPortfolio['estilo']?></p>
                             <p><?=$umPortfolio['descricao']?></p>
                             <div class="text-center" id="imagemPortfolio">
-                                <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom foto-portfolio">
+                                <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" style="max-width: 100%;" class="card-img-bottom foto-portfolio">
                             </div>
                             <p class="mt-3 text-center">
                                 <a class="btn btn-outline-primary" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
-                                <a class="btn btn-outline-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
+                                <a class="btn btn-outline-danger excluir" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
                             </p>
                         </div>
                     </div>

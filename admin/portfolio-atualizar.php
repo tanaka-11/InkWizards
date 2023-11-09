@@ -73,3 +73,4 @@ if(isset($_POST['atualizar'])) {
         </div>
     </form>
 </section>
+<?php require "../inc/rodape.php"; ?>

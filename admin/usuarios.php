@@ -37,7 +37,7 @@ $dadosUsuario = $usuario->exibir();
                     <td><?=$umUsuario['tipo']?></td>
                     <td class="text-center">
                         <a class="btn btn-warning" href="usuario-atualizar.php?id=<?=$umUsuario['id']?>">Atualizar</a>
-                        <a class="btn btn-danger" href="usuario-excluir.php?id=<?=$umUsuario['id']?>">Excluir</a>
+                        <a class="btn btn-danger excluir" href="usuario-excluir.php?id=<?=$umUsuario['id']?>">Excluir</a>
                     </td>
                 </tr>
                 <?php }?>
