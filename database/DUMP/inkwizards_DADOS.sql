@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Nov-2023 às 00:12
+-- Tempo de geração: 09-Nov-2023 às 01:39
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -122,7 +122,7 @@ INSERT INTO `usuarios` (`id`, `nome`, `foto_perfil`, `descricao`, `email`, `senh
 (1, 'Marina Tanaka', 'tanaka-espelho.jpg', 'Maloqueira do coração puro', 'tanaka@gmail.com', '$2y$10$l911Pxve5PqPFj.8C7H2Hum9qqvclv3jBvX4I9Syga.3fSU/XQ1Yy', 'tatuador'),
 (2, 'Andre Mocoto', 'andre.jpg', 'Cubista', 'andre@gmail.com', '$2y$10$S4esQ/3UKvekj0lrRmCzJ.p4mxEgP720.dtT.ZJRZ7GZ72LDrf4Py', 'tatuador'),
 (3, 'Luis Fernando', 'nando.jpg', 'Penetra', 'nando@gmail.com', '$2y$10$9G42rGoNGKcVMvqk0VIMR.SB0WHGy4v52jETQGsTh9cZkGID4avBG', 'tatuador'),
-(4, 'Admin', 'icon-admin.jpg', 'Admin do Site', 'admin@admin.com', '$2y$10$kRGBI0GW3xPIKp9q5N9UEeD8YclDq7cQmMqkS5.F1UWZ7e7AdR2WK', 'admin'),
+(4, 'InkWizards Admin', 'icon-admin.jpg', 'Admin do Site', 'inkwizards.tatto@gmail.com', '$2y$10$kRGBI0GW3xPIKp9q5N9UEeD8YclDq7cQmMqkS5.F1UWZ7e7AdR2WK', 'admin'),
 (5, 'Cliente', 'dog.jpg', 'Cliente', 'cliente@cliente.com', '$2y$10$LrfQ502kt53rCZpHMfHNpOtFnFm2IKVAIfX8FNfRDR1oTd6eh7nIG', 'cliente');
 
 --
