@@ -11,14 +11,14 @@ $usuario = new Usuario;
 $dadosUsuario = $usuario->exibir();
 
 ?>
-    <h1 class="text-center">Usuarios - <?=count($dadosUsuario)?></h1>
+    <h1 class="text-center m-3">Usuarios - <?=count($dadosUsuario)?></h1>
     
     <!-- Tabela com os dados dos usuarios -->
     <div class="container">
         <p>
-            <a class="btn btn-primary" href="">Voltar</a>
+            <a class="btn btn-danger" href="">Voltar</a>
         </p>
-        <p class="text-center"><a class="btn btn-primary" href="usuario-inserir.php">Inserir usuário</a></p>
+        <p class="text-center"><a class="btn btn-danger" href="usuario-inserir.php">Inserir usuário</a></p>
         <table class="table table-dark table-striped table-hover">
             <thead>
                 <tr>
