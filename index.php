@@ -26,6 +26,10 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
                             <div class="card-img-overlay">
                                 <h5 class="card-title"><?= $umUsuario['nome'] ?></h5>
                             </div>
+
+                            <p class="text-center m-3">
+                                <a href="artista.php?id=<?= $umUsuario['id'] ?>" class="btn btn-outline-danger">Veja mais</a>
+                            </p>
                         </div>
                     </div>
                 <?php } ?>
@@ -45,7 +49,7 @@ $dadosPortfolio = $portfolio->exibirComEstilo();
                 <div class="col-md-3">
                     <div class="card text-bg-dark m-4">
                         <div class="card-body d-flex align-items-center justify-content-center">
-                            <h3 style="color: #CB002D; height: 60px;" class="card-text"><?=$umEstilo['nome']?></h3>
+                            <h3 style="color: #CB002D;" class="card-text"><?=$umEstilo['nome']?></h3>
                         </div>
                     </div>
                 </div>

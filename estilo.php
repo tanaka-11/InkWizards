@@ -11,7 +11,7 @@ use Inkwizards\Portfolio;
 <section class="portfolio">
     <h2 class="text-center m-3 p-3">Tatuagens</h2>
     <div class="container">
-        <p><a class="btn btn-primary" href="estilos.php">Voltar</a></p>
+        <p><a class="btn btn-danger" href="estilos.php">Voltar</a></p>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php foreach ($dadosPortfolio as $umPortfolio) { ?>
                 <div class="col mb-4">
