@@ -30,3 +30,4 @@ use Inkwizards\Estilo;
         </tbody>
     </table>
 </section>
+<?php require_once "../inc/rodape.php" ?>

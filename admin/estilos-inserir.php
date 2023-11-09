@@ -25,3 +25,4 @@ use Inkwizards\Estilo;
         </div>
     </form>
 </div>
+<?php require "../inc/rodape.php"; ?>

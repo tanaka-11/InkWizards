@@ -40,7 +40,7 @@ if($_SESSION['tipo'] === 'admin'){
                         <p class="m-3 text-center">
                             <a class="btn btn-outline-primary" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
     
-                            <a class="btn btn-outline-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
+                            <a class="btn btn-outline-danger excluir" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
                         </p>
     
                     </div>
