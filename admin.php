@@ -11,7 +11,7 @@ use Inkwizards\Usuario;
 <section class="container">
     
 <div class="card text-bg-dark text-center m-3 p-3" style="width: 100%;">
-    <p class="text-start"><a class="btn btn-primary" href="contato.php">Voltar</a></p>
+    <p class="text-start"><a class="btn btn-danger" href="contato.php">Voltar</a></p>
     <div id="foto-de-perfil">
         <img src="assets/images/perfil/<?= $dadosUsuario['foto_perfil'] ?>" class="card-img-top foto-perfil" alt="Foto de perfil">
     </div>
