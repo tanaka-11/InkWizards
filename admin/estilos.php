@@ -10,7 +10,7 @@ use Inkwizards\Estilo;
 <section class="container">
     <h1 class="text-center">Estilos</h1>
     <p><a class="btn btn-primary" href="estilos-inserir.php">Inserir estilo</a></p>
-    <table class="table table-striped table-hover">
+    <table class="table table-dark table-striped table-hover">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -23,7 +23,7 @@ use Inkwizards\Estilo;
                     <td><?=$dadosEstilo['nome']?></td>
                     <td class="text-center">
                         <a class="btn btn-warning" href="estilos-atualizar.php?id=<?=$dadosEstilo['id']?>">Atualizar</a>
-                        <a class="btn btn-danger" href="estilos-excluir.php?id=<?=$dadosEstilo['id']?>">Excluir</a>
+                        <a class="btn btn-danger excluir" href="estilos-excluir.php?id=<?=$dadosEstilo['id']?>">Excluir</a>
                     </td>
                 </tr>
             <?php } ?>
