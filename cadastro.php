@@ -72,7 +72,7 @@ if(isset ($_POST['cadastrar'])) {
         </div>
 
         <div class="m-3">
-            <button class="btn btn-primary" type="submit" name="cadastrar">Cadastrar</button>
+            <button class="btn btn-danger" type="submit" name="cadastrar">Cadastrar</button>
         </div>
     </form>
 

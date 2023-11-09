@@ -1,6 +1,7 @@
 <?php
 use Inkwizards\{Portfolio};
 require_once "../inc/cabecalho-admin.php";
+$sessao->verificaAcessoNaoCliente();
 
 $portfolio = new Portfolio;
 

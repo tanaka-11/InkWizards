@@ -36,6 +36,13 @@ final class ControleDeAcesso {
         }
     }
 
+    public function verificaAcessoNaoCliente():void {
+        if($_SESSION['tipo'] === 'cliente'){
+            header("location:nao-autorizado.php");
+            die();
+        }
+    }
+
     // Metodo de acesso dos usuarios (LOGIN)
     public function login(int $id, string $nome, string $tipo): void {
         // Variaveis de sessão

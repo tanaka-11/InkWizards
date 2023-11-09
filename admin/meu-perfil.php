@@ -37,29 +37,31 @@ $dadosUsuario = $usuario->exibirUm();
         </div>
 
 
-        <?php if (empty($dadosLocalizacao)) { ?>
-            <p>
-                <a class="btn btn-outline-primary" href="localizacao-inserir.php">Adicionar localização</a>
-            </p>
-        <?php } else { ?>
-            <p>
-                <?= $dadosLocalizacao['endereco'] ?> <br>
-                <a class="btn btn-outline-primary" href="localizacao-atualizar.php?id=<?= $dadosLocalizacao['id'] ?>">Editar</a>
-                <a class="btn btn-outline-danger" href="localizacao-excluir.php?id=<?= $dadosLocalizacao['id'] ?>">Excluir</a>
-            </p>
-        <?php } ?>
+        <?php if($_SESSION['tipo'] !== 'cliente') { 
+            if (empty($dadosLocalizacao)) { ?>
+                <p>
+                    <a class="btn btn-outline-primary" href="localizacao-inserir.php">Adicionar localização</a>
+                </p>
+            <?php } else { ?>
+                <p>
+                    <?= $dadosLocalizacao['endereco'] ?> <br>
+                    <a class="btn btn-outline-primary" href="localizacao-atualizar.php?id=<?= $dadosLocalizacao['id'] ?>">Editar</a>
+                    <a class="btn btn-outline-danger" href="localizacao-excluir.php?id=<?= $dadosLocalizacao['id'] ?>">Excluir</a>
+                </p>
+            <?php } ?>
 
-        <?php if (empty($dadosContato)) { ?>
-            <p>
-                <a class="btn btn-outline-primary" href="contato-inserir.php">Adicionar contato</a>
-            </p>
-        <?php } else { ?>
-            <p>
-                <?= $dadosContato['celular'] ?> <br>
-                <a class="btn btn-outline-primary" href="contato-atualizar.php?id=<?= $dadosContato['id'] ?>">Editar</a>
-                <a class="btn btn-outline-danger" href="contato-excluir.php?id=<?= $dadosContato['id'] ?>">Excluir</a>
-            </p>
-        <?php } ?>
+            <?php if (empty($dadosContato)) { ?>
+                <p>
+                    <a class="btn btn-outline-primary" href="contato-inserir.php">Adicionar contato</a>
+                </p>
+            <?php } else { ?>
+                <p>
+                    <?= $dadosContato['celular'] ?> <br>
+                    <a class="btn btn-outline-primary" href="contato-atualizar.php?id=<?= $dadosContato['id'] ?>">Editar</a>
+                    <a class="btn btn-outline-danger" href="contato-excluir.php?id=<?= $dadosContato['id'] ?>">Excluir</a>
+                </p>
+            <?php }
+            } ?>
 
         <div class="card-body">
             <a class="btn btn-outline-danger" href="perfil-atualizar.php">Editar Dados de Perfil</a>
