@@ -28,3 +28,4 @@ use Inkwizards\Portfolio;
         </div>
     </div>
 </section>
+<?php require_once "inc/rodape.php"; ?>
