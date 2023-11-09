@@ -2,31 +2,14 @@
 </main>
 
 <footer>
-    <nav class="navbar navbar-expand-md border-bottom bg-dark" data-bs-theme="dark">
-        <div class="container-fluid">
-            
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="artistas.php">Artistas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="estilo.php">Estilos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contato.php">Contato</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="text-center text-bg-dark">
+        <p class="p-4 pb-1">Alguns direitos reservados &copy;</p>
+        <div class="btn-group m-3">
+            <button class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></button>
+            <button class="btn btn-outline-secondary"><i class="bi bi-linkedin"></i></button>
+            <button class="btn btn-outline-secondary"><i class="bi bi-github"></i></button>
         </div>
-    </nav>
+    </div>
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
