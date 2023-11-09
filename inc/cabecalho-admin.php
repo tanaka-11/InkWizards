@@ -97,3 +97,8 @@ $titulo = match($pagina) {
 </header>
 
 <main>
+    <dialog id="modal-exclusao" class="mt-4 shadow-lg text-center rounded text-bg-dark">    
+        <h2 class="alert alert-danger">Deseja realmente excluir?</h2>
+        <button id="sim" class="btn btn-success">Sim</button>
+        <button id="nao" class="btn btn-danger" autofocus>Não</button>
+    </dialog>
