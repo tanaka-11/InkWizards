@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Nov-2023 às 01:39
+-- Tempo de geração: 09-Nov-2023 às 01:42
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -96,7 +96,8 @@ INSERT INTO `portfolio` (`id`, `imagem`, `descricao`, `usuario_id`, `estilo_id`)
 (2, 'tatuagem3.jpg', 'Tatuagem no Pescoço', 1, 3),
 (3, 'tatuagem2.jpg', 'Tatuagem no Pescoço', 1, 1),
 (4, 'tatuagem1.jpg', 'Tatuagem no Braço', 1, 2),
-(5, 'tatuagem5.jpg', 'Tatuagem no Braço', 2, 4);
+(5, 'tatuagem5.jpg', 'Tatuagem no Braço', 2, 4),
+(6, 'tatuagem6.jpg', 'Tatuagem no Pescoço', 3, 2);
 
 -- --------------------------------------------------------
 
@@ -189,7 +190,7 @@ ALTER TABLE `localizacao`
 -- AUTO_INCREMENT de tabela `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
