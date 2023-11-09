@@ -23,9 +23,10 @@ if(isset($_POST['inserir'])){
 
 ?>
 
-<h1 class="text-center">Portfolio</h1>
+<h1 class="text-center m-3">Portfolio</h1>
 
 <form action="#" method="post" class="container" enctype="multipart/form-data">
+    <p><a class="btn btn-danger" href="portfolios.php">Voltar</a></p>
     <div class="form-floating m-3">
         <input class="form-control" type="file" name="imagem" id="imagem" placeholder="" accept="image/png, image/jpeg, image/gif, image/svg+xml">
         <label for="imagem">Inserir sua arte</label>
@@ -47,7 +48,7 @@ if(isset($_POST['inserir'])){
     </div>
 
     <div class="m-3">
-        <button class="btn btn-primary" type="submit" name="inserir">Inserir</button>
+        <button class="btn btn-danger" type="submit" name="inserir">Inserir</button>
     </div>
 </form>
 
