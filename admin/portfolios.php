@@ -20,21 +20,28 @@ if($_SESSION['tipo'] === 'admin'){
         <a class="btn btn-outline-danger" href="portfolio-inserir.php">Inserir tatuagem</a>
     </p>
 
-<div class="d-flex justify-content-center">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-        <?php foreach($dadosPortfolio as $umPortfolio){ ?>
-            <div class="col">
-                <div class="card m-3 text-bg-dark ">
-    
-                    <div class="card-body">
-                        <?php if($_SESSION['tipo'] === "admin") { ?>
-                            <h3><?=$umPortfolio['usuario']?></h3>
-                        <?php } ?>
-                        <p><?=$umPortfolio['estilo']?></p>    
-                        <p><?=$umPortfolio['descricao']?></p>
-                        
-                        <div style="text-align: center;" id="imagemPortfolio">
-                            <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom foto-portfolio">
+    <div class="d-flex justify-content-center">
+        <?php if (count($dadosPortfolio) === 1) { ?>
+            <div class="col col-12 col-md-6">
+        <?php } else { ?>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <?php } ?>
+            <?php foreach ($dadosPortfolio as $umPortfolio) { ?>
+                <div class="col mb-3">
+                    <div class="card text-bg-dark">
+                        <div class="card-body">
+                            <?php if ($_SESSION['tipo'] === "admin") { ?>
+                                <h3><?=$umPortfolio['usuario']?></h3>
+                            <?php } ?>
+                            <p><?=$umPortfolio['estilo']?></p>
+                            <p><?=$umPortfolio['descricao']?></p>
+                            <div class="text-center" id="imagemPortfolio">
+                                <img src="../assets/images/portfolio/<?=$umPortfolio['imagem']?>" alt="Foto tatuagem" class="card-img-bottom foto-portfolio">
+                            </div>
+                            <p class="mt-3 text-center">
+                                <a class="btn btn-outline-primary" href="portfolio-atualizar.php?id=<?=$umPortfolio['id']?>">Atualizar</a>
+                                <a class="btn btn-outline-danger" href="portfolio-excluir.php?id=<?=$umPortfolio['id']?>">Excluir</a>
+                            </p>
                         </div>
     
                         <p class="m-3 text-center">
@@ -45,13 +52,11 @@ if($_SESSION['tipo'] === 'admin'){
     
                     </div>
                 </div>
-            </div>
-        <?php } ?>
+            <?php } ?>
+        </div>
     </div>
-</div>
-
-        
-    </section>    
+</section>
+    
 <?php 
 require_once "../inc/rodape.php";
 ?>
