@@ -19,11 +19,11 @@ if(isset($_POST['atualizar'])){
 <form action="#" method="post" class="container">
         <p class="m-3"><a class="btn btn-danger" href="meu-perfil.php">Voltar</a></p>
         <div class="form-floating m-3">
-            <input value="<?=$dadosContato['celular']?>" class="form-control" type="number" name="celular" id="celular" placeholder="" required>
+            <input value="<?=$dadosContato['celular']?>" class="form-control" type="text" name="celular" id="celular" placeholder="" required>
             <label for="celular">Celular:</label>
         </div>
         <div class="form-floating m-3">
-            <input value="<?=$dadosContato['telefone']?>" class="form-control" type="number" name="telefone" id="telefone" placeholder="">
+            <input value="<?=$dadosContato['telefone']?>" class="form-control" type="text" name="telefone" id="telefone" placeholder="">
             <label for="telefone">Telefone:</label>
         </div>
         <div class="m-3">
