@@ -25,8 +25,10 @@ use Inkwizards\Localizacao;
         <form action="#" method="post" class="form-cadastro">
             <p><a class="btn btn-danger" href="meu-perfil.php">Voltar</a></p>
             <div class="form-floating m-3">
-                <input value="<?=$dadosLocalizacao['cep']?>" class="form-control" type="number" name="cep" id="cep" placeholder="" required>
+                <input value="<?=$dadosLocalizacao['cep']?>" class="form-control" type="text" name="cep" id="cep" placeholder="" required>
                 <label for="cep">CEP:</label>
+                <button id="localizar-cep" class="btn btn-primary">Localizar CEP</button>
+                <b id="status"></b>
             </div>
             <div class="form-floating m-3">
                 <input value="<?=$dadosLocalizacao['endereco']?>" class="form-control" type="text" name="endereco" id="endereco" placeholder="" required>

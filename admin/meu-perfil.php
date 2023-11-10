@@ -46,7 +46,7 @@ $dadosUsuario = $usuario->exibirUm();
                 <p>
                     <?= $dadosLocalizacao['endereco'] ?> <br>
                     <a class="btn btn-outline-primary" href="localizacao-atualizar.php?id=<?= $dadosLocalizacao['id'] ?>">Editar</a>
-                    <a class="btn btn-outline-danger" href="localizacao-excluir.php?id=<?= $dadosLocalizacao['id'] ?>">Excluir</a>
+                    <a class="btn btn-outline-danger excluir" href="localizacao-excluir.php?id=<?= $dadosLocalizacao['id'] ?>">Excluir</a>
                 </p>
             <?php } ?>
 
@@ -58,7 +58,7 @@ $dadosUsuario = $usuario->exibirUm();
                 <p>
                     <?= $dadosContato['celular'] ?> <br>
                     <a class="btn btn-outline-primary" href="contato-atualizar.php?id=<?= $dadosContato['id'] ?>">Editar</a>
-                    <a class="btn btn-outline-danger" href="contato-excluir.php?id=<?= $dadosContato['id'] ?>">Excluir</a>
+                    <a class="btn btn-outline-danger excluir" href="contato-excluir.php?id=<?= $dadosContato['id'] ?>">Excluir</a>
                 </p>
             <?php }
             } ?>
